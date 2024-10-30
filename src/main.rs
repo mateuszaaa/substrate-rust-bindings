@@ -1,5 +1,5 @@
 use subxt::{
-    client::OnlineClientT, config::{signed_extensions, substrate::{Digest, NumberOrHex}, Hasher, Header, PolkadotExtrinsicParams}, utils::{AccountId32, MultiAddress}, Config, OnlineClient, PolkadotConfig, SubstrateConfig
+    client::OnlineClientT, config::{signed_extensions, substrate::{BlakeTwo256, Digest, NumberOrHex}, Hasher, Header, PolkadotExtrinsicParams}, utils::{AccountId32, MultiAddress}, Config, OnlineClient, PolkadotConfig, SubstrateConfig
 };
 use hex::encode as hex_encode;
 use sha3;
@@ -168,12 +168,12 @@ pub type GaspExtrinsicParams<T> = signed_extensions::AnyOf<
 
 
 impl Config for GaspConfig {
-    type Hash = <SubstrateConfig as Config>::Hash;
+    type Hash = H256;
     type AccountId = GaspAddress;
     type Address = GaspAddress;
     type Signature = GaspSignature;
-    type Hasher = <SubstrateConfig as Config>::Hasher;
-    type Header = <SubstrateConfig as Config>::Header;
+    type Hasher = BlakeTwo256;
+    type Header = GaspHeader<u32, BlakeTwo256>;
     type ExtrinsicParams = GaspExtrinsicParams<Self>;
     type AssetId = u32;
 }
@@ -273,7 +273,10 @@ async fn run() -> Result<(), Box<dyn std::error::Error>> {
     let tx = api
         .tx();
 
-    // api.backend().latest_finalized_block_ref().await?;
+    let latest = api.backend().latest_finalized_block_ref().await?;
+    let header = api.backend().block_header(latest.hash()).await?.unwrap();
+    println!("Latest block: {:?}", latest);
+    println!("Latest block: {:#?}", header);
 
     let partial_signed = tx.create_partial_signed(&call, &keypair.address(), Default::default()).await.expect("correct");
     // let signed = tx.create_signed(&call, &keypair, Default::default()).await.expect("correct");
@@ -291,7 +294,7 @@ async fn run() -> Result<(), Box<dyn std::error::Error>> {
      })?
     .wait_for_finalized_success()
     .await?;
-
+    //
     // println!("{:?}", partial_signed);
     // println!("{:?}", signed);
     // println!("{:?}", signed2);
