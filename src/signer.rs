@@ -1,30 +1,12 @@
 
-use subxt::{
-    client::OnlineClientT, config::{signed_extensions, substrate::{BlakeTwo256, Digest, NumberOrHex}, Hasher, Header, PolkadotExtrinsicParams}, utils::{AccountId32, MultiAddress}, Config, OnlineClient, PolkadotConfig, SubstrateConfig
-};
-use hex::encode as hex_encode;
-use sha3;
-use sha3::Digest as Keccak256Digest;
-use crate::sha3::Keccak256;
-use hex_literal::hex;
-use std::fmt;
-// mod gasp;
-// use subxt_signer::sr25519::dev::{self};
-use primitive_types::{U256, H256, H512};
+use subxt::Config;
+use sha3::{Keccak256, Digest};
 
-use parity_scale_codec::{Encode, Decode};
-use serde::{Serialize, Deserialize};
-use secp256k1::{
-	ecdsa::{RecoverableSignature, RecoveryId}, rand, Message, PublicKey, Secp256k1, SecretKey
-    // SECP256K1,
-};
-use subxt_signer::ecdsa::dev;
+use secp256k1::{ Message, Secp256k1, SecretKey };
 use subxt::tx::signer::Signer as SignerT;
-use crate::gasp::{GaspAddress, GaspSignature, GaspPublicKey};
+use crate::gasp::{GaspAddress, GaspSignature};
 
-use secp256k1::{
-	SECP256K1,
-};
+use secp256k1::SECP256K1;
 
 pub struct Keypair(pub secp256k1::Keypair);
 
@@ -35,20 +17,12 @@ impl Keypair {
         Keypair(secp256k1::Keypair::from_secret_key(&secp, &secret_key))
     }
 
-    pub fn public(&self) -> GaspPublicKey {
-        self.0.public_key().serialize().into()
-    }
-
     pub fn address(&self) -> GaspAddress {
         let mut res = [0u8; 64];
         res.copy_from_slice(&self.0.public_key().serialize_uncompressed()[1..]);
         let mut buffer = [0u8; 20];
-        buffer.copy_from_slice(&Keccak256::digest(&res)[12..32]);
+        buffer.copy_from_slice(&Keccak256::digest(res)[12..32]);
         buffer.into()
-    }
-
-    pub fn secret_key(&self) -> SecretKey {
-        self.0.secret_key()
     }
 
     pub fn sign_prehashed(&self, message: &[u8; 32]) -> GaspSignature{

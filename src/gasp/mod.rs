@@ -1,7 +1,6 @@
 use std::fmt::{self, Display};
 
 use parity_scale_codec::{Encode, Decode};
-use sha3::{Digest as KeccakDigest, Keccak256};
 
 mod gasp_bindings;
 pub use gasp_bindings::api as api;
@@ -11,9 +10,9 @@ pub use header::GaspHeader;
 
 
 use subxt::{
-    client::OnlineClientT, config::{signed_extensions, substrate::{BlakeTwo256, Digest, NumberOrHex}, Hasher, Header, PolkadotExtrinsicParams}, utils::{AccountId32, MultiAddress}, Config, OnlineClient, PolkadotConfig, SubstrateConfig
+    config::{signed_extensions, substrate::BlakeTwo256}, Config
 };
-use primitive_types::{U256, H256, H512};
+use primitive_types::H256;
 
 #[derive(Clone, Copy, Eq, PartialEq, Ord, PartialOrd, Hash, Debug)]
 pub enum GaspConfig {}
@@ -53,7 +52,7 @@ impl From<[u8; 65]> for GaspSignature {
 
 impl Display for GaspSignature {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "0x{}", hex::encode(&self.0))
+        write!(f, "0x{}", hex::encode(self.0))
     }
 }
 
@@ -77,6 +76,6 @@ impl From<[u8; 20]> for GaspAddress {
 
 impl Display for GaspAddress {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "0x{}", hex::encode(&self.0))
+        write!(f, "0x{}", hex::encode(self.0))
     }
 }

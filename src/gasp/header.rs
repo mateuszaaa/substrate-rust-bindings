@@ -1,9 +1,7 @@
 use parity_scale_codec::{Encode, Decode};
 use serde::{Serialize, Deserialize};
 use primitive_types::{U256, H256, H512};
-use subxt::{
-    client::OnlineClientT, config::{signed_extensions, substrate::{BlakeTwo256, Digest, NumberOrHex}, Hasher, Header, PolkadotExtrinsicParams}, utils::{AccountId32, MultiAddress}, Config, OnlineClient, PolkadotConfig, SubstrateConfig
-};
+use subxt::config::{substrate::{Digest, NumberOrHex}, Hasher, Header};
 
 fn serialize_number<S, T: Copy + Into<U256>>(val: &T, s: S) -> Result<S::Ok, S::Error>
 where
