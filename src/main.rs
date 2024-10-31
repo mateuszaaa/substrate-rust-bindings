@@ -8,9 +8,6 @@ use gasp::GaspConfig;
 
 mod gasp;
 
-
-
-
 #[tokio::main]
 pub async fn main() {
     if let Err(err) = run().await {
@@ -23,7 +20,7 @@ async fn run() -> Result<(), Box<dyn std::error::Error>> {
     println!("Connection established.");
 
     let keypair = Keypair::from_secret_key(hex!("5fb92d6e98884f76de468fa3f6278f8807c48bebc13595d45af5bdc4da702133"));
-    println!("Address: {}", keypair.address());
+    println!("Address             : {}", keypair.address());
 
 
     let storage_query = gasp::api::storage().system().block_hash(0);
@@ -49,9 +46,9 @@ async fn run() -> Result<(), Box<dyn std::error::Error>> {
 
 
     let partial_signed = tx.create_partial_signed(&call, &keypair.address(), Default::default()).await.expect("correct");
-    println!("transaction payload 0x{}", hex_encode(partial_signed.signer_payload()));
+    println!("transaction payload : {}", hex_encode(partial_signed.signer_payload()));
     let signed = partial_signed.sign(&keypair);
-    println!("signed transaction payload 0x{}", hex_encode(signed.encoded()));
+    println!("signed tx payload   : {}", hex_encode(signed.encoded()));
 
     signed.submit_and_watch()
     .await
