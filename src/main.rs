@@ -4,9 +4,44 @@ use hex_literal::hex;
 
 mod signer;
 use signer::Keypair;
-use gasp::GaspConfig;
+use futures::StreamExt;
 
 mod gasp;
+use gasp::GaspConfig;
+use subxt::Config;
+
+pub trait GaspApi<T: Config> {
+    async fn get_pending_updates(&self, at: T::Hash) -> Result<Vec<u8>, Error>;
+}
+
+pub struct Gasp<T: Config>(OnlineClient<T>);
+
+#[derive(Debug, thiserror::Error)]
+pub enum Error {
+    #[error("unknown error")]
+    Unknown,
+    #[error("unknown error")]
+    Subxt(#[from] subxt::Error),
+}
+
+impl<T: Config> GaspApi<T> for Gasp<T> {
+    async fn get_pending_updates(&self, at: T::Hash) -> Result<Vec<u8>, Error> {
+
+        let iter = gasp::api::storage().rolldown().pending_sequencer_updates_iter();
+        self.0.storage()
+            .at(at)
+            .iter(iter)
+            .await?
+            .map(|result| {
+                // println!("k: {:?}, v: {:?}", k, v);
+                // v
+            })
+        ;
+
+        Ok(Default::default())
+    }
+}
+
 
 #[tokio::main]
 pub async fn main() {
@@ -39,6 +74,7 @@ async fn run() -> Result<(), Box<dyn std::error::Error>> {
     println!("Latest block hash   : {:?}", latest);
     println!("Latest block seed   : {:?}", hex_encode(header.extrinsics_root));
 
+    // gasp::api::
 
     let call = gasp::api::tx().tokens().transfer(gasp::api::runtime_types::sp_runtime::account::AccountId20([0u8; 20]), 0, 100);
     let tx = api
