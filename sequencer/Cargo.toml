@@ -3,6 +3,9 @@ name = "sequencer"
 version = "0.1.0"
 edition = "2021"
 
+[[bin]]
+name = "sequencer"
+
 [dependencies]
 subxt = "0.38.0"
 subxt-signer = "0.38.0"
@@ -18,6 +21,8 @@ hex-literal = "0.4.1"
 futures = "0.3.17"
 thiserror = "1.0.66"
 
-[profile.dev]
-incremental = true
-lto = true
+bindings = { workspace = true }
+
+# [profile.dev]
+# incremental = true
+# lto = true
