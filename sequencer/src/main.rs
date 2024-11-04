@@ -14,10 +14,7 @@ mod gasp;
 use gasp::GaspConfig;
 use subxt::Config;
 
-use ::subxt::ext::subxt_core::ext::codec::Decode;
-// NOTE: StaticStorageKey::decode
-use ::subxt::ext::subxt_core::storage::address::StaticStorageKey;
-use subxt::ext::subxt_core::storage::address::{StaticAddress, StorageHashers};
+use subxt::ext::subxt_core::storage::address::{StorageHashers};
 
 pub type SequencerPendingUpdateKey = (
     gasp::api::rolldown::storage::types::pending_sequencer_updates::Param0,
@@ -61,47 +58,55 @@ impl<T: Config> GaspApi<T> for Gasp<T> {
         let hashers = StorageHashers::new(entry.entry_type(), metadata.types()).expect("is fine");
 
         let iter = gasp::api::storage().rolldown().pending_sequencer_updates_iter();
-        let result = self.0.storage()
+        let result: Vec<Result<PendingUpdate, Error>> = self.0.storage()
             .at(at)
             .iter(iter)
             .await?
-            .map(|result| {
-                result.map( |storage_kv| {
-                    println!("storage_kv: {:?}", storage_kv);
-                    let (acc, update, hash) = storage_kv.value;
+            .map(|result| -> Result<PendingUpdate, Error> {
+                let storage_kv = result?;
+                println!("storage_kv: {:?}", storage_kv);
+                let (acc, update, hash) = storage_kv.value;
 
-                    let min_deposit_id = update.pendingDeposits
-                        .iter()
-                        .map(|elem| elem.requestId.id)
-                        .min()
-                        .unwrap_or(u128::MAX);
-                    let max_deposit_id = update.pendingDeposits.iter().map(|elem| elem.requestId.id).max().unwrap_or(0u128);
+                let min_deposit_id = update.pendingDeposits
+                    .iter()
+                    .map(|elem| elem.requestId.id)
+                    .min()
+                    .unwrap_or(u128::MAX);
+                let max_deposit_id = update.pendingDeposits.iter()
+                    .map(|elem| elem.requestId.id)
+                    .max()
+                    .unwrap_or(0u128);
 
-                    let min_cancel_id = update.pendingCancelResolutions.iter().map(|elem| elem.requestId.id).min().unwrap_or(u128::MAX);
-                    let max_cancel_id = update.pendingCancelResolutions.iter().map(|elem| elem.requestId.id).max().unwrap_or(0u128);
+                let min_cancel_id = update.pendingCancelResolutions.iter()
+                    .map(|elem| elem.requestId.id)
+                    .min()
+                    .unwrap_or(u128::MAX);
+                let max_cancel_id = update.pendingCancelResolutions.iter()
+                    .map(|elem| elem.requestId.id)
+                    .max()
+                    .unwrap_or(0u128);
 
-                    //TODO: remove unwrap
-                    let keys = <( StaticStorageKey<gasp_types::pending_sequencer_updates::Param0>, StaticStorageKey<gasp_types::pending_sequencer_updates::Param1>)>::decode_storage_key(
-                        &mut &storage_kv.key_bytes[32..],
-                        &mut hashers.iter(),
-                        metadata.types(),
-                    ).unwrap();
+                //TODO: remove unwrap
+                let keys = <( StaticStorageKey<gasp_types::pending_sequencer_updates::Param0>, StaticStorageKey<gasp_types::pending_sequencer_updates::Param1>)>::decode_storage_key(
+                    &mut &storage_kv.key_bytes[32..],
+                    &mut hashers.iter(),
+                    metadata.types(),
+                ).unwrap();
 
 
 
-                    PendingUpdate {
-                        update_id: keys.0.decoded().unwrap(),
-                        range: (
-                            std::cmp::min(min_deposit_id, min_cancel_id),
-                            std::cmp::max(max_deposit_id, max_cancel_id)
-                        ),
-                        hash,
-                    }
-                })
-            });
-
-            Ok(Default::default())
-
+                Ok(PendingUpdate {
+                    update_id: keys.0.decoded().unwrap(),
+                    range: (
+                        std::cmp::min(min_deposit_id, min_cancel_id),
+                        std::cmp::max(max_deposit_id, max_cancel_id)
+                    ),
+                    hash,
+                }) 
+            })
+            .collect()
+            .await;
+            result.into_iter().collect()
     }
 
 }
