@@ -153,6 +153,5 @@ async fn run() -> Result<(), Box<dyn std::error::Error>> {
         let result= call.call_raw().await?;
     }
 
-
     Ok(())
 }
