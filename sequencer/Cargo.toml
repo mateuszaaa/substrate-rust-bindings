@@ -20,6 +20,7 @@ hex = "0.4.3"
 hex-literal = "0.4.1"
 futures = "0.3.17"
 thiserror = "1.0.66"
+alloy = { git = "https://github.com/alloy-rs/alloy", features = ["sol-types", "contract"] }
 
 bindings = { workspace = true }
 

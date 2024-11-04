@@ -1,3 +1,4 @@
+use alloy::primitives::Uint;
 use primitive_types::H256;
 use subxt::dynamic::Value;
 use subxt::ext::subxt_core;
@@ -5,14 +6,17 @@ use subxt::OnlineClient;
 use hex::encode as hex_encode;
 use hex_literal::hex;
 
+use alloy::providers::ProviderBuilder;
 mod signer;
 use signer::Keypair;
 use futures::StreamExt;
 use subxt::storage::StorageKey;
+use alloy::contract;
 
 mod gasp;
 use gasp::GaspConfig;
 use subxt::Config;
+// use bindings::rolldownstorage::RolldownStorage::getUpdateForL2Call
 
 use subxt::ext::subxt_core::storage::address::{StorageHashers};
 
@@ -25,6 +29,9 @@ pub trait GaspApi<T: Config> {
     async fn get_pending_updates(&self, at: T::Hash) -> Result<Vec<PendingUpdate>, Error>;
 }
 
+pub trait RolldownApi {
+}
+
 pub struct Gasp<T: Config>(pub OnlineClient<T>);
 
 #[derive(Debug, thiserror::Error)]
@@ -33,6 +40,8 @@ pub enum Error {
     Unknown,
     #[error("unknown error")]
     Subxt(#[from] subxt::Error),
+    #[error("alloy error")]
+    Alloy(#[from] alloy::contract::Error),
 }
 
 #[derive(Debug)]
@@ -124,74 +133,26 @@ async fn run() -> Result<(), Box<dyn std::error::Error>> {
 
     println!("Connection established.");
     let at = api.backend().latest_finalized_block_ref().await?;
-
     println!("# 0x{} received", hex_encode(at.hash()));
 
     let keypair = Keypair::from_secret_key(hex!("5fb92d6e98884f76de468fa3f6278f8807c48bebc13595d45af5bdc4da702133"));
     println!("Address             : {}", keypair.address());
 
     let gasp = Gasp(api);
-    //
     let result = gasp.get_pending_updates(at.hash())
         .await
         .expect("should work");
 
-    println!("result: {:?}", result);
+    let provider = ProviderBuilder::new().with_recommended_fillers().on_builtin("http://localhost:8545").await?;
+    let rolldown = bindings::rolldown::Rolldown::RolldownInstance::new(hex!("1429859428C0aBc9C2C47C8Ee9FBaf82cFA0F20f").into(), provider);
 
-    // let storage_query = gasp::api::storage().rolldown().pending_sequencer_updates();
+    for update in result {
+        let range_start = Uint::<256, 4>::from(update.range.0);
+        let range_end = Uint::<256, 4>::from(update.range.1);
+        let call = rolldown.getPendingRequests(range_start, range_end);
+        let result= call.call_raw().await?;
+    }
 
-
-
-    // NOTE: dynamic example
-    // // Build a dynamic storage query to iterate account information.
-    // // With a dynamic query, we can just provide an empty vector as the keys to iterate over all entries.
-    // let keys: Vec<Value> = vec![];
-    // let storage_query = subxt::dynamic::storage("Rolldown", "PendingSequencerUpdates", keys);
-    //
-    // // Use that query to return an iterator over the results.
-    // let mut results = api.storage().at_latest().await?.iter(storage_query).await?;
-    //
-    // while let Some(Ok(kv)) = results.next().await {
-    //     println!("Keys decoded: {:?}", kv.keys);
-    //     // println!("Key: 0x{}", hex::encode(&kv.key_bytes));
-    //     // println!("Value: {:?}", kv.value.to_value()?);
-    // }
-
-
-    // let genesis = api
-    //     .storage()
-    //     .at_latest()
-    //     .await?
-    //     .fetch(&storage_query)
-    // .await?
-    // .expect("should fetch genesis block");
-
-    // let latest = api.backend().latest_finalized_block_ref().await?;
-    // let header = api.backend().block_header(latest.hash()).await?.unwrap();
-    //
-    // println!("Genesis hash        : {:?}", genesis);
-    // println!("Latest block hash   : {:?}", latest);
-    // println!("Latest block seed   : {:?}", hex_encode(header.extrinsics_root));
-    //
-    // // gasp::api::
-    //
-    // let call = gasp::api::tx().tokens().transfer(gasp::api::runtime_types::sp_runtime::account::AccountId20([0u8; 20]), 0, 100);
-    // let tx = api
-    //     .tx();
-    //
-    //
-    // let partial_signed = tx.create_partial_signed(&call, &keypair.address(), Default::default()).await.expect("correct");
-    // println!("transaction payload : {}", hex_encode(partial_signed.signer_payload()));
-    // let signed = partial_signed.sign(&keypair);
-    // println!("signed tx payload   : {}", hex_encode(signed.encoded()));
-    //
-    // signed.submit_and_watch()
-    // .await
-    // .inspect(|_| {
-    //     println!("Tx submitted successfully {:?}", call);
-    //  })?;
-    // // .wait_for_finalized()
-    // // .await?;
 
     Ok(())
 }
