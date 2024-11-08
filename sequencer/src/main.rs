@@ -1,12 +1,14 @@
 use alloy::primitives::Uint;
 use primitive_types::H256;
-use subxt::config::ExtrinsicParams;
+use subxt::config::{ExtrinsicParams, Header};
 use subxt::dynamic::Value;
 use subxt::ext::subxt_core;
+use subxt::tx::TxInBlock;
 use subxt::OnlineClient;
 use hex::encode as hex_encode;
 use hex_literal::hex;
 use sha3::{Keccak256, Digest};
+use alloy::sol_types::SolValue;
 
 use alloy::providers::ProviderBuilder;
 mod signer;
@@ -28,8 +30,9 @@ pub type SequencerPendingUpdateKey = (
 );
 
 pub trait GaspApi<T: Config> {
-    async fn get_pending_updates(&self, at: T::Hash) -> Result<Vec<PendingUpdate>, Error>;
-    async fn cancel_pending_request(&self, request_id: u128) -> Result<(), Error>;
+    async fn get_pending_updates(&self, at: T::Hash) -> Result<Vec<PendingUpdate>, GaspError>;
+    async fn cancel_pending_request(&self, request_id: u128) -> Result<(), GaspError>;
+    async fn get_pending_update(&self) -> Result<(), GaspError>;
 }
 
 #[derive(Debug, thiserror::Error)]
@@ -47,27 +50,31 @@ pub trait RolldownApi {
    async fn get_latest_reqeust_id(&self) -> Result<u128, RolldownError>;
 }
 
-pub struct Rolldown{
-    secret_key: Keypair,
-}
+pub struct Rolldown;
+    // secret_key: Keypair,
+// }
 
 
-impl Rolldown {
-
+impl RolldownApi for Rolldown {
     async fn get_latest_reqeust_id(&self) -> Result<u128, RolldownError> {
         let provider = ProviderBuilder::new().with_recommended_fillers().on_builtin("http://localhost:8545").await?;
         let rolldown = bindings::rolldown::Rolldown::RolldownInstance::new(hex!("1429859428C0aBc9C2C47C8Ee9FBaf82cFA0F20f").into(), provider);
-        let call = rolldown.lastProcessedUpdate_origin_l1();
+        let call = rolldown.counter();
         let result = call.call().await?;
         Ok(result._0.try_into().unwrap())
     }
 
-    async fn get_pending_updates(&self, start: u128, end: u128) ->  Result<H256, RolldownError> {
+    async fn get_update_hash(&self, start: u128, end: u128) ->  Result<H256, RolldownError> {
 
         let provider = ProviderBuilder::new().with_recommended_fillers().on_builtin("http://localhost:8545").await?;
         let rolldown = bindings::rolldown::Rolldown::RolldownInstance::new(hex!("1429859428C0aBc9C2C47C8Ee9FBaf82cFA0F20f").into(), provider);
+        let latest = self.get_latest_reqeust_id().await?;
 
-        if start < 1u128 || end > self.get_latest_reqeust_id().await? {
+        println!("latest : {} start:{} end:{} ", latest, start, end);
+
+
+        if (start >= latest || end >= latest) {
+            println!("invalid range !!!!");
             return Err(RolldownError::InvalidRange);
         }
 
@@ -75,8 +82,9 @@ impl Rolldown {
         let range_end = Uint::<256, 4>::from(end);
         let call = rolldown.getPendingRequests(range_start, range_end);
 
-        let result_bytes = call.call_raw().await?;
-        let x: [u8; 32] = Keccak256::digest(result_bytes).into();
+        let pending_update = call.call().await?;
+        // let xxx = pending_update._0.abi_encode();
+        let x: [u8; 32] = Keccak256::digest(&pending_update._0.abi_encode()[..]).into();
         Ok(x.into())
     }
 }
@@ -95,6 +103,19 @@ pub enum Error {
     Subxt(#[from] subxt::Error),
 }
 
+#[derive(Debug, thiserror::Error)]
+pub enum GaspError {
+    #[error("tx inclusion block does not exist")]
+    TxInclusionBlockDoesNotExits,
+    #[error("tx included but not executed")]
+    TxIncludedButNotExecuted,
+    #[error("block fetch error")]
+    BlockFetchError,
+    #[error("unknown error")]
+    Subxt(#[from] subxt::Error),
+}
+
+
 #[derive(Debug)]
 pub struct PendingUpdate{
     update_id: u128,
@@ -108,6 +129,11 @@ impl<T: Config> Gasp<T> {
         Ok(self.client.backend().latest_finalized_block_ref().await?.hash())
     }
 
+    async fn latest_block(&self) -> Result<T::Hash, Error> {
+        let mut stream = self.client.backend().stream_all_block_headers().await?;
+        Ok(stream.next().await.expect("infinite stream").map(|elem| elem.1.hash().into())?)
+    }
+
     async fn new(uri: &str, secret_key: [u8; 32]) -> Result<Self, Error> {
         let client = OnlineClient::<T>::from_url(uri).await?;
 
@@ -116,18 +142,63 @@ impl<T: Config> Gasp<T> {
             keypair: Keypair::from_secret_key(secret_key)
         })
     }
+
+    async fn wait_for_tx_execution(&self, tx_hash: T::Hash) -> Result<(), GaspError>{
+        // let block_hash =  status.block_hash();
+        // let tx_hash =  status.extrinsic_hash();
+
+        // println!("tx hash: {} finalized at block {}", hex_encode(tx_hash), hex_encode(block_hash));
+        // let block_number = self.client.backend()
+        //     .block_header(block_hash)
+        //     .await?
+        //     .ok_or(GaspError::TxInclusionBlockDoesNotExits)?
+        //     .number();
+        //
+        // // let max_block_number = block_number.add(10.into());
+        // let max_block_number: u64 = block_number.into() + 10u64;
+        //
+        let mut stream = self.client
+            .backend()
+            .stream_best_block_headers()
+            .await?;
+
+
+        while let Some(header) = stream.next().await{
+            let (header, hash) = header?;
+
+            println!("looking for tx hash:{} in block {}", hex_encode(tx_hash), header.number().into());
+            // if header.number().into() > max_block_number {
+            //     return Err(GaspError::TxIncludedButNotExecuted);
+            // }
+
+            let block = self.client.blocks().at(hash).await?;
+            let extrinsics = block.extrinsics().await?;
+
+            if let Some(_) = extrinsics.iter().find(|extrinsic| extrinsic.hash() == tx_hash) {
+                break;
+            }
+        }
+
+
+
+        Ok(())
+
+    }
+
 }
 
 
-impl<T: Config> GaspApi<T> for Gasp<T>where
+impl<T: Config> GaspApi<T> for Gasp<T> where
     T::AccountId: From<GaspAddress>,
     T::Address: From<GaspAddress>,
     T::Signature: From<GaspSignature>,
     <<T as Config>::ExtrinsicParams as ExtrinsicParams<T>>::Params: Default
 {
+    async fn get_pending_update(&self) -> Result<(), GaspError>{
+        Ok(())
+    }
 
-
-    async fn cancel_pending_request(&self, request_id: u128) -> Result<(), Error>{
+    async fn cancel_pending_request(&self, request_id: u128) -> Result<(), GaspError>{
 
     // let call = gasp::api::tx().rolldown().cancel_requests_from_l1(
     //     gasp::api::rolldown::calls::types::cancel_requests_from_l1::Chain::Ethereum,
@@ -147,18 +218,24 @@ impl<T: Config> GaspApi<T> for Gasp<T>where
      let signed = partial_signed.sign(&self.keypair);
      println!("signed tx payload   : {}", hex_encode(signed.encoded()));
 
-     signed.submit_and_watch()
+     let tx_hash = signed.hash();
+     println!("TX HASH: {}", hex_encode(tx_hash));
+
+     let status = signed.submit_and_watch()
      .await
-     .inspect(|_| {
+     .inspect(|elem| {
          println!("Tx submitted successfully {:?}", call);
       })?;
      // .wait_for_finalized()
      // .await?;
 
-        Ok(())
+    self.wait_for_tx_execution(tx_hash).await?;
+
+
+    Ok(())
     }
 
-    async fn get_pending_updates(&self, at: T::Hash) -> Result<Vec<PendingUpdate>, Error> {
+    async fn get_pending_updates(&self, at: T::Hash) -> Result<Vec<PendingUpdate>, GaspError> {
         use ::subxt::ext::subxt_core::storage::address::StaticStorageKey;
         use gasp::api::rolldown::storage::types as gasp_types;
 
@@ -171,13 +248,13 @@ impl<T: Config> GaspApi<T> for Gasp<T>where
         let hashers = StorageHashers::new(entry.entry_type(), metadata.types()).expect("is fine");
 
         let iter = gasp::api::storage().rolldown().pending_sequencer_updates_iter();
-        let result: Vec<Result<PendingUpdate, Error>> = self.client.storage()
+        let result: Vec<Result<PendingUpdate, GaspError>> = self.client.storage()
             .at(at)
             .iter(iter)
             .await?
-            .map(|result| -> Result<PendingUpdate, Error> {
+            .map(|result| -> Result<PendingUpdate, GaspError> {
                 let storage_kv = result?;
-                println!("storage_kv: {:?}", storage_kv);
+                // println!("storage_kv: {:?}", storage_kv);
                 let (acc, update, hash) = storage_kv.value;
 
                 let min_deposit_id = update.pendingDeposits
@@ -242,23 +319,50 @@ async fn run() -> Result<(), Box<dyn std::error::Error>> {
 
     let gasp = Gasp::<GaspConfig>::new("ws://127.0.0.1:9944", hex!("5fb92d6e98884f76de468fa3f6278f8807c48bebc13595d45af5bdc4da702133")).await?;
 
-    let at = gasp.last_finalized().await?;
 
-    let result = gasp.get_pending_updates(at)
-        .await
-        .expect("should work");
 
-    let provider = ProviderBuilder::new().with_recommended_fillers().on_builtin("http://localhost:8545").await?;
-    let rolldown = bindings::rolldown::Rolldown::RolldownInstance::new(hex!("1429859428C0aBc9C2C47C8Ee9FBaf82cFA0F20f").into(), provider);
+    loop {
+        tokio::time::sleep(tokio::time::Duration::from_secs(1)).await;
+        let at = gasp.latest_block().await?;
+        println!("#{} is latest block", at);
 
-    for update in result {
-        // println!("pending update {}", update.update_id);
-        let range_start = Uint::<256, 4>::from(update.range.0);
-        let range_end = Uint::<256, 4>::from(update.range.1);
-        let call = rolldown.getPendingRequests(range_start, range_end);
+        let result = gasp.get_pending_updates(at)
+            .await
+            .expect("should work");
 
-        if let Err(contract::Error::TransportError(err)) = call.call_raw().await {
-            println!("Error: {:?}", err);
+        println!("pending updates: {}", result.len());
+        // let provider = ProviderBuilder::new().with_recommended_fillers().on_builtin("http://localhost:8545").await?;
+        // let rolldown = bindings::rolldown::Rolldown::RolldownInstance::new(hex!("1429859428C0aBc9C2C47C8Ee9FBaf82cFA0F20f").into(), provider);
+
+        for update in result {
+            // println!("pending update {:#?}", update);
+            // let range_end = Uint::<256, 4>::from(update.range.1);
+            // let range_start = Uint::<256, 4>::from(update.range.0);
+            // let call = rolldown.getPendingRequests(range_start, range_end);
+
+            let r = Rolldown;
+
+            println!("checking update {:#?}", update);
+
+            match r.get_update_hash(update.range.0, update.range.1).await {
+                Ok(hash) => {
+                    println!("hash: {} vs {}", hash, update.hash);
+                    gasp.cancel_pending_request(update.update_id).await;
+                },
+                Err(RolldownError::InvalidRange) => {
+                    println!("invalid range");
+                    gasp.cancel_pending_request(update.update_id).await.unwrap();
+                }
+                Err(err) => {
+                    println!("error {:?}", err);
+                }
+            }
+
+            // if let Err(RolldownError::InvalidRange) =  {
+            //     println!("invalid");
+            // }else{
+            //     println!("valid");
+            // }
         }
     }
 
