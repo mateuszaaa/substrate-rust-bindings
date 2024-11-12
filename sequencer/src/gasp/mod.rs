@@ -65,7 +65,7 @@ impl From<[u8; 33]> for GaspPublicKey {
     }
 }
 
-#[derive(Encode, Decode, Debug, PartialEq, Eq, Clone)]
+#[derive(Encode, Decode, Debug, PartialEq, Eq, Clone, Hash)]
 pub struct GaspAddress([u8; 20]);
 
 impl From<[u8; 20]> for GaspAddress {
