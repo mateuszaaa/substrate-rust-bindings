@@ -4,7 +4,7 @@ use sha3::{Keccak256, Digest};
 
 use secp256k1::{ Message, Secp256k1, SecretKey };
 use subxt::tx::signer::Signer as SignerT;
-use crate::gasp::{GaspAddress, GaspSignature};
+use crate::l2::{GaspAddress, GaspSignature};
 
 use secp256k1::SECP256K1;
 

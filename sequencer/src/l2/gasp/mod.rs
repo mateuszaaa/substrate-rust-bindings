@@ -15,7 +15,7 @@ use subxt::{
 use primitive_types::H256;
 
 #[derive(Clone, Copy, Eq, PartialEq, Ord, PartialOrd, Hash, Debug)]
-pub enum GaspConfig {}
+pub struct GaspConfig;
 
 pub type GaspExtrinsicParams<T> = signed_extensions::AnyOf<
     T,

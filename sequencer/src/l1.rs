@@ -24,7 +24,7 @@ use subxt::ext::subxt_core::storage::address::{StorageHashers};
 
 
 #[derive(Debug, thiserror::Error)]
-pub enum RolldownError{
+pub enum L1Error{
     #[error("Invalid range")]
     InvalidRange,
     #[error("alloy error")]
@@ -33,16 +33,22 @@ pub enum RolldownError{
     TransportAlloy(#[from] alloy::transports::TransportError),
 }
 
-pub trait RolldownApi {
-   async fn get_update(&self, start: u128, end: u128) -> Result<bindings::rolldown::IRolldownPrimitives::L1Update, RolldownError>; 
-   async fn get_update_hash(&self, start: u128, end: u128) -> Result<H256, RolldownError>; 
-   async fn get_latest_reqeust_id(&self) -> Result<u128, RolldownError>;
+pub trait L1Interface {
+   async fn get_update(&self, start: u128, end: u128) -> Result<bindings::rolldown::IRolldownPrimitives::L1Update, L1Error>; 
+   async fn get_update_hash(&self, start: u128, end: u128) -> Result<H256, L1Error>; 
+   async fn get_latest_reqeust_id(&self) -> Result<u128, L1Error>;
 }
 
-pub struct Rolldown;
+pub struct RolldownContract;
+ 
+impl RolldownContract {
+    pub fn new() -> Self{
+        RolldownContract
+    }
+}
 
-impl RolldownApi for Rolldown {
-    async fn get_latest_reqeust_id(&self) -> Result<u128, RolldownError> {
+impl L1Interface for RolldownContract {
+    async fn get_latest_reqeust_id(&self) -> Result<u128, L1Error> {
         let provider = ProviderBuilder::new().with_recommended_fillers().on_builtin("http://localhost:8545").await?;
         let rolldown = bindings::rolldown::Rolldown::RolldownInstance::new(hex!("1429859428C0aBc9C2C47C8Ee9FBaf82cFA0F20f").into(), provider);
         let call = rolldown.counter();
@@ -53,7 +59,7 @@ impl RolldownApi for Rolldown {
     }
 
 
-    async fn get_update(&self, start: u128, end: u128) ->  Result<bindings::rolldown::IRolldownPrimitives::L1Update, RolldownError> {
+    async fn get_update(&self, start: u128, end: u128) ->  Result<bindings::rolldown::IRolldownPrimitives::L1Update, L1Error> {
 
         let provider = ProviderBuilder::new().with_recommended_fillers().on_builtin("http://localhost:8545").await?;
         let rolldown = bindings::rolldown::Rolldown::RolldownInstance::new(hex!("1429859428C0aBc9C2C47C8Ee9FBaf82cFA0F20f").into(), provider);
@@ -64,7 +70,7 @@ impl RolldownApi for Rolldown {
 
         if start < 1u128 || start > latest || end > latest || end < start {
             println!("invalid range !!!!");
-            return Err(RolldownError::InvalidRange);
+            return Err(L1Error::InvalidRange);
         }
 
         let range_start = Uint::<256, 4>::from(start);
@@ -73,7 +79,7 @@ impl RolldownApi for Rolldown {
         Ok(call.call().await?._0)
     }
 
-    async fn get_update_hash(&self, start: u128, end: u128) ->  Result<H256, RolldownError> {
+    async fn get_update_hash(&self, start: u128, end: u128) ->  Result<H256, L1Error> {
         let pending_update = self.get_update(start,end).await?;
         let x: [u8; 32] = Keccak256::digest(&pending_update.abi_encode()[..]).into();
         Ok(x.into())

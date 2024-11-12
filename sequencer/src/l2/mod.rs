@@ -12,10 +12,10 @@ use subxt::OnlineClient;
 use subxt::Config;
 use futures::StreamExt;
 
-use crate::gasp;
-use crate::gasp::GaspConfig;
-use crate::gasp::GaspAddress;
-use crate::gasp::GaspSignature;
+pub mod gasp;
+pub use gasp::GaspAddress;
+pub use gasp::GaspSignature;
+use gasp::GaspConfig;
 use crate::signer::Keypair;
 
 #[derive(Debug)]
@@ -27,31 +27,26 @@ pub struct PendingUpdate{
 
 use gasp::api::runtime_types::frame_system::EventRecord;
 use gasp::api::runtime_types::rollup_runtime::RuntimeEvent;
-pub type GaspEvent = EventRecord<RuntimeEvent, H256>;
+pub type L2Event = EventRecord<RuntimeEvent, H256>;
 
-pub type SequencerPendingUpdateKey = (
-    gasp::api::rolldown::storage::types::pending_sequencer_updates::Param0,
-    gasp::api::rolldown::storage::types::pending_sequencer_updates::Param1
-);
-
-pub trait GaspApi<T: Config> {
-    async fn get_latest_processed_request_id(&self, at: T::Hash) -> Result<u128, GaspError>;
-    async fn get_read_rights(&self, at: T::Hash) -> Result<u128, GaspError>;
-    async fn get_cancel_rights(&self, at: T::Hash) -> Result<u128, GaspError>;
-    async fn get_pending_updates(&self, at: T::Hash) -> Result<Vec<PendingUpdate>, GaspError>;
-    async fn deserialize_sequencer_update(&self, data: Vec<u8>) -> Result<gasp::api::runtime_types::pallet_rolldown::messages::L1Update, GaspError>;
-    async fn cancel_pending_request(&self, request_id: u128) -> Result<bool, GaspError>;
-    async fn update_l1_from_l2(&self, update: gasp::api::runtime_types::pallet_rolldown::messages::L1Update, hash: H256) -> Result<bool, GaspError>;
+pub trait L2Interface {
+    async fn get_latest_processed_request_id(&self, at: HashOf<GaspConfig>) -> Result<u128, L2Error>;
+    async fn get_read_rights(&self, at: HashOf<GaspConfig>) -> Result<u128, L2Error>;
+    async fn get_cancel_rights(&self, at: HashOf<GaspConfig>) -> Result<u128, L2Error>;
+    async fn get_pending_updates(&self, at: HashOf<GaspConfig>) -> Result<Vec<PendingUpdate>, L2Error>;
+    async fn deserialize_sequencer_update(&self, data: Vec<u8>) -> Result<gasp::api::runtime_types::pallet_rolldown::messages::L1Update, L2Error>;
+    async fn cancel_pending_request(&self, request_id: u128) -> Result<bool, L2Error>;
+    async fn update_l1_from_l2(&self, update: gasp::api::runtime_types::pallet_rolldown::messages::L1Update, hash: H256) -> Result<bool, L2Error>;
 }
 
-pub struct Gasp<T: Config>{
-    client: OnlineClient<T>,
+pub struct Gasp{
+    client: OnlineClient<GaspConfig>,
     keypair: Keypair,
 }
 
 
 #[derive(Debug, thiserror::Error)]
-pub enum GaspError {
+pub enum L2Error {
     #[error("tx inclusion block does not exist")]
     TxInclusionBlockDoesNotExits,
     #[error("tx included but not executed")]
@@ -70,20 +65,21 @@ pub enum GaspError {
     UnknownTxStatus,
 }
 
+pub type HashOf<T: Config> = T::Hash;
 
-impl<T: Config> Gasp<T> {
+impl Gasp {
 
-    pub async fn last_finalized(&self) -> Result<T::Hash, GaspError> {
+    pub async fn last_finalized(&self) -> Result<HashOf<GaspConfig>, L2Error> {
         Ok(self.client.backend().latest_finalized_block_ref().await?.hash())
     }
 
-    pub async fn latest_block(&self) -> Result<T::Hash, GaspError> {
+    pub async fn latest_block(&self) -> Result<HashOf<GaspConfig>, L2Error> {
         let mut stream = self.client.backend().stream_all_block_headers().await?;
         Ok(stream.next().await.expect("infinite stream").map(|elem| elem.1.hash().into())?)
     }
 
-    pub async fn new(uri: &str, secret_key: [u8; 32]) -> Result<Self, GaspError> {
-        let client = OnlineClient::<T>::from_url(uri).await?;
+    pub async fn new(uri: &str, secret_key: [u8; 32]) -> Result<Self, L2Error> {
+        let client = OnlineClient::<GaspConfig>::from_url(uri).await?;
 
         Ok(Self {
             client,
@@ -91,7 +87,7 @@ impl<T: Config> Gasp<T> {
         })
     }
 
-    async fn get_events(&self, at: T::Hash) -> Result<Vec<GaspEvent>, GaspError>{
+    async fn get_events(&self, at: HashOf<GaspConfig>) -> Result<Vec<L2Event>, L2Error>{
 
         let storage = gasp::api::storage().system().events();
         Ok(self.client.storage()
@@ -101,7 +97,7 @@ impl<T: Config> Gasp<T> {
             .unwrap_or_default())
     }
 
-    async fn wait_for_tx_execution(&self, tx_hash: T::Hash) -> Result<bool, GaspError>{
+    async fn wait_for_tx_execution(&self, tx_hash: HashOf<GaspConfig>) -> Result<bool, L2Error>{
         let mut stream = self.client
             .backend()
             .stream_best_block_headers()
@@ -111,7 +107,7 @@ impl<T: Config> Gasp<T> {
         while let Some(header) = stream.next().await{
             let (header, hash) = header?;
 
-            println!("looking for tx hash:{} in block {}", hex_encode(tx_hash), header.number().into());
+            println!("looking for tx hash:{} in block {}", hex_encode(tx_hash), header.number());
 
             let block = self.client.blocks().at(hash.clone()).await?;
             let extrinsics = block.extrinsics().await?;
@@ -128,7 +124,7 @@ impl<T: Config> Gasp<T> {
                         matches!(elem.event, RuntimeEvent::System(gasp::api::runtime_types::frame_system::pallet::Event::ExtrinsicFailed{..}))
                 });
 
-                let elem = status.ok_or(GaspError::UnknownTxStatus)?;
+                let elem = status.ok_or(L2Error::UnknownTxStatus)?;
 
                 return match elem.event {
                     RuntimeEvent::System(gasp::api::runtime_types::frame_system::pallet::Event::ExtrinsicSuccess{..}) => {
@@ -138,7 +134,7 @@ impl<T: Config> Gasp<T> {
                         Ok(false)
                     },
                     _ => {
-                        Err(GaspError::UnknownTxStatus)
+                        Err(L2Error::UnknownTxStatus)
                     }
                 };
 
@@ -147,21 +143,21 @@ impl<T: Config> Gasp<T> {
 
 
 
-        Err(GaspError::UnknownTxStatus)
+        Err(L2Error::UnknownTxStatus)
 
     }
 
 }
 
 
-impl<T: Config> GaspApi<T> for Gasp<T> where
-    T::AccountId: From<GaspAddress>,
-    T::Address: From<GaspAddress>,
-    T::Signature: From<GaspSignature>,
-    <<T as Config>::ExtrinsicParams as ExtrinsicParams<T>>::Params: Default
+impl L2Interface for Gasp
+    // T::AccountId: From<GaspAddress>,
+    // T::Address: From<GaspAddress>,
+    // T::Signature: From<GaspSignature>,
+    // <<T as Config>::ExtrinsicParams as ExtrinsicParams<T>>::Params: Default
 {
 
-    async fn get_latest_processed_request_id(&self, at: T::Hash) -> Result<u128, GaspError>{
+    async fn get_latest_processed_request_id(&self, at: HashOf<GaspConfig>) -> Result<u128, L2Error>{
 
         //NOTE: use through parameter
         let chain = gasp::api::rolldown::calls::types::cancel_requests_from_l1::Chain::Ethereum;
@@ -173,7 +169,7 @@ impl<T: Config> GaspApi<T> for Gasp<T> where
             .unwrap_or_default())
     }
 
-    async fn get_read_rights(&self, at: T::Hash) -> Result<u128, GaspError>{
+    async fn get_read_rights(&self, at: HashOf<GaspConfig>) -> Result<u128, L2Error>{
         use gasp::api::runtime_types::pallet_rolldown::pallet::SequencerRights;
 
         let chain = gasp::api::rolldown::calls::types::cancel_requests_from_l1::Chain::Ethereum;
@@ -189,10 +185,10 @@ impl<T: Config> GaspApi<T> for Gasp<T> where
 
         rights.get(&self.keypair.address())
             .map(|elem| elem.read_rights)
-            .ok_or(GaspError::CanNotFetchRights)
+            .ok_or(L2Error::CanNotFetchRights)
     }
 
-    async fn get_cancel_rights(&self, at: T::Hash) -> Result<u128, GaspError>{
+    async fn get_cancel_rights(&self, at: HashOf<GaspConfig>) -> Result<u128, L2Error>{
         use gasp::api::runtime_types::pallet_rolldown::pallet::SequencerRights;
 
         //NOTE: create parameter
@@ -209,10 +205,10 @@ impl<T: Config> GaspApi<T> for Gasp<T> where
 
         rights.get(&self.keypair.address())
             .map(|elem| elem.cancel_rights)
-            .ok_or(GaspError::CanNotFetchRights)
+            .ok_or(L2Error::CanNotFetchRights)
     }
 
-    async fn deserialize_sequencer_update(&self, payload: Vec<u8>) -> Result<gasp::api::runtime_types::pallet_rolldown::messages::L1Update, GaspError>{
+    async fn deserialize_sequencer_update(&self, payload: Vec<u8>) -> Result<gasp::api::runtime_types::pallet_rolldown::messages::L1Update, L2Error>{
 
         let call = gasp::api::runtime_apis::rolldown_runtime_api::RolldownRuntimeApi.get_native_sequencer_update(payload);
 
@@ -223,10 +219,10 @@ impl<T: Config> GaspApi<T> for Gasp<T> where
             .call(call)
         .await?;
 
-        update.ok_or(GaspError::SequencerUpdateConversionError)
+        update.ok_or(L2Error::SequencerUpdateConversionError)
     }
 
-    async fn update_l1_from_l2(&self, update: gasp::api::runtime_types::pallet_rolldown::messages::L1Update, hash: H256) -> Result<bool, GaspError>{
+    async fn update_l1_from_l2(&self, update: gasp::api::runtime_types::pallet_rolldown::messages::L1Update, hash: H256) -> Result<bool, L2Error>{
 
         let call = gasp::api::tx().rolldown().update_l2_from_l1(
             update,
@@ -253,7 +249,7 @@ impl<T: Config> GaspApi<T> for Gasp<T> where
         Ok(self.wait_for_tx_execution(tx_hash).await?)
     }
 
-    async fn cancel_pending_request(&self, request_id: u128) -> Result<bool, GaspError>{
+    async fn cancel_pending_request(&self, request_id: u128) -> Result<bool, L2Error>{
 
     let call = gasp::api::tx().rolldown().cancel_requests_from_l1(
         gasp::api::rolldown::calls::types::cancel_requests_from_l1::Chain::Ethereum,
@@ -280,7 +276,7 @@ impl<T: Config> GaspApi<T> for Gasp<T> where
     Ok(self.wait_for_tx_execution(tx_hash).await?)
     }
 
-    async fn get_pending_updates(&self, at: T::Hash) -> Result<Vec<PendingUpdate>, GaspError> {
+    async fn get_pending_updates(&self, at: HashOf<GaspConfig>) -> Result<Vec<PendingUpdate>, L2Error> {
         use ::subxt::ext::subxt_core::storage::address::StaticStorageKey;
         use gasp::api::rolldown::storage::types as gasp_types;
 
@@ -293,11 +289,11 @@ impl<T: Config> GaspApi<T> for Gasp<T> where
         let hashers = StorageHashers::new(entry.entry_type(), metadata.types()).expect("is fine");
 
         let iter = gasp::api::storage().rolldown().pending_sequencer_updates_iter();
-        let result: Vec<Result<PendingUpdate, GaspError>> = self.client.storage()
+        let result: Vec<Result<PendingUpdate, L2Error>> = self.client.storage()
             .at(at)
             .iter(iter)
             .await?
-            .map(|result| -> Result<PendingUpdate, GaspError> {
+            .map(|result| -> Result<PendingUpdate, L2Error> {
                 let storage_kv = result?;
                 // println!("storage_kv: {:?}", storage_kv);
                 let (acc, update, hash) = storage_kv.value;
