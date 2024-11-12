@@ -1,25 +1,11 @@
-use std::collections::HashMap;
 
 use alloy::primitives::Uint;
 use primitive_types::H256;
-use subxt::config::{ExtrinsicParams, Header};
-use subxt::dynamic::Value;
-use subxt::ext::subxt_core;
-use subxt::tx::TxInBlock;
-use subxt::OnlineClient;
-use hex::encode as hex_encode;
 use hex_literal::hex;
 use sha3::{Keccak256, Digest};
 use alloy::sol_types::SolValue;
 
 use alloy::providers::ProviderBuilder;
-use futures::StreamExt;
-use subxt::storage::StorageKey;
-use alloy::contract;
-
-use subxt::Config;
-use bindings::irolldown::IRolldownPrimitives::L1Update;
-
 use subxt::ext::subxt_core::storage::address::{StorageHashers};
 
 

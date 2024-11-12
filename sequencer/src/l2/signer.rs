@@ -4,7 +4,10 @@ use sha3::{Keccak256, Digest};
 
 use secp256k1::{ Message, Secp256k1, SecretKey };
 use subxt::tx::signer::Signer as SignerT;
-use crate::l2::{GaspAddress, GaspSignature};
+
+use super::GaspAddress;
+use super::GaspSignature;
+use super::GaspConfig;
 
 use secp256k1::SECP256K1;
 
@@ -38,24 +41,20 @@ impl Keypair {
 }
 
 
-impl<T: Config> SignerT<T> for Keypair
-where
-    T::AccountId: From<GaspAddress>,
-    T::Address: From<GaspAddress>,
-    T::Signature: From<GaspSignature>,
+impl SignerT<GaspConfig> for Keypair
 {
-    fn account_id(&self) -> T::AccountId {
-        self.address().into()
+    fn account_id(&self) -> GaspAddress {
+        self.address()
     }
 
-    fn address(&self) -> T::Address {
-        self.address().into()
+    fn address(&self) -> GaspAddress {
+        self.address()
     }
 
-    fn sign(&self, signer_payload: &[u8]) -> T::Signature {
+    fn sign(&self, signer_payload: &[u8]) -> GaspSignature {
         let hashed = Keccak256::digest(signer_payload);
         let signature = self.sign_prehashed(&hashed.into());
-        signature.into()
+        signature
     }
 }
 

@@ -12,11 +12,11 @@ use subxt::OnlineClient;
 use subxt::Config;
 use futures::StreamExt;
 
-pub mod gasp;
-pub use gasp::GaspAddress;
-pub use gasp::GaspSignature;
-use gasp::GaspConfig;
-use crate::signer::Keypair;
+mod signer;
+use signer::Keypair;
+
+mod gasp;
+use gasp::{GaspAddress, GaspSignature, GaspConfig};
 
 #[derive(Debug)]
 pub struct PendingUpdate{
@@ -150,12 +150,7 @@ impl Gasp {
 }
 
 
-impl L2Interface for Gasp
-    // T::AccountId: From<GaspAddress>,
-    // T::Address: From<GaspAddress>,
-    // T::Signature: From<GaspSignature>,
-    // <<T as Config>::ExtrinsicParams as ExtrinsicParams<T>>::Params: Default
-{
+impl L2Interface for Gasp {
 
     async fn get_latest_processed_request_id(&self, at: HashOf<GaspConfig>) -> Result<u128, L2Error>{
 

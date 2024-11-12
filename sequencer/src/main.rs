@@ -1,5 +1,4 @@
 use hex_literal::hex;
-mod signer;
 mod l1;
 mod l2;
 
