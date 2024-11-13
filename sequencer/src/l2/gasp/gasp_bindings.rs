@@ -185,6 +185,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -432,6 +433,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -463,6 +465,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -492,6 +495,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -521,6 +525,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -548,6 +553,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -574,6 +580,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -598,6 +605,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -624,6 +632,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -656,6 +665,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -691,6 +701,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -797,6 +808,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -827,6 +839,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -860,6 +873,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -1068,6 +1082,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -1094,6 +1109,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -1119,6 +1135,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -1148,6 +1165,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -1176,6 +1194,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -1200,6 +1219,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -1225,6 +1245,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -1251,6 +1272,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -1284,6 +1306,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -1342,6 +1365,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -1684,6 +1708,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -1715,6 +1740,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -1746,6 +1772,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -1777,6 +1804,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -1808,6 +1836,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -1838,6 +1867,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -1867,6 +1897,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -1896,6 +1927,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -1925,6 +1957,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -1953,6 +1986,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -1980,6 +2014,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -2010,6 +2045,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -2041,6 +2077,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -2065,6 +2102,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -2158,6 +2196,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -2183,6 +2222,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -2212,6 +2252,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -2311,6 +2352,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -2337,6 +2379,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -2364,6 +2407,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -2482,6 +2526,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -2510,6 +2555,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -2535,6 +2581,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -2563,6 +2610,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -2638,6 +2686,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -2699,6 +2748,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -2775,6 +2825,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -2801,6 +2852,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -2887,6 +2939,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -2920,6 +2973,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -3076,6 +3130,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -3107,6 +3162,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -3140,6 +3196,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -3167,6 +3224,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -3223,6 +3281,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -3341,6 +3400,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -3373,6 +3433,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -3401,6 +3462,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -3428,6 +3490,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -3550,6 +3613,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -3582,6 +3646,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -3610,6 +3675,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -3637,6 +3703,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -3931,6 +3998,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -3964,6 +4032,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -3995,6 +4064,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -4023,6 +4093,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -4052,6 +4123,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -4084,6 +4156,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -4115,6 +4188,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -4145,6 +4219,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -4179,6 +4254,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -4208,6 +4284,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -4239,6 +4316,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -4274,6 +4352,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -4563,6 +4642,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -4587,6 +4667,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -4613,6 +4694,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -4631,6 +4713,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -4655,6 +4738,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -4679,6 +4763,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -4705,6 +4790,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -4729,6 +4815,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -5625,6 +5712,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -5817,6 +5905,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -5864,6 +5953,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -5906,6 +5996,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -5948,6 +6039,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -5984,6 +6076,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -6026,6 +6119,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -6249,6 +6343,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -6276,6 +6371,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -6294,6 +6390,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -6312,6 +6409,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -6330,6 +6428,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -6354,6 +6453,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -6417,6 +6517,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -6457,6 +6558,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -6497,6 +6599,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -6535,6 +6638,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -6562,6 +6666,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -6611,6 +6716,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -6664,6 +6770,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -6708,6 +6815,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -6747,6 +6855,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -6786,6 +6895,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -7161,6 +7271,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -7186,6 +7297,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -7218,6 +7330,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -7246,6 +7359,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -7277,6 +7391,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -7564,6 +7679,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -7585,6 +7701,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -7606,6 +7723,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -7627,6 +7745,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -7724,6 +7843,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -7746,6 +7866,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -7768,6 +7889,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -7792,6 +7914,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -7816,6 +7939,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -7883,6 +8007,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -7912,6 +8037,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -7939,6 +8065,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -7968,6 +8095,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -8003,6 +8131,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -8032,6 +8161,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -8062,6 +8192,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -8089,6 +8220,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -8119,6 +8251,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -8152,6 +8285,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -8193,6 +8327,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -8232,6 +8367,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -8536,6 +8672,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -8567,6 +8704,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -8597,6 +8735,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -8624,6 +8763,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -8655,6 +8795,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -8690,6 +8831,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -8711,6 +8853,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -8739,6 +8882,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -8764,6 +8908,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -8789,6 +8934,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -9936,6 +10082,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -10015,6 +10162,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -10224,6 +10372,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -10269,6 +10418,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -10319,6 +10469,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -10362,6 +10513,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -10405,6 +10557,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -10448,6 +10601,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -10478,6 +10632,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -10736,6 +10891,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -10764,6 +10920,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -10793,6 +10950,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -10823,6 +10981,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -10851,6 +11010,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -10879,6 +11039,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -10912,6 +11073,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -10942,6 +11104,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -10968,6 +11131,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -10996,6 +11160,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -11026,6 +11191,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -11054,6 +11220,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -11084,6 +11251,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -11112,6 +11280,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -11140,6 +11309,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -11164,6 +11334,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -11192,6 +11363,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -11220,6 +11392,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -11245,6 +11418,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -11704,6 +11878,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -11853,6 +12028,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -11886,6 +12062,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -11933,6 +12110,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -11979,6 +12157,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -12026,6 +12205,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -12075,6 +12255,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -12107,6 +12288,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -12140,6 +12322,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -12173,6 +12356,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -12202,6 +12386,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -12234,6 +12419,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -12591,6 +12777,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -12622,6 +12809,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -12651,6 +12839,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -12684,6 +12873,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -12717,6 +12907,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -12752,6 +12943,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -12787,6 +12979,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -12812,6 +13005,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -12839,6 +13033,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -12866,6 +13061,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -12893,6 +13089,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -13254,6 +13451,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -13282,6 +13480,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -13313,6 +13512,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -13352,6 +13552,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -13382,6 +13583,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -13420,6 +13622,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -13465,6 +13668,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -13503,6 +13707,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -13536,6 +13741,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -13575,6 +13781,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -13606,6 +13813,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -13916,6 +14124,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -13941,6 +14150,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -13968,6 +14178,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -13995,6 +14206,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -14022,6 +14234,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -14051,6 +14264,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -14080,6 +14294,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -14109,6 +14324,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -15228,6 +15444,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -15266,6 +15483,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -15337,6 +15555,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -15354,6 +15573,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -15379,6 +15599,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -15698,6 +15919,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -15734,6 +15956,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -15774,6 +15997,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -15825,6 +16049,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -15877,6 +16102,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -15906,6 +16132,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -16134,6 +16361,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -16163,6 +16391,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -16373,6 +16602,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -16409,6 +16639,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -16448,6 +16679,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -16480,6 +16712,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -16510,6 +16743,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -16543,6 +16777,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -16576,6 +16811,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -16788,6 +17024,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -16814,6 +17051,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -16843,6 +17081,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -16867,6 +17106,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -16893,6 +17133,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -16922,6 +17163,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -17596,6 +17838,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -17617,6 +17860,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -17638,6 +17882,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -17728,6 +17973,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -17758,6 +18004,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -17788,6 +18035,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -17811,6 +18059,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -17829,6 +18078,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -17854,6 +18104,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -18271,6 +18522,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -18304,6 +18556,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -18336,6 +18589,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -18366,6 +18620,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -18498,6 +18753,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -18525,6 +18781,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -18764,6 +19021,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -18802,6 +19060,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -18833,6 +19092,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -18927,6 +19187,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -18949,6 +19210,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -18976,6 +19238,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -18998,6 +19261,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -19020,6 +19284,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -19046,6 +19311,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -19069,6 +19335,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -19375,6 +19642,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -19398,6 +19666,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -19424,6 +19693,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -19452,6 +19722,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -19475,6 +19746,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -19493,6 +19765,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -19511,6 +19784,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -19529,6 +19803,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -20228,6 +20503,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -20257,6 +20533,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -20285,6 +20562,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -20323,6 +20601,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -20352,6 +20631,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -20383,6 +20663,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -20413,6 +20694,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -20435,6 +20717,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -20457,6 +20740,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -20489,6 +20773,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -20517,6 +20802,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -20549,6 +20835,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -20571,6 +20858,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -20610,6 +20898,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -20634,6 +20923,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -20664,6 +20954,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -20687,6 +20978,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -20716,6 +21008,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -20750,6 +21043,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -20780,6 +21074,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -20814,6 +21109,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -20842,6 +21138,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -20879,6 +21176,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -20914,6 +21212,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -20947,6 +21246,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -20976,6 +21276,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -21015,6 +21316,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -21640,6 +21942,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -21670,6 +21973,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -21698,6 +22002,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -21726,6 +22031,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -21754,6 +22060,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -21782,6 +22089,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -21810,6 +22118,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -21838,6 +22147,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -21864,6 +22174,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -21890,6 +22201,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -21918,6 +22230,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -21940,6 +22253,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -21968,6 +22282,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -21996,6 +22311,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -22026,6 +22342,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -22056,6 +22373,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -22085,6 +22403,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -22114,6 +22433,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -22142,6 +22462,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -22172,6 +22493,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -22195,6 +22517,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -22223,6 +22546,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -22245,6 +22569,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -22274,6 +22599,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -22306,6 +22632,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -22336,6 +22663,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -22366,6 +22694,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -22394,6 +22723,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -22420,6 +22750,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -22448,6 +22779,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -22474,6 +22806,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -22500,6 +22833,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -22527,6 +22861,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -23715,6 +24050,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -23763,6 +24099,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -23790,6 +24127,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -23817,6 +24155,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -23844,6 +24183,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -23875,6 +24215,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -23912,6 +24253,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -24124,6 +24466,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -24151,6 +24494,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -24176,6 +24520,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -24203,6 +24548,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -24228,6 +24574,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -24254,6 +24601,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -25044,6 +25392,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -25083,6 +25432,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -25180,6 +25530,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -25583,6 +25934,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -25622,6 +25974,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -25666,6 +26019,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -25808,6 +26162,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -25835,6 +26190,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -25853,6 +26209,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -26187,6 +26544,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -26219,6 +26577,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -26266,6 +26625,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -26300,6 +26660,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -26427,6 +26788,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -26455,6 +26817,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -26695,6 +27058,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -26741,6 +27105,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -26784,6 +27149,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -26829,6 +27195,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -26876,6 +27243,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -26925,6 +27293,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -26986,6 +27355,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -27032,6 +27402,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -27078,6 +27449,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -27460,6 +27832,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -27484,6 +27857,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -27508,6 +27882,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -27536,6 +27911,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -27562,6 +27938,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -27586,6 +27963,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -27610,6 +27988,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -27634,6 +28013,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -27662,6 +28042,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -27688,6 +28069,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -27722,6 +28104,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -27746,6 +28129,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -27772,6 +28156,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -27798,6 +28183,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -28210,6 +28596,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -28243,6 +28630,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -28278,6 +28666,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -28307,6 +28696,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -28340,6 +28730,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -28484,6 +28875,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -28509,6 +28901,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -28536,6 +28929,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -28554,6 +28948,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -28629,6 +29024,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -28664,6 +29060,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -28702,6 +29099,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -28833,6 +29231,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -28856,6 +29255,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -28894,6 +29294,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -28952,6 +29353,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -28991,6 +29393,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -29038,6 +29441,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -29079,6 +29483,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -29116,6 +29521,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -29402,6 +29808,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -29433,6 +29840,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -29466,6 +29874,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -29490,6 +29899,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -29514,6 +29924,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -29541,6 +29952,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -29568,6 +29980,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -29596,6 +30009,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -29622,6 +30036,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -29965,6 +30380,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -29999,6 +30415,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -30036,6 +30453,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -30075,6 +30493,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -30104,6 +30523,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -30151,6 +30571,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -30188,6 +30609,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -30226,6 +30648,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -30263,6 +30686,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -30300,6 +30724,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -30350,6 +30775,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -30389,6 +30815,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -30425,6 +30852,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -30458,6 +30886,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -30492,6 +30921,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -30523,6 +30953,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -30559,6 +30990,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -30587,6 +31019,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -30630,6 +31063,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -30661,6 +31095,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -30693,6 +31128,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -30723,6 +31159,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -31314,6 +31751,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -31338,6 +31776,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -31364,6 +31803,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -31390,6 +31830,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -31416,6 +31857,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -31442,6 +31884,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -31468,6 +31911,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -31492,6 +31936,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -31520,6 +31965,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -31548,6 +31994,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -31577,6 +32024,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -31601,6 +32049,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -31625,6 +32074,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -31653,6 +32103,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -31683,6 +32134,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -31707,6 +32159,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -31735,6 +32188,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -32350,6 +32804,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -32380,6 +32835,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -32410,6 +32866,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -32444,6 +32901,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -32477,6 +32935,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -32509,6 +32968,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -32539,6 +32999,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -32714,6 +33175,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -32732,6 +33194,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -32750,6 +33213,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -32768,6 +33232,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -32786,6 +33251,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -32804,6 +33270,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -32891,6 +33358,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -32913,6 +33381,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -32933,6 +33402,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -32953,6 +33423,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -32974,6 +33445,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -32992,6 +33464,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -33008,6 +33481,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -33029,6 +33503,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -33053,6 +33528,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -33074,6 +33550,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -33096,6 +33573,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -33117,6 +33595,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -33148,6 +33627,7 @@ pub mod api {
                             :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                             Clone,
                             Debug,
+                            PartialEq,
                         )]
                         # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                         #[codec(dumb_trait_bound)]
@@ -33173,6 +33653,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -33193,6 +33674,7 @@ pub mod api {
                         :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                         Clone,
                         Debug,
+                        PartialEq,
                     )]
                     # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                     #[codec(dumb_trait_bound)]
@@ -33213,6 +33695,7 @@ pub mod api {
                         :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                         Clone,
                         Debug,
+                        PartialEq,
                     )]
                     # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                     #[codec(dumb_trait_bound)]
@@ -33233,6 +33716,7 @@ pub mod api {
                         :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                         Clone,
                         Debug,
+                        PartialEq,
                     )]
                     # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                     #[codec(dumb_trait_bound)]
@@ -33253,6 +33737,7 @@ pub mod api {
                         :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                         Clone,
                         Debug,
+                        PartialEq,
                     )]
                     # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                     #[codec(dumb_trait_bound)]
@@ -33273,6 +33758,7 @@ pub mod api {
                         :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                         Clone,
                         Debug,
+                        PartialEq,
                     )]
                     # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                     #[codec(dumb_trait_bound)]
@@ -33293,6 +33779,7 @@ pub mod api {
                         :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                         Clone,
                         Debug,
+                        PartialEq,
                     )]
                     # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                     #[codec(dumb_trait_bound)]
@@ -33313,6 +33800,7 @@ pub mod api {
                         :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                         Clone,
                         Debug,
+                        PartialEq,
                     )]
                     # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                     #[codec(dumb_trait_bound)]
@@ -33334,6 +33822,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -33355,6 +33844,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -33378,6 +33868,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -33406,6 +33897,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -33520,6 +34012,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -33573,6 +34066,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -33632,6 +34126,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -33651,6 +34146,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -33667,6 +34163,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -33684,6 +34181,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -33701,6 +34199,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -33726,6 +34225,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -33748,6 +34248,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -33771,6 +34272,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -33790,6 +34292,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -33812,6 +34315,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -33836,6 +34340,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -33866,6 +34371,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -33927,6 +34433,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -33965,6 +34472,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -34006,6 +34514,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -34135,6 +34644,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -34180,6 +34690,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -34336,6 +34847,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -34353,6 +34865,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -34369,6 +34882,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -34390,6 +34904,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -34423,6 +34938,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -34564,6 +35080,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -34653,6 +35170,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -34701,6 +35219,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -34728,6 +35247,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -34884,6 +35404,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -34943,6 +35464,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -35026,6 +35548,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -35046,6 +35569,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -35070,6 +35594,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -35158,6 +35683,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -35241,6 +35767,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -35301,6 +35828,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -35330,6 +35858,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -35350,6 +35879,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -35383,6 +35913,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -35423,6 +35954,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -35455,6 +35987,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -35486,6 +36019,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -35555,6 +36089,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -35597,6 +36132,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -35631,6 +36167,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -35653,6 +36190,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -35680,6 +36218,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -35713,6 +36252,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -36009,6 +36549,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -36106,6 +36647,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -36239,6 +36781,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -36259,6 +36802,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -36353,6 +36897,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -36385,6 +36930,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -36406,6 +36952,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -36436,6 +36983,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -36468,6 +37016,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -36508,6 +37057,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -36568,6 +37118,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -36589,6 +37140,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -36610,6 +37162,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -36637,6 +37190,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -36674,6 +37228,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -36712,6 +37267,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -36738,6 +37294,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -36812,6 +37369,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -36840,6 +37398,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -36883,6 +37442,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -36921,6 +37481,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -36943,6 +37504,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -36987,6 +37549,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -37035,6 +37598,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -37072,6 +37636,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -37104,6 +37669,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -37125,6 +37691,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -37154,6 +37721,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -37279,6 +37847,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -37346,6 +37915,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -37416,6 +37986,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -37439,6 +38010,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -37466,6 +38038,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -37488,6 +38061,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -37510,6 +38084,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -37529,6 +38104,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -37547,6 +38123,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -37576,6 +38153,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -37595,6 +38173,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -37638,6 +38217,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -37658,6 +38238,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -37675,6 +38256,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -37697,6 +38279,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -37720,6 +38303,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -37742,6 +38326,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -37764,6 +38349,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -37788,6 +38374,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -37809,6 +38396,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -37834,6 +38422,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -37856,6 +38445,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -37876,6 +38466,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -37896,6 +38487,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -37922,6 +38514,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -37946,6 +38539,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -38039,6 +38633,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -38061,6 +38656,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -38146,6 +38742,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -38231,6 +38828,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -38257,6 +38855,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -38278,6 +38877,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -38309,6 +38909,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -38391,6 +38992,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -38438,6 +39040,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -38494,6 +39097,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -38512,6 +39116,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -38535,6 +39140,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -38582,6 +39188,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -38616,6 +39223,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -38647,6 +39255,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -38712,6 +39321,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -38734,6 +39344,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -38781,6 +39392,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -38845,6 +39457,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -38863,6 +39476,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -38898,6 +39512,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -38947,6 +39562,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -38978,6 +39594,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -39000,6 +39617,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -39021,6 +39639,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -39043,6 +39662,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -39056,6 +39676,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -39079,6 +39700,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -39307,6 +39929,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -39363,6 +39986,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -39461,6 +40085,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -39481,6 +40106,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -39499,6 +40125,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -39526,6 +40153,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -39655,6 +40283,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -39677,6 +40306,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -39729,6 +40359,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -39843,6 +40474,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -39891,6 +40523,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -39927,6 +40560,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -39949,6 +40583,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -39972,6 +40607,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -40123,6 +40759,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -40235,6 +40872,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -40343,6 +40981,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -40363,6 +41002,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -40384,6 +41024,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -40591,6 +41232,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -40613,6 +41255,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -40634,6 +41277,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -40668,6 +41312,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -40692,6 +41337,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -40716,6 +41362,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -40740,6 +41387,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -40762,6 +41410,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -40787,6 +41436,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -40809,6 +41459,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -40831,6 +41482,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -40958,6 +41610,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -41198,6 +41851,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -41220,6 +41874,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -41242,6 +41897,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -41262,6 +41918,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -41286,6 +41943,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -41304,6 +41962,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -41322,6 +41981,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -41343,6 +42003,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -41365,6 +42026,7 @@ pub mod api {
                             :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                             Clone,
                             Debug,
+                            PartialEq,
                         )]
                         # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                         #[codec(dumb_trait_bound)]
@@ -41388,6 +42050,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -41416,6 +42079,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -41429,6 +42093,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -41497,6 +42162,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -41563,6 +42229,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -41631,6 +42298,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -41653,6 +42321,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -41674,6 +42343,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -41692,6 +42362,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -41710,6 +42381,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -41728,6 +42400,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -41755,6 +42428,7 @@ pub mod api {
                         :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                         Clone,
                         Debug,
+                        PartialEq,
                     )]
                     # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                     #[codec(dumb_trait_bound)]
@@ -41779,6 +42453,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -41796,6 +42471,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -41814,6 +42490,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -41844,6 +42521,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -41860,6 +42538,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -41879,6 +42558,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -41893,6 +42573,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -41911,6 +42592,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -41931,6 +42613,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -41951,6 +42634,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -41968,6 +42652,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -41988,6 +42673,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -42011,6 +42697,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -42029,6 +42716,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -42044,6 +42732,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -42060,6 +42749,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -42077,6 +42767,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -42100,6 +42791,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -42117,6 +42809,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -42139,6 +42832,7 @@ pub mod api {
                         :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                         Clone,
                         Debug,
+                        PartialEq,
                     )]
                     # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                     #[codec(dumb_trait_bound)]
@@ -42162,6 +42856,7 @@ pub mod api {
                         :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                         Clone,
                         Debug,
+                        PartialEq,
                     )]
                     # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                     #[codec(dumb_trait_bound)]
@@ -42183,6 +42878,7 @@ pub mod api {
                         :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                         Clone,
                         Debug,
+                        PartialEq,
                     )]
                     # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                     #[codec(dumb_trait_bound)]
@@ -42223,6 +42919,7 @@ pub mod api {
                         :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                         Clone,
                         Debug,
+                        PartialEq,
                     )]
                     # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                     #[codec(dumb_trait_bound)]
@@ -42756,6 +43453,7 @@ pub mod api {
                         :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                         Clone,
                         Debug,
+                        PartialEq,
                     )]
                     # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                     #[codec(dumb_trait_bound)]
@@ -42786,6 +43484,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -42838,6 +43537,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -42862,6 +43562,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -42884,6 +43585,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -42908,6 +43610,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -42936,6 +43639,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -42978,6 +43682,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -42996,6 +43701,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -43012,6 +43718,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -43046,6 +43753,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -43067,6 +43775,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -43097,6 +43806,7 @@ pub mod api {
                     :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                     Clone,
                     Debug,
+                    PartialEq,
                 )]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
@@ -43120,6 +43830,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
@@ -43139,6 +43850,7 @@ pub mod api {
                 :: subxt :: ext :: subxt_core :: ext :: scale_encode :: EncodeAsType,
                 Clone,
                 Debug,
+                PartialEq,
             )]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]

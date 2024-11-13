@@ -73,7 +73,7 @@ where
                 hash: update_hash,
             }
          })
-        .filter(|update| update.chain.encode() == self.chain.encode())
+        .filter(|update| update.chain == self.chain)
         .collect::<Vec<_>>();
         updates.sort_by_key(|update| update.update_id);
 
