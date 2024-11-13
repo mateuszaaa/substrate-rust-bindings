@@ -97,8 +97,7 @@ where
 
 
     pub async fn cancel_update(&self, update_id: u128) -> Result<bool, Error> {
-        todo!()
-        // Ok(self.l2.cancel_pending_request(update_id, self.chain).await?)
+        Ok(self.l2.cancel_pending_request(update_id, self.chain.clone()).await?)
     }
 
     pub async fn has_read_rights_available(&self, at: H256) -> Result<bool, Error>{
