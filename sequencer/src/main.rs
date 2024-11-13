@@ -1,12 +1,16 @@
+use alloy::sol_types::SolValue;
 use hex_literal::hex;
-mod l1;
-mod l2;
+use tracing::level_filters::LevelFilter;
+use tracing::{debug, info, trace, warn};
 
+mod sequencer;
+
+mod l1;
 use l2::L2Error;
 use l1::{L1Interface, L1Error, RolldownContract};
 
+mod l2;
 use l2::{Gasp, L2Interface};
-use alloy::sol_types::SolValue;
 
 #[derive(Debug, thiserror::Error)]
 pub enum Error {
@@ -18,6 +22,15 @@ pub enum Error {
 
 #[tokio::main]
 pub async fn main() {
+
+    let filter = tracing_subscriber::EnvFilter::builder()
+        .with_default_directive(LevelFilter::INFO.into())
+        .from_env_lossy();
+        // .add_directive("keepalive=info".parse()?)
+        // .add_directive("p2p_playground=info".parse()?);
+
+    tracing_subscriber::fmt().with_env_filter(filter).init();
+
     if let Err(err) = run().await {
         eprintln!("{err:?}");
     }
@@ -28,7 +41,7 @@ async fn run() -> Result<(), Error> {
     println!("Connection established.");
 
     let gasp = Gasp::new("ws://127.0.0.1:9944", hex!("5fb92d6e98884f76de468fa3f6278f8807c48bebc13595d45af5bdc4da702133")).await?;
-    let r = RolldownContract::new();
+    let r = RolldownContract::new("http://localhost:8545", hex!("1429859428C0aBc9C2C47C8Ee9FBaf82cFA0F20f")).await?;
     let at = gasp.latest_block().await?;
     let latest_processed_on_l2 = gasp.get_latest_processed_request_id(at).await?;
     let latest_create_on_l1 = r.get_latest_reqeust_id().await?;

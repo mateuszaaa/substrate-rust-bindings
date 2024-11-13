@@ -18,6 +18,11 @@ use signer::Keypair;
 mod gasp;
 use gasp::{GaspAddress, GaspSignature, GaspConfig};
 
+pub mod types{
+    use super::gasp;
+    pub use gasp::api::runtime_types::pallet_rolldown::messages::L1Update;
+}
+
 #[derive(Debug)]
 pub struct PendingUpdate{
     update_id: u128,
@@ -34,9 +39,9 @@ pub trait L2Interface {
     async fn get_read_rights(&self, at: HashOf<GaspConfig>) -> Result<u128, L2Error>;
     async fn get_cancel_rights(&self, at: HashOf<GaspConfig>) -> Result<u128, L2Error>;
     async fn get_pending_updates(&self, at: HashOf<GaspConfig>) -> Result<Vec<PendingUpdate>, L2Error>;
-    async fn deserialize_sequencer_update(&self, data: Vec<u8>) -> Result<gasp::api::runtime_types::pallet_rolldown::messages::L1Update, L2Error>;
+    async fn deserialize_sequencer_update(&self, data: Vec<u8>) -> Result<types::L1Update, L2Error>;
     async fn cancel_pending_request(&self, request_id: u128) -> Result<bool, L2Error>;
-    async fn update_l1_from_l2(&self, update: gasp::api::runtime_types::pallet_rolldown::messages::L1Update, hash: H256) -> Result<bool, L2Error>;
+    async fn update_l1_from_l2(&self, update: types::L1Update, hash: H256) -> Result<bool, L2Error>;
 }
 
 pub struct Gasp{
