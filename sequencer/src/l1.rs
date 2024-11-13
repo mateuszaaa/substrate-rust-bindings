@@ -64,6 +64,8 @@ impl RolldownContract {
 }
 
 impl L1Interface for RolldownContract {
+
+    #[tracing::instrument(skip(self))]
     async fn get_latest_reqeust_id(&self) -> Result<u128, L1Error> {
         let call = self.contract_handle.counter();
         let result = call.call().await?;
@@ -72,13 +74,12 @@ impl L1Interface for RolldownContract {
         Ok(next_request_id.saturating_sub(1u128))
     }
 
+    #[tracing::instrument(skip(self))]
     async fn get_update(&self, start: u128, end: u128) -> Result<types::L1Update, L1Error> {
         let latest = self.get_latest_reqeust_id().await?;
 
-        println!("latest : {} start:{} end:{} ", latest, start, end);
-
         if start < 1u128 || start > latest || end > latest || end < start {
-            println!("invalid range !!!!");
+            tracing::warn!("latest :{} range.start:{} range.end:{} ", latest, start, end);
             return Err(L1Error::InvalidRange);
         }
 
@@ -87,9 +88,14 @@ impl L1Interface for RolldownContract {
         let call = self
             .contract_handle
             .getPendingRequests(range_start, range_end);
-        Ok(call.call().await?._0)
+        let result = call.call().await?;
+
+        tracing::debug!("deposits: {} cancel_resolutions: {}", result._0.pendingDeposits.len(), result._0.pendingCancelResolutions.len());
+               
+        Ok(result._0)
     }
 
+    #[tracing::instrument(skip(self))]
     async fn get_update_hash(&self, start: u128, end: u128) -> Result<H256, L1Error> {
         let pending_update = self.get_update(start, end).await?;
         let x: [u8; 32] = Keccak256::digest(&pending_update.abi_encode()[..]).into();

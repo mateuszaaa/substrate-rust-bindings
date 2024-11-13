@@ -21,13 +21,16 @@ use gasp::{GaspAddress, GaspConfig, GaspSignature};
 pub mod types {
     use super::gasp;
     pub use gasp::api::runtime_types::pallet_rolldown::messages::L1Update;
+    pub use gasp::api as bindings;
+    pub use gasp::api::runtime_types::pallet_rolldown::messages::{Deposit, RequestId, Origin, Chain}; 
 }
 
 #[derive(Debug)]
 pub struct PendingUpdate {
-    update_id: u128,
-    range: (u128, u128),
-    hash: H256,
+    pub chain: types::Chain,
+    pub update_id: u128,
+    pub range: (u128, u128),
+    pub hash: H256,
 }
 
 use gasp::api::runtime_types::frame_system::EventRecord;
@@ -67,6 +70,8 @@ pub enum L2Error {
     BlockFetchError,
     #[error("unknown error")]
     Subxt(#[from] subxt::Error),
+    #[error("unknown error")]
+    SubxtExt(#[from] subxt::ext::subxt_core::Error),
     #[error("cannot fetch sequencer rights")]
     CanNotFetchRights,
     #[error("runtime api call failed")]
@@ -75,9 +80,11 @@ pub enum L2Error {
     CanNotFetchLatestProcessedRequestId,
     #[error("unknown tx status")]
     UnknownTxStatus,
+    #[error("cannot subscribe to block headers")]
+    HeaderSubscriptionFailed,
 }
 
-pub type HashOf<T: Config> = T::Hash;
+pub type HashOf<T> = <T as Config>::Hash;
 
 impl Gasp {
     pub async fn last_finalized(&self) -> Result<HashOf<GaspConfig>, L2Error> {
@@ -94,7 +101,7 @@ impl Gasp {
         Ok(stream
             .next()
             .await
-            .expect("infinite stream")
+            .ok_or(L2Error::HeaderSubscriptionFailed)?
             .map(|elem| elem.1.hash().into())?)
     }
 
@@ -118,16 +125,17 @@ impl Gasp {
             .unwrap_or_default())
     }
 
+    #[tracing::instrument(skip(self))]
     async fn wait_for_tx_execution(&self, tx_hash: HashOf<GaspConfig>) -> Result<bool, L2Error> {
         let mut stream = self.client.backend().stream_best_block_headers().await?;
 
         while let Some(header) = stream.next().await {
             let (header, hash) = header?;
 
-            println!(
-                "looking for tx hash:{} in block {}",
+            tracing::debug!(
+                "checking block #{} {}",
+                header.number(),
                 hex_encode(tx_hash),
-                header.number()
             );
 
             let block = self.client.blocks().at(hash.clone()).await?;
@@ -136,7 +144,7 @@ impl Gasp {
             if let Some((id, _)) = extrinsics
                 .iter()
                 .enumerate()
-                .find(|(id, extrinsic)| extrinsic.hash() == tx_hash)
+                .find(|(_, extrinsic)| extrinsic.hash() == tx_hash)
             {
                 let events = self.get_events(hash.hash()).await?;
                 let events = events
@@ -144,7 +152,7 @@ impl Gasp {
                     .filter(|elem| {
                         matches!(
                             elem.phase,
-                            gasp::api::runtime_types::frame_system::Phase::ApplyExtrinsic(id)
+                            gasp::api::runtime_types::frame_system::Phase::ApplyExtrinsic(pos) if pos == id as u32
                         )
                     })
                     .collect::<Vec<_>>();
@@ -156,7 +164,7 @@ impl Gasp {
 
                 let elem = status.ok_or(L2Error::UnknownTxStatus)?;
 
-                return match elem.event {
+                let status = match elem.event {
                     RuntimeEvent::System(
                         gasp::api::runtime_types::frame_system::pallet::Event::ExtrinsicSuccess {
                             ..
@@ -169,14 +177,39 @@ impl Gasp {
                     ) => Ok(false),
                     _ => Err(L2Error::UnknownTxStatus),
                 };
+
+                tracing::debug!("execution status: {:?}", status);
+                return status;
             }
         }
 
         Err(L2Error::UnknownTxStatus)
     }
+
+    async fn sign_and_send(&self, call: impl subxt::tx::Payload) -> Result<bool, L2Error> {
+        let tx = self.client.tx();
+
+        let partial_signed = tx
+            .create_partial_signed(&call, &self.keypair.address().into(), Default::default())
+            .await?;
+
+        tracing::trace!(
+            "tx: {}",
+            hex_encode(partial_signed.signer_payload())
+        );
+
+        let signed = partial_signed.sign(&self.keypair);
+
+        tracing::trace!("signed tx: {}", hex_encode(signed.encoded()));
+
+        let tx_hash = signed.submit().await?;
+        Ok(self.wait_for_tx_execution(tx_hash).await?)
+    }
 }
 
 impl L2Interface for Gasp {
+
+    #[tracing::instrument(skip(self))]
     async fn get_latest_processed_request_id(
         &self,
         at: HashOf<GaspConfig>,
@@ -195,6 +228,7 @@ impl L2Interface for Gasp {
             .unwrap_or_default())
     }
 
+    #[tracing::instrument(skip(self))]
     async fn get_read_rights(&self, at: HashOf<GaspConfig>) -> Result<u128, L2Error> {
         use gasp::api::runtime_types::pallet_rolldown::pallet::SequencerRights;
 
@@ -217,6 +251,7 @@ impl L2Interface for Gasp {
             .ok_or(L2Error::CanNotFetchRights)
     }
 
+    #[tracing::instrument(skip(self))]
     async fn get_cancel_rights(&self, at: HashOf<GaspConfig>) -> Result<u128, L2Error> {
         use gasp::api::runtime_types::pallet_rolldown::pallet::SequencerRights;
 
@@ -240,6 +275,7 @@ impl L2Interface for Gasp {
             .ok_or(L2Error::CanNotFetchRights)
     }
 
+    #[tracing::instrument(skip(self))]
     async fn deserialize_sequencer_update(
         &self,
         payload: Vec<u8>,
@@ -258,67 +294,26 @@ impl L2Interface for Gasp {
         update.ok_or(L2Error::SequencerUpdateConversionError)
     }
 
+    #[tracing::instrument(skip(self))]
     async fn update_l1_from_l2(
         &self,
         update: gasp::api::runtime_types::pallet_rolldown::messages::L1Update,
         hash: H256,
     ) -> Result<bool, L2Error> {
         let call = gasp::api::tx().rolldown().update_l2_from_l1(update, hash);
-
-        let tx = self.client.tx();
-
-        let partial_signed = tx
-            .create_partial_signed(&call, &self.keypair.address().into(), Default::default())
-            .await
-            .expect("correct");
-        println!(
-            "transaction payload : {}",
-            hex_encode(partial_signed.signer_payload())
-        );
-
-        let signed = partial_signed.sign(&self.keypair);
-        println!("signed tx payload   : {}", hex_encode(signed.encoded()));
-
-        let tx_hash = signed.hash();
-        println!("TX HASH: {}", hex_encode(tx_hash));
-
-        let status = signed.submit_and_watch().await.inspect(|elem| {
-            println!("Tx submitted successfully {:?}", call);
-        })?;
-
-        Ok(self.wait_for_tx_execution(tx_hash).await?)
+        self.sign_and_send(call).await
     }
 
+    #[tracing::instrument(skip(self))]
     async fn cancel_pending_request(&self, request_id: u128) -> Result<bool, L2Error> {
         let call = gasp::api::tx().rolldown().cancel_requests_from_l1(
             gasp::api::rolldown::calls::types::cancel_requests_from_l1::Chain::Ethereum,
             request_id,
         );
-
-        let tx = self.client.tx();
-
-        let partial_signed = tx
-            .create_partial_signed(&call, &self.keypair.address().into(), Default::default())
-            .await
-            .expect("correct");
-        println!(
-            "transaction payload : {}",
-            hex_encode(partial_signed.signer_payload())
-        );
-
-        let signed = partial_signed.sign(&self.keypair);
-        println!("signed tx payload   : {}", hex_encode(signed.encoded()));
-
-        let tx_hash = signed.hash();
-        println!("TX HASH: {}", hex_encode(tx_hash));
-
-        let status = signed.submit_and_watch().await.inspect(|elem| {
-            println!("Tx submitted successfully {:?}", call);
-        })?;
-
-        Ok(self.wait_for_tx_execution(tx_hash).await?)
+        self.sign_and_send(call).await
     }
 
+    #[tracing::instrument(skip(self))]
     async fn get_pending_updates(
         &self,
         at: HashOf<GaspConfig>,
@@ -331,9 +326,9 @@ impl L2Interface for Gasp {
             "Rolldown",
             "PendingSequencerUpdates",
             &metadata,
-        )
-        .expect("should work");
-        let hashers = StorageHashers::new(entry.entry_type(), metadata.types()).expect("is fine");
+        )?;
+
+        let hashers = StorageHashers::new(entry.entry_type(), metadata.types())?;
 
         let iter = gasp::api::storage()
             .rolldown()
@@ -346,8 +341,7 @@ impl L2Interface for Gasp {
             .await?
             .map(|result| -> Result<PendingUpdate, L2Error> {
                 let storage_kv = result?;
-                // println!("storage_kv: {:?}", storage_kv);
-                let (acc, update, hash) = storage_kv.value;
+                let (_acc, update, hash) = storage_kv.value;
 
                 let min_deposit_id = update
                     .pendingDeposits
@@ -375,7 +369,6 @@ impl L2Interface for Gasp {
                     .max()
                     .unwrap_or(0u128);
 
-                //TODO: remove unwrap
                 let keys = <(
                     StaticStorageKey<gasp_types::pending_sequencer_updates::Param0>,
                     StaticStorageKey<gasp_types::pending_sequencer_updates::Param1>,
@@ -383,11 +376,11 @@ impl L2Interface for Gasp {
                     &mut &storage_kv.key_bytes[32..],
                     &mut hashers.iter(),
                     metadata.types(),
-                )
-                .unwrap();
+                )?;
 
                 Ok(PendingUpdate {
-                    update_id: keys.0.decoded().unwrap(),
+                    update_id: keys.0.decoded()?,
+                    chain: keys.1.decoded()?,
                     range: (
                         std::cmp::min(min_deposit_id, min_cancel_id),
                         std::cmp::max(max_deposit_id, max_cancel_id),
