@@ -25,6 +25,7 @@ tracing = "0.1.40"
 tracing-log = "0.2.0"
 tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
 tracing-tree = "0.4.0"
+tracing-test = "0.1.0"
 
 bindings = { workspace = true }
 

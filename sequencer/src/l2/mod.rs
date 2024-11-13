@@ -1,4 +1,5 @@
 use std::collections::HashMap;
+use std::sync::Arc;
 
 use hex::encode as hex_encode;
 
@@ -22,8 +23,10 @@ pub mod types {
     use super::gasp;
     pub use gasp::api::runtime_types::pallet_rolldown::messages::L1Update;
     pub use gasp::api as bindings;
-    pub use gasp::api::runtime_types::pallet_rolldown::messages::{Deposit, RequestId, Origin, Chain}; 
+    pub use gasp::api::runtime_types::pallet_rolldown::messages::{Deposit, RequestId, Origin, Chain, CancelResolution};
 }
+
+pub type PendingUpdateWithKeys = (u128, types::L1Update, H256);
 
 #[derive(Debug)]
 pub struct PendingUpdate {
@@ -47,10 +50,10 @@ pub trait L2Interface {
     async fn get_pending_updates(
         &self,
         at: HashOf<GaspConfig>,
-    ) -> Result<Vec<PendingUpdate>, L2Error>;
+    ) -> Result<Vec<PendingUpdateWithKeys>, L2Error>;
     async fn deserialize_sequencer_update(&self, data: Vec<u8>)
         -> Result<types::L1Update, L2Error>;
-    async fn cancel_pending_request(&self, request_id: u128) -> Result<bool, L2Error>;
+    async fn cancel_pending_request(&self, request_id: u128, chain: types::Chain) -> Result<bool, L2Error>;
     async fn update_l1_from_l2(&self, update: types::L1Update, hash: H256)
         -> Result<bool, L2Error>;
 }
@@ -305,9 +308,9 @@ impl L2Interface for Gasp {
     }
 
     #[tracing::instrument(skip(self))]
-    async fn cancel_pending_request(&self, request_id: u128) -> Result<bool, L2Error> {
+    async fn cancel_pending_request(&self, request_id: u128, chain: types::Chain) -> Result<bool, L2Error> {
         let call = gasp::api::tx().rolldown().cancel_requests_from_l1(
-            gasp::api::rolldown::calls::types::cancel_requests_from_l1::Chain::Ethereum,
+            chain,
             request_id,
         );
         self.sign_and_send(call).await
@@ -317,7 +320,7 @@ impl L2Interface for Gasp {
     async fn get_pending_updates(
         &self,
         at: HashOf<GaspConfig>,
-    ) -> Result<Vec<PendingUpdate>, L2Error> {
+    ) -> Result<Vec<PendingUpdateWithKeys>, L2Error> {
         use ::subxt::ext::subxt_core::storage::address::StaticStorageKey;
         use gasp::api::rolldown::storage::types as gasp_types;
 
@@ -333,41 +336,16 @@ impl L2Interface for Gasp {
         let iter = gasp::api::storage()
             .rolldown()
             .pending_sequencer_updates_iter();
-        let result: Vec<Result<PendingUpdate, L2Error>> = self
+        let result: Vec<Result<_, L2Error>> = self
             .client
             .storage()
             .at(at)
             .iter(iter)
             .await?
-            .map(|result| -> Result<PendingUpdate, L2Error> {
+            .map(|result| -> Result<_, L2Error> {
                 let storage_kv = result?;
                 let (_acc, update, hash) = storage_kv.value;
 
-                let min_deposit_id = update
-                    .pendingDeposits
-                    .iter()
-                    .map(|elem| elem.requestId.id)
-                    .min()
-                    .unwrap_or(u128::MAX);
-                let max_deposit_id = update
-                    .pendingDeposits
-                    .iter()
-                    .map(|elem| elem.requestId.id)
-                    .max()
-                    .unwrap_or(0u128);
-
-                let min_cancel_id = update
-                    .pendingCancelResolutions
-                    .iter()
-                    .map(|elem| elem.requestId.id)
-                    .min()
-                    .unwrap_or(u128::MAX);
-                let max_cancel_id = update
-                    .pendingCancelResolutions
-                    .iter()
-                    .map(|elem| elem.requestId.id)
-                    .max()
-                    .unwrap_or(0u128);
 
                 let keys = <(
                     StaticStorageKey<gasp_types::pending_sequencer_updates::Param0>,
@@ -378,18 +356,11 @@ impl L2Interface for Gasp {
                     metadata.types(),
                 )?;
 
-                Ok(PendingUpdate {
-                    update_id: keys.0.decoded()?,
-                    chain: keys.1.decoded()?,
-                    range: (
-                        std::cmp::min(min_deposit_id, min_cancel_id),
-                        std::cmp::max(max_deposit_id, max_cancel_id),
-                    ),
-                    hash,
-                })
+                Ok((keys.0.decoded()?, update, hash))
             })
             .collect()
             .await;
+
         result.into_iter().collect()
     }
 }
