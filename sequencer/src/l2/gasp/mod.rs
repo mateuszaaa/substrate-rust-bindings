@@ -1,18 +1,18 @@
 use std::fmt::{self, Display};
 
-use parity_scale_codec::{Encode, Decode};
+use parity_scale_codec::{Decode, Encode};
 
 mod gasp_bindings;
-pub use gasp_bindings::api as api;
+pub use gasp_bindings::api;
 
 mod header;
 pub use header::GaspHeader;
 
-
-use subxt::{
-    config::{signed_extensions, substrate::BlakeTwo256}, Config
-};
 use primitive_types::H256;
+use subxt::{
+    config::{signed_extensions, substrate::BlakeTwo256},
+    Config,
+};
 
 #[derive(Clone, Copy, Eq, PartialEq, Ord, PartialOrd, Hash, Debug)]
 pub struct GaspConfig;
@@ -28,7 +28,6 @@ pub type GaspExtrinsicParams<T> = signed_extensions::AnyOf<
         signed_extensions::ChargeTransactionPayment,
     ),
 >;
-
 
 impl Config for GaspConfig {
     type Hash = H256;

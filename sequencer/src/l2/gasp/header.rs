@@ -1,7 +1,10 @@
-use parity_scale_codec::{Encode, Decode};
-use serde::{Serialize, Deserialize};
-use primitive_types::{U256, H256, H512};
-use subxt::config::{substrate::{Digest, NumberOrHex}, Hasher, Header};
+use parity_scale_codec::{Decode, Encode};
+use primitive_types::{H256, H512, U256};
+use serde::{Deserialize, Serialize};
+use subxt::config::{
+    substrate::{Digest, NumberOrHex},
+    Hasher, Header,
+};
 
 fn serialize_number<S, T: Copy + Into<U256>>(val: &T, s: S) -> Result<S::Ok, S::Error>
 where
@@ -24,10 +27,10 @@ where
 
 #[derive(Encode, Decode, Debug, PartialEq, Eq, Clone, Serialize, Deserialize)]
 pub struct ShufflingSeed {
-	/// shuffling seed for the previous block
-	pub seed: H256,
-	/// seed signature
-	pub proof: H512,
+    /// shuffling seed for the previous block
+    pub seed: H256,
+    /// seed signature
+    pub proof: H512,
 }
 
 #[derive(Encode, Decode, Debug, PartialEq, Eq, Clone, Serialize, Deserialize)]
@@ -66,4 +69,3 @@ where
         self.number
     }
 }
-
