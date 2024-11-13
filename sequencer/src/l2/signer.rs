@@ -1,5 +1,4 @@
 use sha3::{Digest, Keccak256};
-use subxt::Config;
 
 use secp256k1::{Message, Secp256k1, SecretKey};
 use subxt::tx::signer::Signer as SignerT;

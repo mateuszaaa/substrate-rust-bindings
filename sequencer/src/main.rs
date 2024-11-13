@@ -1,7 +1,6 @@
 use alloy::sol_types::SolValue;
 use hex_literal::hex;
 use tracing::level_filters::LevelFilter;
-use tracing::{debug, info, trace, warn};
 
 mod sequencer;
 

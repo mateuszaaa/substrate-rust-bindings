@@ -1,5 +1,5 @@
-use crate::l1::{types as l1types, L1Error, L1Interface};
-use crate::l2::{types as l2types, L2Error, L2Interface, PendingUpdate};
+use crate::l1::{L1Error, L1Interface};
+use crate::l2::{L2Error, L2Interface};
 
 pub struct Sequencer<L1, L2> {
     l1: L1,
