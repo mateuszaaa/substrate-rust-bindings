@@ -82,8 +82,7 @@ pub trait L2Interface {
     async fn get_merkle_proof(
         &self,
         request_id: u128,
-        start: u128,
-        end: u128,
+        range: (u128, u128),
         chain: types::Chain,
         at: HashOf<GaspConfig>,
     ) -> Result<Vec<H256>, L2Error>;
@@ -494,14 +493,13 @@ impl L2Interface for Gasp {
     async fn get_merkle_proof(
         &self,
         request_id: u128,
-        start: u128,
-        end: u128,
+        range: (u128, u128),
         chain: types::Chain,
         at: HashOf<GaspConfig>,
     ) -> Result<Vec<H256>, L2Error> {
         // let range = types::Range{ start, end };
         let call = gasp::api::runtime_apis::rolldown_runtime_api::RolldownRuntimeApi
-            .get_merkle_proof_for_tx(chain, (start, end), request_id);
+            .get_merkle_proof_for_tx(chain, range, request_id);
 
         let proof = self
             .client
@@ -684,7 +682,7 @@ mod test {
         assert!(hash1 != hash2);
 
         let proofs = gasp
-            .get_merkle_proof(1u128, 1u128, 2u128, ETHEREUM, at)
+            .get_merkle_proof(1u128, (1u128, 2u128), ETHEREUM, at)
             .await
             .expect("can fetch l2 request hash");
 

@@ -191,7 +191,7 @@ pub (crate) mod test {
             async fn cancel_pending_request(&self, request_id: u128, chain: l2types::Chain) -> Result<bool, L2Error>;
             async fn update_l1_from_l2(&self, update: l2types::L1Update, hash: H256) -> Result<bool, L2Error>;
             async fn get_pending_cancels( &self, chain: l2types::Chain, at: H256) -> Result<Vec<u128>, L2Error>;
-            async fn get_merkle_proof( &self, request_id: u128, start: u128, end: u128, chain: l2types::Chain, at: H256) -> Result<Vec<H256>, L2Error>;
+            async fn get_merkle_proof( &self, request_id: u128, range : (u128, u128), chain: l2types::Chain, at: H256) -> Result<Vec<H256>, L2Error>;
             async fn get_l2_request_hash( &self, request_id: u128, chain: l2types::Chain, at: H256) -> Result<Option<H256>, L2Error>;
         }
     }
