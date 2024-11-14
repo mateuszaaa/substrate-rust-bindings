@@ -146,6 +146,7 @@ where
 #[cfg(test)]
 mod test {
     use std::sync::Arc;
+    use std::task::Poll;
 
     use super::*;
     use crate::l1::types as l1types;
@@ -357,35 +358,78 @@ mod test {
             Some(1u128)
         );
     }
-    //
-    // #[tokio::test]
-    // async fn test_find_malicious_update_works() {
-    //     let update_hash =  H256::from(hex!("1111111111111111111111111111111111111111111111111111111111111111"));
-    //     let correct_hash =  H256::zero();
-    //
-    //     let update = UpdateBuilder::new()
-    //         .with_dummy_deposit()
-    //         .build(ETHEREUM);
-    //     let pending : PendingUpdateWithKeys = (1u128, update, update_hash);
-    //
-    //     let mut l1mock = MockL1::new();
-    //     l1mock
-    //         .expect_get_update_hash()
-    //         .with(eq(1u128), eq(1u128))
-    //         .times(1)
-    //         .returning(move |_, _| Ok(correct_hash));
-    //
-    //     let mut l2mock = MockL2::new();
-    //     l2mock
-    //         .expect_get_pending_updates()
-    //         .times(1)
-    //         .return_once(move |_| Ok(vec![pending]));
-    //
-    //     let sequencer = Sequencer::new(l1mock, l2mock, ETHEREUM);
-    //
-    //     assert_eq!(
-    //         sequencer.find_malicious_update(H256::zero()).await.unwrap(),
-    //         Some(1u128)
-    //     );
-    // }
+
+
+    #[tokio::test]
+    async fn test_find_pending_cancels_to_close() {
+        let update = UpdateBuilder::new()
+            .with_dummy_deposit()
+            .build(ETHEREUM);
+
+        let mut l1mock = MockL1::new();
+        l1mock
+            .expect_get_latest_finalized_request_id()
+            .return_once(|| Ok(Some(1u128)));
+
+        let mut l2mock = MockL2::new();
+            l2mock.expect_get_pending_cancels()
+            .return_once(|_, _| Ok(vec![1u128, 2u128]));
+
+        let sequencer = Sequencer::new(l1mock, l2mock, ETHEREUM);
+        let result = sequencer.find_closable_cancel_resolutions(H256::zero()).await;
+
+        assert_eq!(
+            result.unwrap(),
+            vec![1u128]
+        );
+    }
+
+
+    #[tokio::test]
+    async fn test_find_pending_cancels_to_close2() {
+        let update = UpdateBuilder::new()
+            .with_dummy_deposit()
+            .build(ETHEREUM);
+
+        let mut l1mock = MockL1::new();
+        l1mock
+            .expect_get_latest_finalized_request_id()
+            .return_once(|| Ok(Some(10u128)));
+
+        let pending_cancels = vec![1u128, 2u128, 10u128];
+        let cancels = pending_cancels.clone();
+
+        let mut l2mock = MockL2::new();
+            l2mock.expect_get_pending_cancels()
+            .return_once(|_, _| Ok(cancels));
+
+        let sequencer = Sequencer::new(l1mock, l2mock, ETHEREUM);
+        let result = sequencer.find_closable_cancel_resolutions(H256::zero()).await;
+
+        assert_eq!(
+            result.unwrap(),
+            pending_cancels
+        );
+    }
+
+    #[tokio::test]
+    async fn test_find_pending_cancels_to_close_when_there_is_no_merkle_root_provided_to_l1() {
+        let mut l1mock = MockL1::new();
+        l1mock
+            .expect_get_latest_finalized_request_id()
+            .return_once(|| Ok(None));
+
+        let mut l2mock = MockL2::new();
+            l2mock.expect_get_pending_cancels()
+            .times(0);
+
+        let sequencer = Sequencer::new(l1mock, l2mock, ETHEREUM);
+        let result = sequencer.find_closable_cancel_resolutions(H256::zero()).await;
+
+        assert_eq!(
+            result.unwrap(),
+            vec![]
+        );
+    }
+
 }
