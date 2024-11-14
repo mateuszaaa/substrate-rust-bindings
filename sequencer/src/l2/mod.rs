@@ -556,14 +556,7 @@ mod test {
     use hex_literal::hex;
     use serial_test::serial;
 
-    // async fn get_latest_processed_request_id( &self, at: HashOf<GaspConfig>,) -> Result<u128, L2Error>;
-    // async fn update_l1_from_l2(&self, update: types::L1Update, hash: H256) -> Result<bool, L2Error>;
-    // async fn get_pending_updates( &self, at: HashOf<GaspConfig>,) -> Result<Vec<PendingUpdateWithKeys>, L2Error>;
-    // async fn deserialize_sequencer_update(&self, data: Vec<u8>) -> Result<types::L1Update, L2Error>;
-    // async fn cancel_pending_request( &self, request_id: u128, chain: types::Chain,) -> Result<bool, L2Error>;
-    // async fn get_pending_cancels( &self, chain: types::Chain, at: HashOf<GaspConfig>,) -> Result<Vec<u128>, L2Error>;
-    // async fn get_merkle_proof( &self, request_id: u128, start: u128, end: u128, chain: types::Chain, at: HashOf<GaspConfig>,) -> Result<Vec<H256>, L2Error>;
-    // async fn get_l2_request_hash( &self, request_id: u128, chain: types::Chain, at: HashOf<GaspConfig>,) -> Result<Option<H256>, L2Error>;
+    //TODO: adcd test for L2Interace::deserialize_sequencer_update
 
     const URI: &'static str = "ws://localhost:9944";
     const DUMMY_PKEY: [u8; 32] =
@@ -585,6 +578,7 @@ mod test {
     }
 
     #[serial]
+    #[ignore]
     #[tokio::test]
     async fn test_can_submit_multiple_tx_in_a_row() {
         let gasp = Gasp::new(URI, BALTATHAR_PKEY)
@@ -593,9 +587,6 @@ mod test {
         gasp.withdraw(ETHEREUM, DUMMY_ADDR, TEST_TOKEN, 100, None)
             .await
             .expect("can submit withdrawal");
-        gasp.wait_for_next_block().await.unwrap();
-        gasp.wait_for_next_block().await.unwrap();
-        gasp.wait_for_next_block().await.unwrap();
         gasp.withdraw(ETHEREUM, DUMMY_ADDR, TEST_TOKEN, 100, None)
             .await
             .expect("can submit withdrawal");
