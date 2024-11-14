@@ -60,11 +60,5 @@ async fn run() -> Result<(), Error> {
         .await?;
     println!("update {:?}", gasp_update);
 
-    // let read_rights = gasp.get_read_rights(at).await?;
-    //
-    // if read_rights > 0u128 {
-    //     gasp.update_l1_from_l2(gasp_update, update_hash).await?;
-    // }
-
     Ok(())
 }

@@ -1,6 +1,5 @@
 use alloy::sol_types::SolValue;
 use futures::StreamExt;
-use parity_scale_codec::Encode;
 use primitive_types::H256;
 
 use crate::l1::{L1Error, L1Interface};
@@ -158,18 +157,18 @@ where
 
 #[cfg(test)]
 mod test {
-    use std::sync::Arc;
-    use std::task::Poll;
+    
+    
 
     use super::*;
     use crate::l1::types as l1types;
-    use crate::l2::{types as l2types, PendingUpdate, PendingUpdateWithKeys};
+    use crate::l2::{types as l2types, PendingUpdateWithKeys};
     use hex_literal::hex;
     use mockall;
     use mockall::predicate::eq;
     use parity_scale_codec::Decode;
     use primitive_types::H256;
-    use tracing_test::traced_test;
+    
 
     mockall::mock! {
         pub L1 {}
@@ -228,7 +227,7 @@ mod test {
             Self(vec![])
         }
 
-        fn with_dummy_deposit(mut self) -> Self {
+        fn with_dummy_deposit(self) -> Self {
             self.with_request(
                 l2types::Deposit {
                     requestId: l2types::RequestId {

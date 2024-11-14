@@ -174,3 +174,28 @@ impl L1Interface for RolldownContract {
         Ok(x.into())
     }
 }
+
+#[cfg(test)]
+mod test{
+    use super::*;
+    use hex_literal::hex;
+
+    const URI: &'static str = "http://localhost:8545";
+    const DUMMY_ADDRESS: [u8; 20] = hex!("0000000000000000000000000000000000000000");
+    const ALICE_PKEY: [u8; 32] = hex!("dbda1821b80551c9d65939329250298aa3472ba22feea921c0cf5d620ea67b97");
+    // const ETHEREUM: l2types::Chain = l2types::Chain::Ethereum;
+    // const ARBITRUM: l2types::Chain = l2types::Chain::Arbitrum;
+
+    // async fn get_update(&self, start: u128, end: u128) -> Result<types::L1Update, L1Error>;
+    // async fn get_update_hash(&self, start: u128, end: u128) -> Result<H256, L1Error>;
+    // async fn get_latest_reqeust_id(&self) -> Result<Option<u128>, L1Error>;
+    // async fn get_latest_finalized_request_id(&self) -> Result<Option<u128>, L1Error>;
+    // async fn close_cancel( &self, cancel: types::Cancel, merkle_root: H256, proof: Vec<H256>) -> Result<H256, L1Error>;
+
+    #[tokio::test]
+    async fn test_find_malicious_update_ignores_valid_updates() {
+        // let rolldown = RolldownContract::new(URI, DUMMY_ADDRESS).await.unwrap();
+        // rolldown;
+    }
+
+}
