@@ -47,7 +47,7 @@ async fn run() -> Result<(), Error> {
         hex!("1429859428C0aBc9C2C47C8Ee9FBaf82cFA0F20f"),
     )
     .await?;
-    let at = gasp.latest_block().await?;
+    let at = gasp.latest_block().await?.1;
     let latest_processed_on_l2 = gasp.get_latest_processed_request_id(at).await?;
     let latest_create_on_l1 = r.get_latest_reqeust_id().await?;
     let start = latest_processed_on_l2.saturating_add(1u128);

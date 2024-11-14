@@ -156,10 +156,7 @@ where
 }
 
 #[cfg(test)]
-mod test {
-    
-    
-
+pub (crate) mod test {
     use super::*;
     use crate::l1::types as l1types;
     use crate::l2::{types as l2types, PendingUpdateWithKeys};
@@ -203,7 +200,7 @@ mod test {
     const ETHEREUM: l2types::Chain = l2types::Chain::Ethereum;
     const ARBITRUM: l2types::Chain = l2types::Chain::Arbitrum;
 
-    enum Request {
+    pub enum Request {
         Deposit(l2types::Deposit),
         Cancel(l2types::CancelResolution),
     }
@@ -214,7 +211,7 @@ mod test {
         }
     }
 
-    struct UpdateBuilder(Vec<Request>);
+    pub struct UpdateBuilder(Vec<Request>);
 
     pub fn to_u256(value: u128) -> l2types::bindings::runtime_types::primitive_types::U256 {
         let x = primitive_types::U256::from(7u128);
@@ -223,16 +220,16 @@ mod test {
     }
 
     impl UpdateBuilder {
-        fn new() -> Self {
+        pub fn new() -> Self {
             Self(vec![])
         }
 
-        fn with_dummy_deposit(self) -> Self {
+        pub fn with_dummy_deposit(self, rid: u128) -> Self {
             self.with_request(
                 l2types::Deposit {
                     requestId: l2types::RequestId {
                         origin: l2types::Origin::L1,
-                        id: 1u128,
+                        id: rid,
                     },
                     depositRecipient: DUMMY_ADDRESS,
                     tokenAddress: DUMMY_ADDRESS,
@@ -244,21 +241,12 @@ mod test {
             )
         }
 
-        fn with_request(mut self, r: Request) -> Self {
+        pub fn with_request(mut self, r: Request) -> Self {
             self.0.push(r);
             self
         }
 
-        fn build(mut self, chain: l2types::Chain) -> l2types::L1Update {
-            self.0.iter_mut().enumerate().for_each(|(idx, r)| match r {
-                Request::Deposit(d) => {
-                    d.requestId.id = (idx + 1) as u128;
-                }
-                Request::Cancel(c) => {
-                    c.requestId.id = (idx + 1) as u128;
-                }
-            });
-
+        pub fn build(mut self, chain: l2types::Chain) -> l2types::L1Update {
             let mut result = l2types::L1Update {
                 chain,
                 pendingDeposits: vec![],
@@ -285,7 +273,7 @@ mod test {
         let update_hash = H256::zero();
         let correct_hash = update_hash.clone();
 
-        let update = UpdateBuilder::new().with_dummy_deposit().build(ETHEREUM);
+        let update = UpdateBuilder::new().with_dummy_deposit(1u128).build(ETHEREUM);
         let pending: PendingUpdateWithKeys = (1u128, update, update_hash);
 
         let mut l1mock = MockL1::new();
@@ -314,7 +302,7 @@ mod test {
         let update_hash = H256::zero();
         let correct_hash = update_hash.clone();
 
-        let update = UpdateBuilder::new().with_dummy_deposit().build(ARBITRUM);
+        let update = UpdateBuilder::new().with_dummy_deposit(1u128).build(ARBITRUM);
         let pending: PendingUpdateWithKeys = (1u128, update, update_hash);
 
         let mut l1mock = MockL1::new();
@@ -341,7 +329,7 @@ mod test {
         ));
         let correct_hash = H256::zero();
 
-        let update = UpdateBuilder::new().with_dummy_deposit().build(ETHEREUM);
+        let update = UpdateBuilder::new().with_dummy_deposit(1u128).build(ETHEREUM);
         let pending: PendingUpdateWithKeys = (1u128, update, update_hash);
 
         let mut l1mock = MockL1::new();
@@ -367,7 +355,7 @@ mod test {
 
     #[tokio::test]
     async fn test_find_pending_cancels_to_close() {
-        let update = UpdateBuilder::new().with_dummy_deposit().build(ETHEREUM);
+        let update = UpdateBuilder::new().with_dummy_deposit(1u128).build(ETHEREUM);
 
         let mut l1mock = MockL1::new();
         l1mock
@@ -389,7 +377,7 @@ mod test {
 
     #[tokio::test]
     async fn test_find_pending_cancels_to_close2() {
-        let update = UpdateBuilder::new().with_dummy_deposit().build(ETHEREUM);
+        let update = UpdateBuilder::new().with_dummy_deposit(1u128).build(ETHEREUM);
 
         let mut l1mock = MockL1::new();
         l1mock

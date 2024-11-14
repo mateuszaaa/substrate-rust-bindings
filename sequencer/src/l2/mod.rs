@@ -130,22 +130,57 @@ pub enum L2Error {
 pub type HashOf<T> = <T as Config>::Hash;
 
 impl Gasp {
+    pub async fn withdraw(
+        &self,
+        chain: types::Chain,
+        recipient: [u8; 20],
+        token: [u8; 20],
+        amount: u128,
+        ferry_tip: Option<u128>,
+    ) -> Result<bool, L2Error> {
+        let call = gasp::api::tx()
+            .rolldown()
+            .withdraw(chain, recipient, token, amount, ferry_tip);
+        self.sign_and_send(call).await
+    }
 
-    pub async fn header_stream(&self) -> Result<Pin<Box<dyn Stream<Item = Result<(u32, H256), L2Error>> + Send + 'static>>,  L2Error>
+    async fn update_l1_from_l2_unsafe(
+        &self,
+        update: gasp::api::runtime_types::pallet_rolldown::messages::L1Update,
+    ) -> Result<bool, L2Error> {
+        let call = gasp::api::tx().rolldown().update_l2_from_l1_unsafe(update);
+        self.sign_and_send(call).await
+    }
+
+
+    pub async fn wait_for_next_block(&self) -> Result<(), L2Error> {
+        let (best, header) = self.latest_block().await?;
+        let mut stream = self.header_stream().await?;
+
+        while let Some(item) = stream.next().await {
+            let (number, _hash) = item?;
+            if number > best {
+                break;
+            }
+        }
+        Ok(())
+    }
+
+    pub async fn header_stream(
+        &self,
+    ) -> Result<Pin<Box<dyn Stream<Item = Result<(u32, H256), L2Error>> + Send + 'static>>, L2Error>
     {
         Ok(self
             .client
             .backend()
             .stream_best_block_headers()
             .await?
-            .map(|elem|  
-                elem
-                    .map(|(header, hash)| (header.number, hash.hash()))
+            .map(|elem| {
+                elem.map(|(header, hash)| (header.number, hash.hash()))
                     .map_err(|err| L2Error::from(err))
-            )
+            })
             .boxed())
     }
-
 
     pub async fn last_finalized(&self) -> Result<HashOf<GaspConfig>, L2Error> {
         Ok(self
@@ -156,13 +191,13 @@ impl Gasp {
             .hash())
     }
 
-    pub async fn latest_block(&self) -> Result<HashOf<GaspConfig>, L2Error> {
+    pub async fn latest_block(&self) -> Result<(u32, HashOf<GaspConfig>), L2Error> {
         let mut stream = self.client.backend().stream_all_block_headers().await?;
         Ok(stream
             .next()
             .await
             .ok_or(L2Error::HeaderSubscriptionFailed)?
-            .map(|elem| elem.1.hash().into())?)
+            .map(|elem| (elem.0.number(), elem.1.hash().into()))?)
     }
 
     pub async fn new(uri: &str, secret_key: [u8; 32]) -> Result<Self, L2Error> {
@@ -491,7 +526,7 @@ impl L2Interface for Gasp {
         at: HashOf<GaspConfig>,
     ) -> Result<Option<H256>, L2Error> {
         let req = types::RequestId {
-            origin: types::Origin::L1,
+            origin: types::Origin::L2,
             id: request_id,
         };
 
@@ -514,46 +549,64 @@ impl L2Interface for Gasp {
     }
 }
 
-
 #[cfg(test)]
-mod test{
+mod test {
     use super::*;
+    use crate::sequencer::test::{to_u256, Request, UpdateBuilder};
     use hex_literal::hex;
     use serial_test::serial;
 
-    // async fn get_read_rights( &self, chain: types::Chain, at: HashOf<GaspConfig>,) -> Result<u128, L2Error>;
     // async fn get_latest_processed_request_id( &self, at: HashOf<GaspConfig>,) -> Result<u128, L2Error>;
-    // async fn get_cancel_rights( &self, chain: types::Chain, at: HashOf<GaspConfig>,) -> Result<u128, L2Error>;
+    // async fn update_l1_from_l2(&self, update: types::L1Update, hash: H256) -> Result<bool, L2Error>;
     // async fn get_pending_updates( &self, at: HashOf<GaspConfig>,) -> Result<Vec<PendingUpdateWithKeys>, L2Error>;
     // async fn deserialize_sequencer_update(&self, data: Vec<u8>) -> Result<types::L1Update, L2Error>;
     // async fn cancel_pending_request( &self, request_id: u128, chain: types::Chain,) -> Result<bool, L2Error>;
-    // async fn update_l1_from_l2(&self, update: types::L1Update, hash: H256) -> Result<bool, L2Error>;
     // async fn get_pending_cancels( &self, chain: types::Chain, at: HashOf<GaspConfig>,) -> Result<Vec<u128>, L2Error>;
     // async fn get_merkle_proof( &self, request_id: u128, start: u128, end: u128, chain: types::Chain, at: HashOf<GaspConfig>,) -> Result<Vec<H256>, L2Error>;
     // async fn get_l2_request_hash( &self, request_id: u128, chain: types::Chain, at: HashOf<GaspConfig>,) -> Result<Option<H256>, L2Error>;
 
     const URI: &'static str = "ws://localhost:9944";
-    const DUMMY_PKEY: [u8; 32] = hex!("b9d2ea9a615f3165812e8d44de0d24da9bbd164b65c4f0573e1ce2c8dbd9c8df");
-    const BALTATHAR_PKEY: [u8; 32] = hex!("8075991ce870b93a8870eca0c0f91913d12f47948ca0fd25b49c6fa7cdbeee8b");
-    // const ETHEREUM: l2types::Chain = l2types::Chain::Ethereum;
-    // const ARBITRUM: l2types::Chain = l2types::Chain::Arbitrum;
-
-    // async fn get_update(&self, start: u128, end: u128) -> Result<types::L1Update, L1Error>;
-    // async fn get_update_hash(&self, start: u128, end: u128) -> Result<H256, L1Error>;
-    // async fn get_latest_reqeust_id(&self) -> Result<Option<u128>, L1Error>;
-    // async fn get_latest_finalized_request_id(&self) -> Result<Option<u128>, L1Error>;
-    // async fn close_cancel( &self, cancel: types::Cancel, merkle_root: H256, proof: Vec<H256>) -> Result<H256, L1Error>;
+    const DUMMY_PKEY: [u8; 32] =
+        hex!("b9d2ea9a615f3165812e8d44de0d24da9bbd164b65c4f0573e1ce2c8dbd9c8df");
+    const DUMMY_ADDR: [u8; 20] = hex!("0000000000000000000000000000000000000000");
+    const ALITH_PKEY: [u8; 32] =
+        hex!("5fb92d6e98884f76de468fa3f6278f8807c48bebc13595d45af5bdc4da702133");
+    const BALTATHAR_PKEY: [u8; 32] =
+        hex!("8075991ce870b93a8870eca0c0f91913d12f47948ca0fd25b49c6fa7cdbeee8b");
+    const TEST_TOKEN: [u8; 20] = hex!("FD471836031dc5108809D173A067e8486B9047A3");
+    const ETHEREUM: types::Chain = types::Chain::Ethereum;
 
     #[serial]
     #[tokio::test]
     async fn test_can_connect() {
-        let gasp = Gasp::new(URI, BALTATHAR_PKEY).await.expect("can connect to gasp");
+        Gasp::new(URI, BALTATHAR_PKEY)
+            .await
+            .expect("can connect to gasp");
+    }
+
+    #[serial]
+    #[tokio::test]
+    async fn test_can_submit_multiple_tx_in_a_row() {
+        let gasp = Gasp::new(URI, BALTATHAR_PKEY)
+            .await
+            .expect("can connect to gasp");
+        gasp.withdraw(ETHEREUM, DUMMY_ADDR, TEST_TOKEN, 100, None)
+            .await
+            .expect("can submit withdrawal");
+        gasp.wait_for_next_block().await.unwrap();
+        gasp.wait_for_next_block().await.unwrap();
+        gasp.wait_for_next_block().await.unwrap();
+        gasp.withdraw(ETHEREUM, DUMMY_ADDR, TEST_TOKEN, 100, None)
+            .await
+            .expect("can submit withdrawal");
     }
 
     #[serial]
     #[tokio::test]
     async fn can_subscribe_to_new_blocks() {
-        let gasp = Gasp::new(URI, BALTATHAR_PKEY).await.expect("can connect to gasp");
+        let gasp = Gasp::new(URI, BALTATHAR_PKEY)
+            .await
+            .expect("can connect to gasp");
         let mut stream = gasp.header_stream().await.unwrap();
         let (number1, hash1) = stream.next().await.expect("can fetch next block").unwrap();
         let (number2, hash2) = stream.next().await.expect("can fetch next block").unwrap();
@@ -564,31 +617,141 @@ mod test{
     #[serial]
     #[tokio::test]
     async fn test_can_fetch_rights() {
-        let baltathat_gasp = Gasp::new(URI, BALTATHAR_PKEY).await.expect("can connect to gasp");
-        let dummy_gasp = Gasp::new(URI, DUMMY_PKEY).await.expect("can connect to gasp");
+        let baltathat_gasp = Gasp::new(URI, BALTATHAR_PKEY)
+            .await
+            .expect("can connect to gasp");
+        let dummy_gasp = Gasp::new(URI, DUMMY_PKEY)
+            .await
+            .expect("can connect to gasp");
 
-        let at = baltathat_gasp.latest_block().await.unwrap();
+        let at = baltathat_gasp.latest_block().await.unwrap().1;
 
-         let dummy_read_rights = dummy_gasp.get_read_rights(types::Chain::Ethereum, at).await;
-         let dummy_cancel_rights = dummy_gasp.get_cancel_rights(types::Chain::Ethereum, at).await;
+        let dummy_read_rights = dummy_gasp.get_read_rights(types::Chain::Ethereum, at).await;
+        let dummy_cancel_rights = dummy_gasp
+            .get_cancel_rights(types::Chain::Ethereum, at)
+            .await;
 
-         let baltathar_read_rights = baltathat_gasp.get_read_rights(types::Chain::Ethereum, at).await;
-         let baltathar_cancel_rights = baltathat_gasp.get_cancel_rights(types::Chain::Ethereum, at).await;
+        let baltathar_read_rights = baltathat_gasp
+            .get_read_rights(types::Chain::Ethereum, at)
+            .await;
+        let baltathar_cancel_rights = baltathat_gasp
+            .get_cancel_rights(types::Chain::Ethereum, at)
+            .await;
 
-        assert!(
-            matches!(dummy_read_rights, Err(L2Error::CanNotFetchRights)),
-        );
-        assert!(
-            matches!(dummy_cancel_rights, Err(L2Error::CanNotFetchRights)),
-        );
+        assert!(matches!(dummy_read_rights, Err(L2Error::CanNotFetchRights)),);
+        assert!(matches!(
+            dummy_cancel_rights,
+            Err(L2Error::CanNotFetchRights)
+        ),);
 
-        assert_eq!(
-            baltathar_read_rights.unwrap(),
-            1u128
-        );
+        assert_eq!(baltathar_read_rights.unwrap(), 1u128);
 
         baltathar_cancel_rights.unwrap();
     }
 
+    #[serial]
+    #[tokio::test]
+    async fn test_fetch_merkle_proof() {
+        let gasp = Gasp::new(URI, ALITH_PKEY)
+            .await
+            .expect("can connect to gasp");
+        gasp.wait_for_next_block().await.unwrap();
 
+        assert_eq!(
+            gasp.withdraw(ETHEREUM, DUMMY_ADDR, TEST_TOKEN, 100, None)
+                .await
+                .expect("can submit withdrawal"),
+            true
+        );
+
+        gasp.wait_for_next_block().await.unwrap();
+        gasp.wait_for_next_block().await.unwrap();
+        gasp.wait_for_next_block().await.unwrap();
+
+        assert_eq!(
+            gasp.withdraw(ETHEREUM, DUMMY_ADDR, TEST_TOKEN, 100, None)
+                .await
+                .expect("can submit withdrawal"),
+            true
+        );
+
+        let at = gasp.latest_block().await.unwrap().1;
+        let hash1 = gasp
+            .get_l2_request_hash(1u128, ETHEREUM, at)
+            .await
+            .expect("can fetch l2 request hash")
+            .expect("can fetch l2 request hash");
+
+        let hash2 = gasp
+            .get_l2_request_hash(2u128, ETHEREUM, at)
+            .await
+            .expect("can fetch l2 request hash")
+            .expect("can fetch l2 request hash");
+
+        assert!(hash1 != H256::zero());
+        assert!(hash2 != H256::zero());
+        assert!(hash1 != hash2);
+
+        let proofs = gasp
+            .get_merkle_proof(1u128, 1u128, 2u128, ETHEREUM, at)
+            .await
+            .expect("can fetch l2 request hash");
+
+        assert_eq!(proofs.len(), 1 as usize);
+    }
+
+    #[serial]
+    #[tokio::test]
+    async fn test_can_submit_and_fetch_udates() {
+        let gasp = Gasp::new(URI, BALTATHAR_PKEY)
+            .await
+            .expect("can connect to gasp");
+        let at = gasp.latest_block().await.unwrap().1;
+        let latest_req_id = gasp.get_latest_processed_request_id(at).await.unwrap();
+        let next_req_id = latest_req_id.saturating_add(1u128);
+        let update = UpdateBuilder::new()
+            .with_request(Request::Deposit(types::Deposit {
+                requestId: types::RequestId {
+                    origin: types::Origin::L1,
+                    id: next_req_id,
+                },
+                depositRecipient: DUMMY_ADDR,
+                tokenAddress: DUMMY_ADDR,
+                amount: to_u256(100u128),
+                timeStamp: to_u256(0u128),
+                ferryTip: to_u256(0u128),
+            }))
+            .build(ETHEREUM);
+
+        let status = gasp.update_l1_from_l2_unsafe(update)
+            .await
+            .expect("can submit update");
+
+        assert_eq!(status, true);
+
+        let at = gasp.latest_block().await.unwrap().1;
+        let updates = gasp.get_pending_updates(at).await.expect("can fetch pending updates");
+        assert!(!updates.is_empty());
+    }
+
+    #[serial]
+    #[tokio::test]
+    async fn test_can_fetch_pending_cancels() {
+        let gasp = Gasp::new(URI, BALTATHAR_PKEY)
+            .await
+            .expect("can connect to gasp");
+        let at = gasp.latest_block().await.unwrap().1;
+        gasp.get_pending_cancels(ETHEREUM, at).await.expect("can fetch pending cancels");
+    }
+
+    #[serial]
+    #[tokio::test]
+    async fn test_can_cancel_pending_update() {
+        let gasp = Gasp::new(URI, BALTATHAR_PKEY)
+            .await
+            .expect("can connect to gasp");
+
+        let result = gasp.cancel_pending_request(u128::MAX, ETHEREUM).await.expect("can fetch pending cancels");
+        assert_eq!(false, result);
+    }
 }
