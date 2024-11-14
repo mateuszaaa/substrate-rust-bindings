@@ -12,8 +12,8 @@ use alloy::providers::{Identity, PendingTransactionError, ProviderBuilder, RootP
 // use subxt::ext::subxt_core::storage::address::{StorageHashers};
 
 pub mod types {
-    pub use bindings::rolldown::IRolldownPrimitives::L1Update;
     pub use bindings::rolldown::IRolldownPrimitives::Cancel;
+    pub use bindings::rolldown::IRolldownPrimitives::L1Update;
 }
 
 #[derive(Debug, thiserror::Error)]
@@ -35,7 +35,12 @@ pub trait L1Interface {
     async fn get_update_hash(&self, start: u128, end: u128) -> Result<H256, L1Error>;
     async fn get_latest_reqeust_id(&self) -> Result<Option<u128>, L1Error>;
     async fn get_latest_finalized_request_id(&self) -> Result<Option<u128>, L1Error>;
-    async fn close_cancel(&self, cancel: types::Cancel, merkle_root:H256, proof: Vec<H256>) -> Result<H256, L1Error>;
+    async fn close_cancel(
+        &self,
+        cancel: types::Cancel,
+        merkle_root: H256,
+        proof: Vec<H256>,
+    ) -> Result<H256, L1Error>;
 }
 
 pub type RolldownInstanceType = bindings::rolldown::Rolldown::RolldownInstance<
@@ -71,24 +76,35 @@ impl RolldownContract {
 }
 
 impl L1Interface for RolldownContract {
-
     #[tracing::instrument(skip(self))]
     async fn get_latest_reqeust_id(&self) -> Result<Option<u128>, L1Error> {
         let call = self.contract_handle.counter();
         let result = call.call().await?;
-        let next_request_id: u128 = result._0.try_into().or_else(|_| Err(L1Error::OverflowError))?;
+        let next_request_id: u128 = result
+            ._0
+            .try_into()
+            .or_else(|_| Err(L1Error::OverflowError))?;
         Ok(next_request_id.checked_sub(1u128))
     }
 
     #[tracing::instrument(skip(self))]
-    async fn get_latest_finalized_request_id(&self) -> Result<Option<u128>, L1Error>{
+    async fn get_latest_finalized_request_id(&self) -> Result<Option<u128>, L1Error> {
         let call = self.contract_handle.getMerkleRootsLength();
         let length = call.call().await?;
-        if let Some(id) = length._0.checked_sub(alloy::primitives::U256::from(1)){
+        if let Some(id) = length._0.checked_sub(alloy::primitives::U256::from(1)) {
             let latest_root = self.contract_handle.roots(id.clone()).call().await?;
-            let range = self.contract_handle.merkleRootRange(latest_root._0).call().await?;
-            Ok(Some(range.end.try_into().or_else(|_| Err(L1Error::OverflowError))?))
-        }else{
+            let range = self
+                .contract_handle
+                .merkleRootRange(latest_root._0)
+                .call()
+                .await?;
+            Ok(Some(
+                range
+                    .end
+                    .try_into()
+                    .or_else(|_| Err(L1Error::OverflowError))?,
+            ))
+        } else {
             Ok(None)
         }
     }
@@ -99,7 +115,12 @@ impl L1Interface for RolldownContract {
 
         if let Some(latest) = latest {
             if start < 1u128 || start > latest || end > latest || end < start {
-                tracing::warn!("latest :{} range.start:{} range.end:{} ", latest, start, end);
+                tracing::warn!(
+                    "latest :{} range.start:{} range.end:{} ",
+                    latest,
+                    start,
+                    end
+                );
                 return Err(L1Error::InvalidRange);
             }
 
@@ -110,24 +131,35 @@ impl L1Interface for RolldownContract {
                 .getPendingRequests(range_start, range_end);
             let result = call.call().await?;
 
-            tracing::debug!("deposits: {} cancel_resolutions: {}", result._0.pendingDeposits.len(), result._0.pendingCancelResolutions.len());
+            tracing::debug!(
+                "deposits: {} cancel_resolutions: {}",
+                result._0.pendingDeposits.len(),
+                result._0.pendingCancelResolutions.len()
+            );
 
             Ok(result._0)
-        }else{
+        } else {
             tracing::warn!("there are no requests in contrcact yet");
             Err(L1Error::InvalidRange)
         }
     }
 
     #[tracing::instrument(skip(self, cancel))]
-    async fn close_cancel(&self, cancel: types::Cancel, merkle_root:H256, proof: Vec<H256>) -> Result<H256, L1Error>{
+    async fn close_cancel(
+        &self,
+        cancel: types::Cancel,
+        merkle_root: H256,
+        proof: Vec<H256>,
+    ) -> Result<H256, L1Error> {
         let proof = proof.into_iter().map(|elem| elem.0.into()).collect();
-        let call =  self.contract_handle.close_cancel(cancel, merkle_root.0.into(), proof);
-        match call.call().await{
+        let call = self
+            .contract_handle
+            .close_cancel(cancel, merkle_root.0.into(), proof);
+        match call.call().await {
             Ok(_) => {
                 tracing::trace!("status ok");
                 Ok(call.send().await?.watch().await?.0.into())
-            },
+            }
             Err(err) => {
                 tracing::warn!("status nok");
                 Err(err.into())

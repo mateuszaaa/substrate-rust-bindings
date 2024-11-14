@@ -21,9 +21,11 @@ use gasp::{GaspAddress, GaspConfig, GaspSignature};
 
 pub mod types {
     use super::gasp;
-    pub use gasp::api::runtime_types::pallet_rolldown::messages::L1Update;
     pub use gasp::api as bindings;
-    pub use gasp::api::runtime_types::pallet_rolldown::messages::{Deposit, RequestId, Origin, Chain, CancelResolution, Range};
+    pub use gasp::api::runtime_types::pallet_rolldown::messages::L1Update;
+    pub use gasp::api::runtime_types::pallet_rolldown::messages::{
+        CancelResolution, Chain, Deposit, Origin, Range, RequestId,
+    };
 }
 
 pub type PendingUpdateWithKeys = (u128, types::L1Update, H256);
@@ -45,15 +47,27 @@ pub trait L2Interface {
         &self,
         at: HashOf<GaspConfig>,
     ) -> Result<u128, L2Error>;
-    async fn get_read_rights(&self, chain: types::Chain, at: HashOf<GaspConfig>) -> Result<u128, L2Error>;
-    async fn get_cancel_rights(&self, chain: types::Chain, at: HashOf<GaspConfig>) -> Result<u128, L2Error>;
+    async fn get_read_rights(
+        &self,
+        chain: types::Chain,
+        at: HashOf<GaspConfig>,
+    ) -> Result<u128, L2Error>;
+    async fn get_cancel_rights(
+        &self,
+        chain: types::Chain,
+        at: HashOf<GaspConfig>,
+    ) -> Result<u128, L2Error>;
     async fn get_pending_updates(
         &self,
         at: HashOf<GaspConfig>,
     ) -> Result<Vec<PendingUpdateWithKeys>, L2Error>;
     async fn deserialize_sequencer_update(&self, data: Vec<u8>)
         -> Result<types::L1Update, L2Error>;
-    async fn cancel_pending_request(&self, request_id: u128, chain: types::Chain) -> Result<bool, L2Error>;
+    async fn cancel_pending_request(
+        &self,
+        request_id: u128,
+        chain: types::Chain,
+    ) -> Result<bool, L2Error>;
     async fn update_l1_from_l2(&self, update: types::L1Update, hash: H256)
         -> Result<bool, L2Error>;
 
@@ -78,7 +92,6 @@ pub trait L2Interface {
         chain: types::Chain,
         at: HashOf<GaspConfig>,
     ) -> Result<Option<H256>, L2Error>;
-
 }
 
 pub struct Gasp {
@@ -221,10 +234,7 @@ impl Gasp {
             .create_partial_signed(&call, &self.keypair.address().into(), Default::default())
             .await?;
 
-        tracing::trace!(
-            "tx: {}",
-            hex_encode(partial_signed.signer_payload())
-        );
+        tracing::trace!("tx: {}", hex_encode(partial_signed.signer_payload()));
 
         let signed = partial_signed.sign(&self.keypair);
 
@@ -236,7 +246,6 @@ impl Gasp {
 }
 
 impl L2Interface for Gasp {
-
     #[tracing::instrument(skip(self))]
     async fn get_latest_processed_request_id(
         &self,
@@ -257,7 +266,11 @@ impl L2Interface for Gasp {
     }
 
     #[tracing::instrument(skip(self))]
-    async fn get_read_rights(&self, chain: types::Chain, at: HashOf<GaspConfig>) -> Result<u128, L2Error> {
+    async fn get_read_rights(
+        &self,
+        chain: types::Chain,
+        at: HashOf<GaspConfig>,
+    ) -> Result<u128, L2Error> {
         use gasp::api::runtime_types::pallet_rolldown::pallet::SequencerRights;
 
         let storage = gasp::api::storage().rolldown().sequencers_rights(chain);
@@ -279,7 +292,11 @@ impl L2Interface for Gasp {
     }
 
     #[tracing::instrument(skip(self))]
-    async fn get_cancel_rights(&self, chain: types::Chain, at: HashOf<GaspConfig>) -> Result<u128, L2Error> {
+    async fn get_cancel_rights(
+        &self,
+        chain: types::Chain,
+        at: HashOf<GaspConfig>,
+    ) -> Result<u128, L2Error> {
         use gasp::api::runtime_types::pallet_rolldown::pallet::SequencerRights;
 
         let storage = gasp::api::storage().rolldown().sequencers_rights(chain);
@@ -330,11 +347,14 @@ impl L2Interface for Gasp {
     }
 
     #[tracing::instrument(skip(self))]
-    async fn cancel_pending_request(&self, request_id: u128, chain: types::Chain) -> Result<bool, L2Error> {
-        let call = gasp::api::tx().rolldown().cancel_requests_from_l1(
-            chain,
-            request_id,
-        );
+    async fn cancel_pending_request(
+        &self,
+        request_id: u128,
+        chain: types::Chain,
+    ) -> Result<bool, L2Error> {
+        let call = gasp::api::tx()
+            .rolldown()
+            .cancel_requests_from_l1(chain, request_id);
         self.sign_and_send(call).await
     }
 
@@ -344,13 +364,11 @@ impl L2Interface for Gasp {
         chain: types::Chain,
         at: HashOf<GaspConfig>,
     ) -> Result<Vec<u128>, L2Error> {
-
-
         let storage_entry = gasp::api::storage()
             .rolldown()
             .awaiting_cancel_resolution(chain);
 
-        let result= self
+        let result = self
             .client
             .storage()
             .at(at)
@@ -362,10 +380,13 @@ impl L2Interface for Gasp {
             .map(|(_account, request_id, _role)| request_id)
             .collect::<Vec<_>>();
 
-        tracing::debug!("found {} pending cancels associated with account: {}", result.len(), hex_encode(self.keypair.address()));
+        tracing::debug!(
+            "found {} pending cancels associated with account: {}",
+            result.len(),
+            hex_encode(self.keypair.address())
+        );
 
         Ok(result)
-
     }
 
     #[tracing::instrument(skip(self))]
@@ -398,7 +419,6 @@ impl L2Interface for Gasp {
                 let storage_kv = result?;
                 let (_acc, update, hash) = storage_kv.value;
 
-
                 let keys = <(
                     StaticStorageKey<gasp_types::pending_sequencer_updates::Param0>,
                     StaticStorageKey<gasp_types::pending_sequencer_updates::Param1>,
@@ -416,7 +436,6 @@ impl L2Interface for Gasp {
         result.into_iter().collect()
     }
 
-
     #[tracing::instrument(skip(self))]
     async fn get_merkle_proof(
         &self,
@@ -425,7 +444,7 @@ impl L2Interface for Gasp {
         end: u128,
         chain: types::Chain,
         at: HashOf<GaspConfig>,
-    ) -> Result<Vec<H256>, L2Error>{
+    ) -> Result<Vec<H256>, L2Error> {
         // let range = types::Range{ start, end };
         let call = gasp::api::runtime_apis::rolldown_runtime_api::RolldownRuntimeApi
             .get_merkle_proof_for_tx(chain, (start, end), request_id);
@@ -436,7 +455,7 @@ impl L2Interface for Gasp {
             .at_latest()
             .await?
             .call(call)
-        .await?;
+            .await?;
 
         proof.iter().enumerate().for_each(|(id, elem)| {
             tracing::trace!("proof[{id}] elem: {}", hex_encode(elem));
@@ -451,8 +470,8 @@ impl L2Interface for Gasp {
         request_id: u128,
         chain: types::Chain,
         at: HashOf<GaspConfig>,
-    ) -> Result<Option<H256>, L2Error>{
-        let req = types::RequestId{
+    ) -> Result<Option<H256>, L2Error> {
+        let req = types::RequestId {
             origin: types::Origin::L1,
             id: request_id,
         };
@@ -468,7 +487,7 @@ impl L2Interface for Gasp {
 
         if let Some(request_hash) = &reqeust_hash {
             tracing::trace!("request hash {}", hex_encode(request_hash));
-        }else{
+        } else {
             tracing::warn!("request hash unknown");
         }
 
