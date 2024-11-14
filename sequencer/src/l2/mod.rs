@@ -23,7 +23,7 @@ pub mod types {
     use super::gasp;
     pub use gasp::api::runtime_types::pallet_rolldown::messages::L1Update;
     pub use gasp::api as bindings;
-    pub use gasp::api::runtime_types::pallet_rolldown::messages::{Deposit, RequestId, Origin, Chain, CancelResolution};
+    pub use gasp::api::runtime_types::pallet_rolldown::messages::{Deposit, RequestId, Origin, Chain, CancelResolution, Range};
 }
 
 pub type PendingUpdateWithKeys = (u128, types::L1Update, H256);
@@ -45,8 +45,8 @@ pub trait L2Interface {
         &self,
         at: HashOf<GaspConfig>,
     ) -> Result<u128, L2Error>;
-    async fn get_read_rights(&self, at: HashOf<GaspConfig>) -> Result<u128, L2Error>;
-    async fn get_cancel_rights(&self, at: HashOf<GaspConfig>) -> Result<u128, L2Error>;
+    async fn get_read_rights(&self, chain: types::Chain, at: HashOf<GaspConfig>) -> Result<u128, L2Error>;
+    async fn get_cancel_rights(&self, chain: types::Chain, at: HashOf<GaspConfig>) -> Result<u128, L2Error>;
     async fn get_pending_updates(
         &self,
         at: HashOf<GaspConfig>,
@@ -56,6 +56,29 @@ pub trait L2Interface {
     async fn cancel_pending_request(&self, request_id: u128, chain: types::Chain) -> Result<bool, L2Error>;
     async fn update_l1_from_l2(&self, update: types::L1Update, hash: H256)
         -> Result<bool, L2Error>;
+
+    async fn get_pending_cancels(
+        &self,
+        chain: types::Chain,
+        at: HashOf<GaspConfig>,
+    ) -> Result<Vec<u128>, L2Error>;
+
+    async fn get_merkle_proof(
+        &self,
+        request_id: u128,
+        start: u128,
+        end: u128,
+        chain: types::Chain,
+        at: HashOf<GaspConfig>,
+    ) -> Result<Vec<H256>, L2Error>;
+
+    async fn get_l2_request_hash(
+        &self,
+        request_id: u128,
+        chain: types::Chain,
+        at: HashOf<GaspConfig>,
+    ) -> Result<Option<H256>, L2Error>;
+
 }
 
 pub struct Gasp {
@@ -85,6 +108,8 @@ pub enum L2Error {
     UnknownTxStatus,
     #[error("cannot subscribe to block headers")]
     HeaderSubscriptionFailed,
+    #[error("awaiting cancel resolution fetch error")]
+    PendingCancelFetchError,
 }
 
 pub type HashOf<T> = <T as Config>::Hash;
@@ -232,10 +257,9 @@ impl L2Interface for Gasp {
     }
 
     #[tracing::instrument(skip(self))]
-    async fn get_read_rights(&self, at: HashOf<GaspConfig>) -> Result<u128, L2Error> {
+    async fn get_read_rights(&self, chain: types::Chain, at: HashOf<GaspConfig>) -> Result<u128, L2Error> {
         use gasp::api::runtime_types::pallet_rolldown::pallet::SequencerRights;
 
-        let chain = gasp::api::rolldown::calls::types::cancel_requests_from_l1::Chain::Ethereum;
         let storage = gasp::api::storage().rolldown().sequencers_rights(chain);
         let rights: HashMap<GaspAddress, SequencerRights> = self
             .client
@@ -255,11 +279,9 @@ impl L2Interface for Gasp {
     }
 
     #[tracing::instrument(skip(self))]
-    async fn get_cancel_rights(&self, at: HashOf<GaspConfig>) -> Result<u128, L2Error> {
+    async fn get_cancel_rights(&self, chain: types::Chain, at: HashOf<GaspConfig>) -> Result<u128, L2Error> {
         use gasp::api::runtime_types::pallet_rolldown::pallet::SequencerRights;
 
-        //NOTE: create parameter
-        let chain = gasp::api::rolldown::calls::types::cancel_requests_from_l1::Chain::Ethereum;
         let storage = gasp::api::storage().rolldown().sequencers_rights(chain);
         let rights: HashMap<GaspAddress, SequencerRights> = self
             .client
@@ -317,6 +339,36 @@ impl L2Interface for Gasp {
     }
 
     #[tracing::instrument(skip(self))]
+    async fn get_pending_cancels(
+        &self,
+        chain: types::Chain,
+        at: HashOf<GaspConfig>,
+    ) -> Result<Vec<u128>, L2Error> {
+
+
+        let storage_entry = gasp::api::storage()
+            .rolldown()
+            .awaiting_cancel_resolution(chain);
+
+        let result= self
+            .client
+            .storage()
+            .at(at)
+            .fetch(&storage_entry)
+            .await?
+            .ok_or(L2Error::PendingCancelFetchError)?
+            .into_iter()
+            .filter(|(account, request_id, role)| account.0 == self.keypair.address().into_inner())
+            .map(|(_account, request_id, _role)| request_id)
+            .collect::<Vec<_>>();
+
+        tracing::debug!("found {} pending cancels associated with account: {}", result.len(), hex_encode(self.keypair.address()));
+
+        Ok(result)
+
+    }
+
+    #[tracing::instrument(skip(self))]
     async fn get_pending_updates(
         &self,
         at: HashOf<GaspConfig>,
@@ -362,5 +414,64 @@ impl L2Interface for Gasp {
             .await;
 
         result.into_iter().collect()
+    }
+
+
+    #[tracing::instrument(skip(self))]
+    async fn get_merkle_proof(
+        &self,
+        request_id: u128,
+        start: u128,
+        end: u128,
+        chain: types::Chain,
+        at: HashOf<GaspConfig>,
+    ) -> Result<Vec<H256>, L2Error>{
+        // let range = types::Range{ start, end };
+        let call = gasp::api::runtime_apis::rolldown_runtime_api::RolldownRuntimeApi
+            .get_merkle_proof_for_tx(chain, (start, end), request_id);
+
+        let proof = self
+            .client
+            .runtime_api()
+            .at_latest()
+            .await?
+            .call(call)
+        .await?;
+
+        proof.iter().enumerate().for_each(|(id, elem)| {
+            tracing::trace!("proof[{id}] elem: {}", hex_encode(elem));
+        });
+
+        Ok(proof)
+    }
+
+    #[tracing::instrument(skip(self))]
+    async fn get_l2_request_hash(
+        &self,
+        request_id: u128,
+        chain: types::Chain,
+        at: HashOf<GaspConfig>,
+    ) -> Result<Option<H256>, L2Error>{
+        let req = types::RequestId{
+            origin: types::Origin::L1,
+            id: request_id,
+        };
+
+        let storage = gasp::api::storage().rolldown().l2_requests(chain, req);
+        let reqeust_hash = self
+            .client
+            .storage()
+            .at(at)
+            .fetch(&storage)
+            .await?
+            .map(|elem| elem.1);
+
+        if let Some(request_hash) = &reqeust_hash {
+            tracing::trace!("request hash {}", hex_encode(request_hash));
+        }else{
+            tracing::warn!("request hash unknown");
+        }
+
+        Ok(reqeust_hash)
     }
 }

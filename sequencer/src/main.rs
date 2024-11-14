@@ -51,7 +51,7 @@ async fn run() -> Result<(), Error> {
     let latest_processed_on_l2 = gasp.get_latest_processed_request_id(at).await?;
     let latest_create_on_l1 = r.get_latest_reqeust_id().await?;
     let start = latest_processed_on_l2.saturating_add(1u128);
-    let end = latest_create_on_l1;
+    let end = latest_create_on_l1.unwrap();
 
     let update = r.get_update(start, end).await?;
     let update_hash = r.get_update_hash(start, end).await?;
@@ -60,11 +60,11 @@ async fn run() -> Result<(), Error> {
         .await?;
     println!("update {:?}", gasp_update);
 
-    let read_rights = gasp.get_read_rights(at).await?;
-
-    if read_rights > 0u128 {
-        gasp.update_l1_from_l2(gasp_update, update_hash).await?;
-    }
+    // let read_rights = gasp.get_read_rights(at).await?;
+    //
+    // if read_rights > 0u128 {
+    //     gasp.update_l1_from_l2(gasp_update, update_hash).await?;
+    // }
 
     Ok(())
 }

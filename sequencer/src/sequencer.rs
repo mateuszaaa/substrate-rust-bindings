@@ -101,23 +101,46 @@ where
     }
 
     pub async fn has_read_rights_available(&self, at: H256) -> Result<bool, Error>{
-        Ok(self.l2.get_read_rights(at).await? > 0)
+        Ok(self.l2.get_read_rights(self.chain.clone(), at).await? > 0)
     }
 
     pub async fn has_cancel_rights_available(&self, at: H256) -> Result<bool, Error>{
-        Ok(self.l2.get_cancel_rights(at).await? > 0)
+        Ok(self.l2.get_cancel_rights(self.chain.clone(), at).await? > 0)
     }
 
     pub async fn get_pending_update(&self, at: H256) -> Result<Option<(H256, l2types::L1Update)>, Error> {
         let latest_processed_on_l2 = self.l2.get_latest_processed_request_id(at).await?;
         let latest_create_on_l1 = self.l1.get_latest_reqeust_id().await?;
         let start = latest_processed_on_l2.saturating_add(1u128);
-        let end = latest_create_on_l1;
-        let update = self.l1.get_update(start, end).await?;
-        let update_hash = self.l1.get_update_hash(start, end).await?;
-        let native_update = self.l2.deserialize_sequencer_update(update.abi_encode()).await?;
-        Ok(Some((update_hash, native_update)))
+        if let Some(end) = latest_create_on_l1 {
+            let update = self.l1.get_update(start, end).await?;
+            let update_hash = self.l1.get_update_hash(start, end).await?;
+            let native_update = self.l2.deserialize_sequencer_update(update.abi_encode()).await?;
+            Ok(Some((update_hash, native_update)))
+        }else{
+            Ok(None)
+        }
     }
+
+    pub async fn submit_sequencer_update(&self, update: l2types::L1Update, update_hash: H256) -> Result<bool, Error> {
+        Ok(self.l2.update_l1_from_l2(update, update_hash).await?)
+    }
+
+    pub async fn find_closable_cancel_resolutions(&self, at:  H256) -> Result<Vec<u128>, Error>{
+        let latest_closable_request_id = self.l1.get_latest_finalized_request_id().await?;
+        if let Some(latest_closable_request_id) = latest_closable_request_id{
+            let cancels = self.l2.get_pending_cancels(self.chain.clone(), at)
+            .await?
+            .into_iter()
+            .filter(|&cancel_request_id| cancel_request_id <= latest_closable_request_id)
+            .collect();
+
+            Ok(cancels)
+        }else{
+            Ok(vec![])
+        }
+    }
+
 }
 
 #[cfg(test)]
@@ -138,9 +161,11 @@ mod test {
         pub L1 {}
 
         impl L1Interface for L1{
-            async fn get_latest_reqeust_id(&self) -> Result<u128, L1Error>;
+            async fn get_latest_reqeust_id(&self) -> Result<Option<u128>, L1Error>;
             async fn get_update(&self, start: u128, end: u128) ->  Result<l1types::L1Update, L1Error>;
             async fn get_update_hash(&self, start: u128, end: u128) ->  Result<H256, L1Error>;
+            async fn close_cancel(&self, cancel: l1types::Cancel, merkle_root:H256, proof: Vec<H256>) -> Result<H256, L1Error>;
+            async fn get_latest_finalized_request_id(&self) -> Result<Option<u128>, L1Error>;
         }
     }
 
@@ -149,12 +174,15 @@ mod test {
 
         impl L2Interface for L2{
             async fn get_latest_processed_request_id(&self, at: H256) -> Result<u128, L2Error>;
-            async fn get_read_rights(&self, at: H256) -> Result<u128, L2Error>;
-            async fn get_cancel_rights(&self, at: H256) -> Result<u128, L2Error>;
+            async fn get_read_rights(&self, chain: l2types::Chain, at: H256) -> Result<u128, L2Error>;
+            async fn get_cancel_rights(&self, chain: l2types::Chain, at: H256) -> Result<u128, L2Error>;
             async fn get_pending_updates(&self, at: H256) -> Result<Vec<PendingUpdateWithKeys>, L2Error>;
             async fn deserialize_sequencer_update(&self, data: Vec<u8>) -> Result<l2types::L1Update, L2Error>;
             async fn cancel_pending_request(&self, request_id: u128, chain: l2types::Chain) -> Result<bool, L2Error>;
             async fn update_l1_from_l2(&self, update: l2types::L1Update, hash: H256) -> Result<bool, L2Error>;
+            async fn get_pending_cancels( &self, chain: l2types::Chain, at: H256) -> Result<Vec<u128>, L2Error>;
+            async fn get_merkle_proof( &self, request_id: u128, start: u128, end: u128, chain: l2types::Chain, at: H256) -> Result<Vec<H256>, L2Error>;
+            async fn get_l2_request_hash( &self, request_id: u128, chain: l2types::Chain, at: H256) -> Result<Option<H256>, L2Error>;
         }
     }
 
