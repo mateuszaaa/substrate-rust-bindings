@@ -409,7 +409,7 @@ impl L2Interface for Gasp {
         update.ok_or(L2Error::SequencerUpdateConversionError)
     }
 
-    #[tracing::instrument(skip(self))]
+    #[tracing::instrument(skip(self, update))]
     async fn update_l1_from_l2(
         &self,
         update: gasp::api::runtime_types::pallet_rolldown::messages::L1Update,

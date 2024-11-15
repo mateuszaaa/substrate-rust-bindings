@@ -1,10 +1,14 @@
+use std::time::Duration;
+
 use alloy::sol_types::SolValue;
-use futures::StreamExt;
+use futures::{Stream, StreamExt};
 use primitive_types::H256;
 use hex::encode as hex_encode;
+use tokio::time::timeout;
 
 use crate::l1::{L1Error, L1Interface, types as l1types};
-use crate::l2::{types as l2types, L2Error, L2Interface, PendingUpdate};
+use crate::l2::types::bindings::rolldown::storage::types::last_processed_request_on_l2;
+use crate::l2::{types as l2types, HeaderStream, L2Error, L2Interface, PendingUpdate};
 
 pub struct Sequencer<L1, L2> {
     l1: L1,
@@ -33,8 +37,30 @@ where
         Self { l1, l2, chain }
     }
 
+    async fn consume_stream_with_timeout<S>(mut stream: S) -> S
+where
+        S: Stream + Unpin,
+    {
+        loop {
+            // Set a timeout of 1 second
+            let result = timeout(Duration::from_secs(1), stream.next()).await;
+
+            match result {
+                Ok(Some(item)) => { 
+                    tracing::debug!("skipping item");
+                }
+                Ok(None) => { // Stream has ended
+                    panic!("Stream ended.");
+                }
+                Err(_) => {
+                    return stream;
+                }
+            }
+        }
+    }
+
     pub async fn run(&self) -> Result<(), Error> {
-        let mut stream = self.l2.header_stream().await?;
+        let mut stream = self.l2.finalized_header_stream().await?;
         loop {
             let (number, block_hash) = stream.next().await.expect("infinite stream")?;
             let at = block_hash;
@@ -55,12 +81,16 @@ where
                 continue;
             }
 
-            if let Some((update_hash, update)) = self.get_pending_update(block_hash).await? {
-                tracing::info!("Found update to submit: {:?}", update);
-                let result = self.l2.update_l1_from_l2(update, update_hash).await?;
-                if !result {
-                    tracing::error!("update submission failed");
-                    return Err(Error::UpdateSubmissionFailure);
+            if self.has_read_rights_available(block_hash).await? {
+                if let Some((update_hash, update)) = self.get_pending_update(block_hash).await? {
+                    tracing::info!("Found update to submit: {:?}", update);
+                    let result = self.l2.update_l1_from_l2(update, update_hash).await?;
+                    if !result {
+                        tracing::error!("update submission failed");
+                        return Err(Error::UpdateSubmissionFailure);
+                    }else{
+                        stream = Self::consume_stream_with_timeout(stream).await;
+                    }
                 }
             }
 
@@ -149,32 +179,53 @@ where
             .await?)
     }
 
+    #[tracing::instrument(skip(self))]
     pub async fn has_read_rights_available(&self, at: H256) -> Result<bool, Error> {
-        Ok(self.l2.get_read_rights(self.chain.clone(), at).await? > 0)
+        let read_rights = self.l2.get_read_rights(self.chain.clone(), at).await?;
+        tracing::trace!("read rights: {}", read_rights);
+        Ok(read_rights > 0)
     }
 
+    #[tracing::instrument(skip(self))]
     pub async fn has_cancel_rights_available(&self, at: H256) -> Result<bool, Error> {
-        Ok(self.l2.get_cancel_rights(self.chain.clone(), at).await? > 0)
+        let cancel_rights = self.l2.get_cancel_rights(self.chain.clone(), at).await?;
+        tracing::trace!("cancel rights: {}", cancel_rights);
+        Ok(cancel_rights> 0)
     }
 
+    #[tracing::instrument(skip(self))]
     pub async fn get_pending_update(
         &self,
         at: H256,
     ) -> Result<Option<(H256, l2types::L1Update)>, Error> {
         let latest_processed_on_l2 = self.l2.get_latest_processed_request_id(self.chain.clone(), at).await?;
-        let latest_create_on_l1 = self.l1.get_latest_reqeust_id().await?;
-        let start = latest_processed_on_l2.saturating_add(1u128);
-        if let Some(end) = latest_create_on_l1 {
+        let latest_request_l1 = self.l1.get_latest_reqeust_id().await?;
 
-            let update = self.l1.get_update(start, end).await?;
-            let update_hash = self.l1.get_update_hash(start, end).await?;
-            let native_update = self
-                .l2
-                .deserialize_sequencer_update(update.abi_encode())
-                .await?;
-            Ok(Some((update_hash, native_update)))
-        } else {
-            Ok(None)
+        tracing::debug!("latest available on L1: {:?} latest processed on L2 {}", latest_request_l1, latest_processed_on_l2);
+
+        match latest_request_l1 {
+            Some(latest_request_l1) if latest_request_l1 > latest_processed_on_l2 => {
+                tracing::info!("new requests on L1 found");
+                               
+                let start = latest_processed_on_l2.saturating_add(1u128);
+                let end = latest_request_l1;
+
+                let update = self.l1.get_update(start, end).await?;
+                let update_hash = self.l1.get_update_hash(start, end).await?;
+                let native_update = self
+                    .l2
+                    .deserialize_sequencer_update(update.abi_encode())
+                    .await?;
+                Ok(Some((update_hash, native_update)))
+            }
+            Some(_) => {
+                tracing::debug!("all requests are processed");
+                Ok(None)
+            }
+            _ => {
+                tracing::debug!("no requests available yet");
+                Ok(None)
+            },
         }
     }
 
