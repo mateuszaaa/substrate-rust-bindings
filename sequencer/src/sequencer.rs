@@ -1,8 +1,9 @@
 use alloy::sol_types::SolValue;
 use futures::StreamExt;
 use primitive_types::H256;
+use hex::encode as hex_encode;
 
-use crate::l1::{L1Error, L1Interface};
+use crate::l1::{L1Error, L1Interface, types as l1types};
 use crate::l2::{types as l2types, L2Error, L2Interface, PendingUpdate};
 
 pub struct Sequencer<L1, L2> {
@@ -17,6 +18,10 @@ pub enum Error {
     L1Error(#[from] L1Error),
     #[error("L2 error")]
     L2Error(#[from] L2Error),
+    #[error("Cannot deserialize the Cancel prtocol message")]
+    CancelDeserializationFailure,
+    #[error("Update submission failed")]
+    UpdateSubmissionFailure,
 }
 
 impl<L1, L2> Sequencer<L1, L2>
@@ -24,8 +29,51 @@ where
     L1: L1Interface,
     L2: L2Interface,
 {
-    fn new(l1: L1, l2: L2, chain: l2types::Chain) -> Self {
+    pub fn new(l1: L1, l2: L2, chain: l2types::Chain) -> Self {
         Self { l1, l2, chain }
+    }
+
+    pub async fn run(&self) -> Result<(), Error> {
+        let mut stream = self.l2.header_stream().await?;
+        loop {
+            let (number, block_hash) = stream.next().await.expect("infinite stream")?;
+            let at = block_hash;
+
+            tracing::info!("#{} : block hash {}", number, hex_encode(block_hash));
+
+            if self.has_cancel_rights_available(block_hash).await? {
+                if let Some(update) = self.find_malicious_update(at).await? {
+                    tracing::info!("Found malicious update: {}", update);
+                    self.cancel_update(update).await?;
+                    continue;
+                }
+            }
+
+            if let Some(closable) = self.find_closable_cancel_resolutions(at).await?.first() {
+                tracing::info!("Found pending cancel ready to close : {}", closable);
+                let status = self.close_cancel(*closable, at).await?;
+                continue;
+            }
+
+            if let Some((update_hash, update)) = self.get_pending_update(block_hash).await? {
+                tracing::info!("Found update to submit: {:?}", update);
+                let result = self.l2.update_l1_from_l2(update, update_hash).await?;
+                if !result {
+                    tracing::error!("update submission failed");
+                    return Err(Error::UpdateSubmissionFailure);
+                }
+            }
+
+        }
+    }
+
+    pub async fn close_cancel(&self, request_id: u128, at: H256) -> Result<(), Error> {
+        let (merkle_root, range ) = self.l1.get_merkle_root(request_id).await?;
+        let proof = self.l2.get_merkle_proof(request_id, range, self.chain.clone(), at).await?;
+        let cancel_bytes = self.l2.get_abi_encoded_request(request_id, self.chain.clone(), at).await?;
+        let cancel = l1types::Cancel::abi_decode(cancel_bytes.as_ref(), true).or_else(|_| Err(Error::CancelDeserializationFailure))?; 
+        self.l1.close_cancel(cancel, merkle_root.into(), proof).await?;
+        Ok(())
     }
 
     pub async fn find_malicious_update(&self, at: H256) -> Result<Option<u128>, Error> {
@@ -113,10 +161,11 @@ where
         &self,
         at: H256,
     ) -> Result<Option<(H256, l2types::L1Update)>, Error> {
-        let latest_processed_on_l2 = self.l2.get_latest_processed_request_id(at).await?;
+        let latest_processed_on_l2 = self.l2.get_latest_processed_request_id(self.chain.clone(), at).await?;
         let latest_create_on_l1 = self.l1.get_latest_reqeust_id().await?;
         let start = latest_processed_on_l2.saturating_add(1u128);
         if let Some(end) = latest_create_on_l1 {
+
             let update = self.l1.get_update(start, end).await?;
             let update_hash = self.l1.get_update_hash(start, end).await?;
             let native_update = self
@@ -159,7 +208,7 @@ where
 pub (crate) mod test {
     use super::*;
     use crate::l1::types as l1types;
-    use crate::l2::{types as l2types, PendingUpdateWithKeys};
+    use crate::l2::{types as l2types, PendingUpdateWithKeys, HeaderStream};
     use hex_literal::hex;
     use mockall;
     use mockall::predicate::eq;
@@ -176,6 +225,7 @@ pub (crate) mod test {
             async fn get_update_hash(&self, start: u128, end: u128) ->  Result<H256, L1Error>;
             async fn close_cancel(&self, cancel: l1types::Cancel, merkle_root:H256, proof: Vec<H256>) -> Result<H256, L1Error>;
             async fn get_latest_finalized_request_id(&self) -> Result<Option<u128>, L1Error>;
+            async fn get_merkle_root(&self, request_id: u128) -> Result<([u8; 32], (u128, u128)), L1Error>;
         }
     }
 
@@ -183,7 +233,7 @@ pub (crate) mod test {
         pub L2 {}
 
         impl L2Interface for L2{
-            async fn get_latest_processed_request_id(&self, at: H256) -> Result<u128, L2Error>;
+            async fn get_latest_processed_request_id(&self, chain: l2types::Chain, at: H256) -> Result<u128, L2Error>;
             async fn get_read_rights(&self, chain: l2types::Chain, at: H256) -> Result<u128, L2Error>;
             async fn get_cancel_rights(&self, chain: l2types::Chain, at: H256) -> Result<u128, L2Error>;
             async fn get_pending_updates(&self, at: H256) -> Result<Vec<PendingUpdateWithKeys>, L2Error>;
@@ -193,6 +243,10 @@ pub (crate) mod test {
             async fn get_pending_cancels( &self, chain: l2types::Chain, at: H256) -> Result<Vec<u128>, L2Error>;
             async fn get_merkle_proof( &self, request_id: u128, range : (u128, u128), chain: l2types::Chain, at: H256) -> Result<Vec<H256>, L2Error>;
             async fn get_l2_request_hash( &self, request_id: u128, chain: l2types::Chain, at: H256) -> Result<Option<H256>, L2Error>;
+            async fn header_stream( &self) -> Result<HeaderStream, L2Error>;
+            async fn finalized_header_stream( &self) -> Result<HeaderStream, L2Error>;
+            async fn get_selected_sequencer( &self, chain: l2types::Chain, at: H256) -> Result<Option<[u8; 20]>, L2Error>;
+            async fn get_abi_encoded_request( &self, request_id : u128, chain: l2types::Chain, at: H256) -> Result<Vec<u8>, L2Error>;
         }
     }
 
@@ -214,7 +268,7 @@ pub (crate) mod test {
     pub struct UpdateBuilder(Vec<Request>);
 
     pub fn to_u256(value: u128) -> l2types::bindings::runtime_types::primitive_types::U256 {
-        let x = primitive_types::U256::from(7u128);
+        let x = primitive_types::U256::from(value);
         let data = x.to_big_endian();
         l2types::bindings::runtime_types::primitive_types::U256::decode(&mut &data[..]).unwrap()
     }
@@ -246,7 +300,7 @@ pub (crate) mod test {
             self
         }
 
-        pub fn build(mut self, chain: l2types::Chain) -> l2types::L1Update {
+        pub fn build(self, chain: l2types::Chain) -> l2types::L1Update {
             let mut result = l2types::L1Update {
                 chain,
                 pendingDeposits: vec![],
@@ -300,8 +354,6 @@ pub (crate) mod test {
     #[tokio::test]
     async fn test_find_malicious_update_ignores_updates_from_other_chains() {
         let update_hash = H256::zero();
-        let correct_hash = update_hash.clone();
-
         let update = UpdateBuilder::new().with_dummy_deposit(1u128).build(ARBITRUM);
         let pending: PendingUpdateWithKeys = (1u128, update, update_hash);
 
@@ -355,8 +407,6 @@ pub (crate) mod test {
 
     #[tokio::test]
     async fn test_find_pending_cancels_to_close() {
-        let update = UpdateBuilder::new().with_dummy_deposit(1u128).build(ETHEREUM);
-
         let mut l1mock = MockL1::new();
         l1mock
             .expect_get_latest_finalized_request_id()
@@ -377,8 +427,6 @@ pub (crate) mod test {
 
     #[tokio::test]
     async fn test_find_pending_cancels_to_close2() {
-        let update = UpdateBuilder::new().with_dummy_deposit(1u128).build(ETHEREUM);
-
         let mut l1mock = MockL1::new();
         l1mock
             .expect_get_latest_finalized_request_id()
@@ -417,4 +465,25 @@ pub (crate) mod test {
 
         assert_eq!(result.unwrap(), vec![]);
     }
+
+    #[tokio::test]
+    async fn test_get_pending_update_when_there_are_no_requests() {
+        let mut l1mock = MockL1::new();
+        l1mock
+            .expect_get_latest_reqeust_id()
+            .return_once(|| Ok(None));
+
+        let mut l2mock = MockL2::new();
+        l2mock.expect_get_latest_processed_request_id()
+            .return_once(|_,_| Ok(0u128));
+
+        l1mock.expect_get_update().times(0);
+
+        let sequencer = Sequencer::new(l1mock, l2mock, ETHEREUM);
+
+        let update = sequencer.get_pending_update(H256::zero()).await;
+        assert!(matches!(update, Ok(None)));
+    }
+
+
 }

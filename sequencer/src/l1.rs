@@ -1,7 +1,8 @@
-use alloy::network::Ethereum;
-use alloy::primitives::Uint;
+use alloy::network::{Ethereum, EthereumWallet, TxSigner};
+use alloy::signers::local::PrivateKeySigner;
+use hex_literal::hex;
 use alloy::providers::fillers::{
-    BlobGasFiller, ChainIdFiller, FillProvider, GasFiller, JoinFill, NonceFiller,
+    BlobGasFiller, ChainIdFiller, FillProvider, GasFiller, JoinFill, NonceFiller, WalletFiller,
 };
 use alloy::sol_types::SolValue;
 use alloy::transports::BoxTransport;
@@ -34,6 +35,7 @@ pub trait L1Interface {
     async fn get_update(&self, start: u128, end: u128) -> Result<types::L1Update, L1Error>;
     async fn get_update_hash(&self, start: u128, end: u128) -> Result<H256, L1Error>;
     async fn get_latest_reqeust_id(&self) -> Result<Option<u128>, L1Error>;
+    async fn get_merkle_root(&self, request_id: u128) -> Result<([u8; 32], (u128, u128)), L1Error>;
     async fn get_latest_finalized_request_id(&self) -> Result<Option<u128>, L1Error>;
     async fn close_cancel(
         &self,
@@ -47,8 +49,14 @@ pub type RolldownInstanceType = bindings::rolldown::Rolldown::RolldownInstance<
     BoxTransport,
     FillProvider<
         JoinFill<
-            Identity,
-            JoinFill<GasFiller, JoinFill<BlobGasFiller, JoinFill<NonceFiller, ChainIdFiller>>>,
+            JoinFill<Identity,
+                JoinFill<GasFiller, 
+                    JoinFill<BlobGasFiller, 
+                        JoinFill<NonceFiller, ChainIdFiller>
+                    >
+                >,
+            >,
+            WalletFiller<EthereumWallet>,
         >,
         RootProvider<BoxTransport>,
         BoxTransport,
@@ -56,39 +64,81 @@ pub type RolldownInstanceType = bindings::rolldown::Rolldown::RolldownInstance<
     >,
 >;
 
+
 pub struct RolldownContract {
     contract_handle: RolldownInstanceType,
 }
 
 impl RolldownContract {
-    pub async fn new(uri: &str, address: [u8; 20]) -> Result<Self, L1Error> {
-        let provider = Box::new(ProviderBuilder::new()
+    pub async fn new(uri: &str, address: [u8; 20], private_key: [u8; 32]) -> Result<Self, L1Error> {
+
+        let signer: PrivateKeySigner = hex::encode(private_key).parse().expect("valid private key");
+        let wallet = EthereumWallet::new(signer);
+        let provider = ProviderBuilder::new()
+            // .wallet(hex!("ac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80"))
             .with_recommended_fillers()
+            .wallet(wallet)
             .on_builtin(uri)
-            .await?);
+            .await?;
         Ok(Self {
             contract_handle: bindings::rolldown::Rolldown::RolldownInstance::new(
                 address.into(),
-                provider,
-            ),
+                provider.clone(),
+            )
         })
     }
 
+    #[cfg(test)]
+    #[tracing::instrument(skip(self))]
     pub async fn deposit_erc20(&self, token: [u8;20], amount: u128, ferry_tip: u128) -> Result<(), L1Error> {
+        use hex::encode as hex_encode;
+
+        let provider = self.contract_handle.provider().clone();
+        let erc20_handle = bindings::ierc20::IERC20::IERC20Instance::new(
+            token.into(),
+            provider
+            );
+
+        let call = erc20_handle.approve(
+            self.contract_handle.address().clone(),
+            alloy::primitives::U256::from(amount), 
+        );
+
+        tracing::trace!("approve send");
+        let builder = call.send().await?;
+        let hash = builder.watch().await?;
+        tracing::debug!("approve hash: {}", hex_encode(hash));
+
+
         let call = self.contract_handle.deposit_erc20_0(
                 token.into(), 
                 alloy::primitives::U256::from(amount), 
                 alloy::primitives::U256::from(ferry_tip)
         );
 
-        let result = call.send().await.unwrap();
-        let hash = result.watch().await.unwrap();
-        println!("hello world {:?}", hash);
+        let hash = call.send().await?.watch().await?;
+        tracing::debug!("deposit hash: {}", hex_encode(hash));
+
         Ok(())
     }
 }
 
 impl L1Interface for RolldownContract {
+    #[tracing::instrument(skip(self))]
+    async fn get_merkle_root(&self, request_id: u128) -> Result<([u8; 32], (u128, u128)), L1Error>{
+
+        let request_id = alloy::primitives::U256::from(request_id);
+        let call = self.contract_handle.find_l2_batch(request_id);
+        let merkle_root = call.call().await?._0;
+
+        let call = self.contract_handle.merkleRootRange(merkle_root);
+        let range = call.call().await?;
+
+        let range_start = range.start.try_into().or_else(|_| Err(L1Error::OverflowError))?;
+        let range_end = range.end.try_into().or_else(|_| Err(L1Error::OverflowError))?;
+        Ok((merkle_root.0, (range_start, range_end)))
+    }
+
     #[tracing::instrument(skip(self))]
     async fn get_latest_reqeust_id(&self) -> Result<Option<u128>, L1Error> {
         let call = self.contract_handle.counter();
@@ -97,7 +147,11 @@ impl L1Interface for RolldownContract {
             ._0
             .try_into()
             .or_else(|_| Err(L1Error::OverflowError))?;
-        Ok(next_request_id.checked_sub(1u128))
+        if next_request_id == 1 {
+            Ok(None)
+        }else{
+            Ok(next_request_id.checked_sub(1u128))
+        }
     }
 
     #[tracing::instrument(skip(self))]
@@ -137,8 +191,8 @@ impl L1Interface for RolldownContract {
                 return Err(L1Error::InvalidRange);
             }
 
-            let range_start = Uint::<256, 4>::from(start);
-            let range_end = Uint::<256, 4>::from(end);
+            let range_start = alloy::primitives::U256::from(start);
+            let range_end = alloy::primitives::U256::from(end);
             let call = self
                 .contract_handle
                 .getPendingRequests(range_start, range_end);
@@ -211,16 +265,14 @@ mod test{
     #[serial]
     #[tokio::test]
     async fn test_can_connect() {
-        RolldownContract::new(URI, ROLLDOWN_ADDRESS).await.unwrap();
+        RolldownContract::new(URI, ROLLDOWN_ADDRESS, ALICE_PKEY).await.unwrap();
     }
 
     #[serial]
     #[tokio::test]
     async fn test_can_latest_request_id() {
-        let rolldown = RolldownContract::new(URI, ROLLDOWN_ADDRESS).await.unwrap();
-        rolldown.deposit_erc20(TOKEN_ADDRESS, 1000, 10);
-        // rolldown.deposit_erc20(DUMMY_ADDRESS, token, amount, ferry_tip)
-        // rolldown.get_latest_reqeust_id().await.unwrap();
+        let rolldown = RolldownContract::new(URI, ROLLDOWN_ADDRESS, ALICE_PKEY).await.unwrap();
+        rolldown.deposit_erc20(TOKEN_ADDRESS, 1000, 10).await.unwrap();
     }
 
 

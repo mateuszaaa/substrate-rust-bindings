@@ -1,13 +1,11 @@
 use std::collections::HashMap;
 use std::pin::Pin;
-use std::sync::Arc;
 
 use futures::Stream;
 use hex::encode as hex_encode;
 
 use futures::StreamExt;
 use primitive_types::H256;
-use subxt::config::ExtrinsicParams;
 use subxt::config::Header;
 use subxt::ext::subxt_core;
 use subxt::ext::subxt_core::storage::address::StorageHashers;
@@ -31,6 +29,7 @@ pub mod types {
 }
 
 pub type PendingUpdateWithKeys = (u128, types::L1Update, H256);
+pub type HeaderStream = Pin<Box<dyn Stream<Item = Result<(u32, H256), L2Error>> + Send + 'static>>;
 
 #[derive(Debug)]
 pub struct PendingUpdate {
@@ -47,6 +46,7 @@ pub type L2Event = EventRecord<RuntimeEvent, H256>;
 pub trait L2Interface {
     async fn get_latest_processed_request_id(
         &self,
+        chain: types::Chain,
         at: HashOf<GaspConfig>,
     ) -> Result<u128, L2Error>;
     async fn get_read_rights(
@@ -54,6 +54,11 @@ pub trait L2Interface {
         chain: types::Chain,
         at: HashOf<GaspConfig>,
     ) -> Result<u128, L2Error>;
+    async fn get_selected_sequencer(
+        &self,
+        chain: types::Chain,
+        at: HashOf<GaspConfig>,
+    ) -> Result<Option<[u8; 20]>, L2Error>;
     async fn get_cancel_rights(
         &self,
         chain: types::Chain,
@@ -93,6 +98,17 @@ pub trait L2Interface {
         chain: types::Chain,
         at: HashOf<GaspConfig>,
     ) -> Result<Option<H256>, L2Error>;
+
+    async fn header_stream( &self,) -> Result<HeaderStream, L2Error>;
+
+    async fn finalized_header_stream(&self) -> Result<HeaderStream, L2Error>;
+
+    async fn get_abi_encoded_request(
+        &self,
+        request_id: u128,
+        chain: types::Chain,
+        at: HashOf<GaspConfig>,
+    ) -> Result<Vec<u8>, L2Error>;
 }
 
 pub struct Gasp {
@@ -165,22 +181,6 @@ impl Gasp {
         Ok(())
     }
 
-    pub async fn header_stream(
-        &self,
-    ) -> Result<Pin<Box<dyn Stream<Item = Result<(u32, H256), L2Error>> + Send + 'static>>, L2Error>
-    {
-        Ok(self
-            .client
-            .backend()
-            .stream_best_block_headers()
-            .await?
-            .map(|elem| {
-                elem.map(|(header, hash)| (header.number, hash.hash()))
-                    .map_err(|err| L2Error::from(err))
-            })
-            .boxed())
-    }
-
     pub async fn last_finalized(&self) -> Result<HashOf<GaspConfig>, L2Error> {
         Ok(self
             .client
@@ -191,12 +191,11 @@ impl Gasp {
     }
 
     pub async fn latest_block(&self) -> Result<(u32, HashOf<GaspConfig>), L2Error> {
-        let mut stream = self.client.backend().stream_all_block_headers().await?;
-        Ok(stream
+        let mut stream = self.header_stream().await?;
+        stream
             .next()
             .await
             .ok_or(L2Error::HeaderSubscriptionFailed)?
-            .map(|elem| (elem.0.number(), elem.1.hash().into()))?)
     }
 
     pub async fn new(uri: &str, secret_key: [u8; 32]) -> Result<Self, L2Error> {
@@ -221,14 +220,14 @@ impl Gasp {
 
     #[tracing::instrument(skip(self))]
     async fn wait_for_tx_execution(&self, tx_hash: HashOf<GaspConfig>) -> Result<bool, L2Error> {
-        let mut stream = self.client.backend().stream_best_block_headers().await?;
+        let mut stream = self.finalized_header_stream().await?;
 
         while let Some(header) = stream.next().await {
-            let (header, hash) = header?;
+            let (number, hash) = header?;
 
             tracing::debug!(
                 "checking block #{} {}",
-                header.number(),
+                number,
                 hex_encode(tx_hash),
             );
 
@@ -240,7 +239,7 @@ impl Gasp {
                 .enumerate()
                 .find(|(_, extrinsic)| extrinsic.hash() == tx_hash)
             {
-                let events = self.get_events(hash.hash()).await?;
+                let events = self.get_events(hash.into()).await?;
                 let events = events
                     .iter()
                     .filter(|elem| {
@@ -302,10 +301,9 @@ impl L2Interface for Gasp {
     #[tracing::instrument(skip(self))]
     async fn get_latest_processed_request_id(
         &self,
+        chain: types::Chain,
         at: HashOf<GaspConfig>,
     ) -> Result<u128, L2Error> {
-        //NOTE: use through parameter
-        let chain = gasp::api::rolldown::calls::types::cancel_requests_from_l1::Chain::Ethereum;
         let storage = gasp::api::storage()
             .rolldown()
             .last_processed_request_on_l2(chain);
@@ -342,6 +340,28 @@ impl L2Interface for Gasp {
             .get(&self.keypair.address())
             .map(|elem| elem.read_rights)
             .ok_or(L2Error::CanNotFetchRights)
+    }
+
+    async fn get_selected_sequencer(
+        &self,
+        chain: types::Chain,
+        at: HashOf<GaspConfig>,
+    ) -> Result<Option<[u8; 20]>, L2Error>{
+        let storage = gasp::api::storage().sequencer_staking().selected_sequencer();
+        let selected = self
+            .client
+            .storage()
+            .at(at)
+            .fetch(&storage)
+            .await?
+            .unwrap_or_default();
+
+        let selected = selected.iter()
+            .find(|(c, account)| {
+                account.0 == self.keypair.address().into_inner() && c == &chain
+            });
+
+        Ok(selected.map(|(_, account)| account.0))
     }
 
     #[tracing::instrument(skip(self))]
@@ -429,7 +449,7 @@ impl L2Interface for Gasp {
             .await?
             .ok_or(L2Error::PendingCancelFetchError)?
             .into_iter()
-            .filter(|(account, request_id, role)| account.0 == self.keypair.address().into_inner())
+            .filter(|(account, _request_id, _role)| account.0 == self.keypair.address().into_inner())
             .map(|(_account, request_id, _role)| request_id)
             .collect::<Vec<_>>();
 
@@ -517,6 +537,28 @@ impl L2Interface for Gasp {
     }
 
     #[tracing::instrument(skip(self))]
+    async fn get_abi_encoded_request(
+        &self,
+        request_id: u128,
+        chain: types::Chain,
+        at: HashOf<GaspConfig>,
+    ) -> Result<Vec<u8>, L2Error> {
+        let call = gasp::api::runtime_apis::rolldown_runtime_api::RolldownRuntimeApi
+            .get_abi_encoded_l2_request(chain, request_id);
+
+        let abi_encoded_request = self
+            .client
+            .runtime_api()
+            .at_latest()
+            .await?
+            .call(call)
+            .await?;
+
+
+        Ok(abi_encoded_request)
+    }
+
+    #[tracing::instrument(skip(self))]
     async fn get_l2_request_hash(
         &self,
         request_id: u128,
@@ -545,6 +587,39 @@ impl L2Interface for Gasp {
 
         Ok(reqeust_hash)
     }
+
+    async fn header_stream(
+        &self,
+    ) -> Result<HeaderStream, L2Error>
+    {
+        Ok(self
+            .client
+            .backend()
+            .stream_best_block_headers()
+            .await?
+            .map(|elem| {
+                elem.map(|(header, hash)| (header.number, hash.hash()))
+                    .map_err(|err| L2Error::from(err))
+            })
+            .boxed())
+    }
+
+    async fn finalized_header_stream(
+        &self,
+    ) -> Result<HeaderStream, L2Error>
+    {
+        Ok(self
+            .client
+            .backend()
+            .stream_finalized_block_headers()
+            .await?
+            .map(|elem| {
+                elem.map(|(header, hash)| (header.number, hash.hash()))
+                    .map_err(|err| L2Error::from(err))
+            })
+            .boxed())
+    }
+
 }
 
 #[cfg(test)]
@@ -696,7 +771,7 @@ mod test {
             .await
             .expect("can connect to gasp");
         let at = gasp.latest_block().await.unwrap().1;
-        let latest_req_id = gasp.get_latest_processed_request_id(at).await.unwrap();
+        let latest_req_id = gasp.get_latest_processed_request_id(ETHEREUM, at).await.unwrap();
         let next_req_id = latest_req_id.saturating_add(1u128);
         let update = UpdateBuilder::new()
             .with_request(Request::Deposit(types::Deposit {
