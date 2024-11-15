@@ -62,16 +62,29 @@ pub struct RolldownContract {
 
 impl RolldownContract {
     pub async fn new(uri: &str, address: [u8; 20]) -> Result<Self, L1Error> {
-        let provider = ProviderBuilder::new()
+        let provider = Box::new(ProviderBuilder::new()
             .with_recommended_fillers()
             .on_builtin(uri)
-            .await?;
+            .await?);
         Ok(Self {
             contract_handle: bindings::rolldown::Rolldown::RolldownInstance::new(
                 address.into(),
                 provider,
             ),
         })
+    }
+
+    pub async fn deposit_erc20(&self, token: [u8;20], amount: u128, ferry_tip: u128) -> Result<(), L1Error> {
+        let call = self.contract_handle.deposit_erc20_0(
+                token.into(), 
+                alloy::primitives::U256::from(amount), 
+                alloy::primitives::U256::from(ferry_tip)
+        );
+
+        let result = call.send().await.unwrap();
+        let hash = result.watch().await.unwrap();
+        println!("hello world {:?}", hash);
+        Ok(())
     }
 }
 
@@ -179,9 +192,12 @@ impl L1Interface for RolldownContract {
 mod test{
     use super::*;
     use hex_literal::hex;
+    use serial_test::serial;
 
     const URI: &'static str = "http://localhost:8545";
     const DUMMY_ADDRESS: [u8; 20] = hex!("0000000000000000000000000000000000000000");
+    const ROLLDOWN_ADDRESS: [u8; 20] = hex!("1429859428C0aBc9C2C47C8Ee9FBaf82cFA0F20f");
+    const TOKEN_ADDRESS: [u8; 20] = hex!("FD471836031dc5108809D173A067e8486B9047A3");
     const ALICE_PKEY: [u8; 32] = hex!("dbda1821b80551c9d65939329250298aa3472ba22feea921c0cf5d620ea67b97");
     // const ETHEREUM: l2types::Chain = l2types::Chain::Ethereum;
     // const ARBITRUM: l2types::Chain = l2types::Chain::Arbitrum;
@@ -192,10 +208,20 @@ mod test{
     // async fn get_latest_finalized_request_id(&self) -> Result<Option<u128>, L1Error>;
     // async fn close_cancel( &self, cancel: types::Cancel, merkle_root: H256, proof: Vec<H256>) -> Result<H256, L1Error>;
 
+    #[serial]
     #[tokio::test]
-    async fn test_find_malicious_update_ignores_valid_updates() {
-        // let rolldown = RolldownContract::new(URI, DUMMY_ADDRESS).await.unwrap();
-        // rolldown;
+    async fn test_can_connect() {
+        RolldownContract::new(URI, ROLLDOWN_ADDRESS).await.unwrap();
     }
+
+    #[serial]
+    #[tokio::test]
+    async fn test_can_latest_request_id() {
+        let rolldown = RolldownContract::new(URI, ROLLDOWN_ADDRESS).await.unwrap();
+        rolldown.deposit_erc20(TOKEN_ADDRESS, 1000, 10);
+        // rolldown.deposit_erc20(DUMMY_ADDRESS, token, amount, ferry_tip)
+        // rolldown.get_latest_reqeust_id().await.unwrap();
+    }
+
 
 }

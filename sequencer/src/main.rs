@@ -22,7 +22,7 @@ pub enum Error {
 #[tokio::main]
 pub async fn main() {
     let filter = tracing_subscriber::EnvFilter::builder()
-        .with_default_directive(LevelFilter::INFO.into())
+        .with_default_directive(LevelFilter::TRACE.into())
         .from_env_lossy();
     // .add_directive("keepalive=info".parse()?)
     // .add_directive("p2p_playground=info".parse()?);
@@ -30,35 +30,38 @@ pub async fn main() {
     tracing_subscriber::fmt().with_env_filter(filter).init();
 
     if let Err(err) = run().await {
-        eprintln!("{err:?}");
+        tracing::error!("{err:?}");
     }
 }
 
 async fn run() -> Result<(), Error> {
     println!("Connection established.");
 
-    let gasp = Gasp::new(
-        "ws://127.0.0.1:9944",
-        hex!("5fb92d6e98884f76de468fa3f6278f8807c48bebc13595d45af5bdc4da702133"),
-    )
-    .await?;
+    // let gasp = Gasp::new(
+    //     "ws://127.0.0.1:9944",
+    //     hex!("5fb92d6e98884f76de468fa3f6278f8807c48bebc13595d45af5bdc4da702133"),
+    // )
+    // .await?;
     let r = RolldownContract::new(
         "http://localhost:8545",
         hex!("1429859428C0aBc9C2C47C8Ee9FBaf82cFA0F20f"),
     )
     .await?;
-    let at = gasp.latest_block().await?.1;
-    let latest_processed_on_l2 = gasp.get_latest_processed_request_id(at).await?;
-    let latest_create_on_l1 = r.get_latest_reqeust_id().await?;
-    let start = latest_processed_on_l2.saturating_add(1u128);
-    let end = latest_create_on_l1.unwrap();
 
-    let update = r.get_update(start, end).await?;
-    let update_hash = r.get_update_hash(start, end).await?;
-    let gasp_update = gasp
-        .deserialize_sequencer_update(update.abi_encode())
-        .await?;
-    println!("update {:?}", gasp_update);
+    let result =  r.deposit_erc20(hex!("FD471836031dc5108809D173A067e8486B9047A3"), 1000, 10).await?;
 
+    // let at = gasp.latest_block().await?.1;
+    // let latest_processed_on_l2 = gasp.get_latest_processed_request_id(at).await?;
+    // let latest_create_on_l1 = r.get_latest_reqeust_id().await?;
+    // let start = latest_processed_on_l2.saturating_add(1u128);
+    // let end = latest_create_on_l1.unwrap();
+    //
+    // let update = r.get_update(start, end).await?;
+    // let update_hash = r.get_update_hash(start, end).await?;
+    // let gasp_update = gasp
+    //     .deserialize_sequencer_update(update.abi_encode())
+    //     .await?;
+    // println!("update {:?}", gasp_update);
+    //
     Ok(())
 }
