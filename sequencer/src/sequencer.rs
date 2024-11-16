@@ -65,7 +65,7 @@ where
 
             tracing::info!("#{} : block hash {}", number, hex_encode(block_hash));
 
-            if self.has_cancel_rights_available(block_hash).await? {
+            if self.has_cancel_rights_available().await? {
                 if let Some(update) = self.find_malicious_update(at).await? {
                     tracing::info!("Found malicious update: {}", update);
                     self.cancel_update(update).await?;
@@ -76,11 +76,11 @@ where
 
             if let Some(closable) = self.find_closable_cancel_resolutions(at).await?.first() {
                 tracing::info!("Found pending cancel ready to close : {}", closable);
-                let status = self.close_cancel(*closable, at).await?;
+                self.close_cancel(*closable, at).await?;
                 continue;
             }
 
-            if self.has_read_rights_available(block_hash).await? && self.is_selected_sequencer(block_hash).await? {
+            if self.has_read_rights_available().await? && self.is_selected_sequencer().await? {
                 if let Some((update_hash, update)) = self.get_pending_update(block_hash).await? {
                     tracing::info!("Found update to submit: {:?}", update);
                     let result = self.l2.update_l1_from_l2(update, update_hash).await?;
@@ -155,10 +155,13 @@ where
         let l1handle = &self.l1;
 
         let mut verified = futures::stream::iter(updates).map(|update| async {
-            let correct_hash = l1handle
+            match l1handle
                 .get_update_hash(update.range.0, update.range.1)
-                .await?;
-            Ok::<_, Error>((correct_hash, update))
+                .await{
+                    Ok(correct_hash) => Ok((correct_hash, update)),
+                    Err(L1Error::InvalidRange) => Ok((H256::zero(), update)),
+                    Err(e) => Err(Error::from(e)),
+            }
         });
 
         while let Some(result) = verified.next().await {
@@ -179,14 +182,16 @@ where
     }
 
     #[tracing::instrument(skip(self))]
-    pub async fn has_read_rights_available(&self, at: H256) -> Result<bool, Error> {
+    pub async fn has_read_rights_available(&self) -> Result<bool, Error> {
+        let at = self.get_latest_block_hash().await?;
         let read_rights = self.l2.get_read_rights(self.chain.clone(), at).await?;
         tracing::trace!("read rights: {}", read_rights);
         Ok(read_rights > 0)
     }
 
     #[tracing::instrument(skip(self))]
-    pub async fn is_selected_sequencer(&self, at: H256) -> Result<bool, Error> {
+    pub async fn is_selected_sequencer(&self) -> Result<bool, Error> {
+        let at = self.get_latest_block_hash().await?;
         if let Some(selected) = self.l2.get_selected_sequencer(self.chain.clone(), at).await? {
             Ok(selected == self.address)
         }else{
@@ -195,10 +200,20 @@ where
     }
 
     #[tracing::instrument(skip(self))]
-    pub async fn has_cancel_rights_available(&self, at: H256) -> Result<bool, Error> {
+    pub async fn has_cancel_rights_available(&self) -> Result<bool, Error> {
+        let at = self.get_latest_block_hash().await?;
         let cancel_rights = self.l2.get_cancel_rights(self.chain.clone(), at).await?;
         tracing::trace!("cancel rights: {}", cancel_rights);
         Ok(cancel_rights> 0)
+    }
+
+    pub async fn get_latest_block_hash(&self) -> Result<H256, Error> {
+        Ok(self.l2.header_stream()
+            .await?
+            .next()
+            .await
+            .ok_or(L2Error::HeaderSubscriptionFailed)?
+            .map(|(_, hash)| hash)?)
     }
 
     #[tracing::instrument(skip(self))]
@@ -628,5 +643,35 @@ pub (crate) mod test {
         sequencer.get_pending_update(H256::zero()).await.unwrap();
     }
 
+
+    #[tokio::test]
+    async fn test_find_malicious_update_with_invalid_range_works() {
+        let update_hash = H256::from(hex!(
+            "1111111111111111111111111111111111111111111111111111111111111111"
+        ));
+        let update = UpdateBuilder::new().with_dummy_deposit(1u128).build(ETHEREUM);
+        let pending: PendingUpdateWithKeys = (33u128, update, update_hash);
+
+        let mut l1mock = MockL1::new();
+        l1mock
+            .expect_get_update_hash()
+            .with(eq(1u128), eq(1u128))
+            .times(1)
+            .returning(move |_, _| Err(L1Error::InvalidRange));
+
+        let mut l2mock = MockL2::new();
+        l2mock.expect_address().return_const(DUMMY_ADDRESS);
+        l2mock
+            .expect_get_pending_updates()
+            .times(1)
+            .return_once(move |_| Ok(vec![pending]));
+
+        let sequencer = Sequencer::new(l1mock, l2mock, ETHEREUM, 100u128);
+
+        assert_eq!(
+            sequencer.find_malicious_update(H256::zero()).await.unwrap(),
+            Some(33u128)
+        );
+    }
 
 }
