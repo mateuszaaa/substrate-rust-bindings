@@ -194,7 +194,6 @@ where
         }
     }
 
-
     #[tracing::instrument(skip(self))]
     pub async fn has_cancel_rights_available(&self, at: H256) -> Result<bool, Error> {
         let cancel_rights = self.l2.get_cancel_rights(self.chain.clone(), at).await?;
@@ -214,7 +213,6 @@ where
 
         match latest_request_l1 {
             Some(latest_request_l1) if latest_request_l1 > latest_processed_on_l2 => {
-                               
                 let start = latest_processed_on_l2.saturating_add(1u128);
                 let end = std::cmp::min(latest_request_l1, start.saturating_add(self.limit));
                 tracing::info!("new requests availabla, fetching range {}..{}", start, end);
@@ -593,13 +591,6 @@ pub (crate) mod test {
 
     #[tokio::test]
     async fn test_get_pending_update_when_there_are_too_many_requests_for_single_update() {
-        // use tracing::level_filters::LevelFilter;
-        // let filter = tracing_subscriber::EnvFilter::builder()
-        //     .with_default_directive(LevelFilter::INFO.into())
-        //     .from_env_lossy()
-        //     .add_directive("sequencer=trace".parse().expect("proper directive"));
-        // tracing_subscriber::fmt().with_env_filter(filter).init();
-        //
 
         let mut l1mock = MockL1::new();
         l1mock

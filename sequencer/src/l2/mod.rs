@@ -452,7 +452,7 @@ impl L2Interface for Gasp {
             .at(at)
             .fetch(&storage_entry)
             .await?
-            .ok_or(L2Error::PendingCancelFetchError)?
+            .unwrap_or_default()
             .into_iter()
             .filter(|(account, _request_id, _role)| account.0 == self.keypair.address().into_inner())
             .map(|(_account, request_id, _role)| request_id)

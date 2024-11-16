@@ -90,37 +90,23 @@ impl RolldownContract {
 
     #[cfg(test)]
     #[tracing::instrument(skip(self))]
-    pub async fn deposit_erc20(&self, token: [u8;20], amount: u128, ferry_tip: u128) -> Result<(), L1Error> {
+    pub async fn deposit(&self, amount: u128, ferry_tip: u128) -> Result<(), L1Error> {
+        use alloy::providers::Provider;
         use hex::encode as hex_encode;
 
-        let provider = self.contract_handle.provider().clone();
-        let erc20_handle = bindings::ierc20::IERC20::IERC20Instance::new(
-            token.into(),
-            provider
-            );
-
-        let call = erc20_handle.approve(
-            self.contract_handle.address().clone(),
-            alloy::primitives::U256::from(amount), 
-        );
-
-        tracing::trace!("approve send");
-        let builder = call.send().await?;
-        let hash = builder.watch().await?;
-        tracing::debug!("approve hash: {}", hex_encode(hash));
 
 
-        let call = self.contract_handle.deposit_erc20_0(
-                token.into(), 
-                alloy::primitives::U256::from(amount), 
+        let call = self.contract_handle.deposit_native_1(
                 alloy::primitives::U256::from(ferry_tip)
-        );
+        ).value(alloy::primitives::U256::from(amount));
 
-        let hash = call.send().await?.watch().await?;
+        let hash = call.send().await?
+            .watch().await?;
         tracing::debug!("deposit hash: {}", hex_encode(hash));
 
         Ok(())
     }
+
 }
 
 impl L1Interface for RolldownContract {
@@ -272,8 +258,31 @@ mod test{
     #[tokio::test]
     async fn test_can_latest_request_id() {
         let rolldown = RolldownContract::new(URI, ROLLDOWN_ADDRESS, ALICE_PKEY).await.unwrap();
-        rolldown.deposit_erc20(TOKEN_ADDRESS, 1000, 10).await.unwrap();
+        rolldown.deposit(1000, 10).await.unwrap();
+        assert!(matches!(rolldown.get_latest_reqeust_id().await.expect("can fetch request"), Some(latest) if latest > 0));
     }
 
+    #[serial]
+    #[tokio::test]
+    async fn test_can_fetch_update_and_update_hash() {
+        use alloy::sol_types::SolValue;
+
+        let rolldown = RolldownContract::new(URI, ROLLDOWN_ADDRESS, ALICE_PKEY).await.unwrap();
+        rolldown.deposit(1000, 10).await.unwrap();
+        let latest_update_first= rolldown.get_latest_reqeust_id().await.expect("can fetch request").unwrap();
+
+        rolldown.deposit(1000, 10).await.unwrap();
+        let latest_update_second= rolldown.get_latest_reqeust_id().await.expect("can fetch request").unwrap();
+
+        assert!(latest_update_first < latest_update_second);
+
+        let update1 = rolldown.get_update(1u128, latest_update_first).await.unwrap();
+        let update2 = rolldown.get_update(1u128, latest_update_second).await.unwrap();
+        let hash1 = rolldown.get_update_hash(1u128, latest_update_first).await.unwrap();
+        let hash2 = rolldown.get_update_hash(1u128, latest_update_second).await.unwrap();
+
+        assert!(hash1 != hash2);
+        assert!(update1.abi_encode() != update2.abi_encode());
+    }
 
 }
