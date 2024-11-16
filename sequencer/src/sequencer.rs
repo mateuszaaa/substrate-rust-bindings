@@ -4,6 +4,7 @@ use alloy::sol_types::SolValue;
 use futures::{Stream, StreamExt};
 use primitive_types::H256;
 use hex::encode as hex_encode;
+use tokio::time::error::Elapsed;
 use tokio::time::timeout;
 
 use crate::l1::{L1Error, L1Interface, types as l1types};
@@ -14,6 +15,7 @@ pub struct Sequencer<L1, L2> {
     l1: L1,
     l2: L2,
     chain: l2types::Chain,
+    limit: u128,
 }
 
 #[derive(Debug, thiserror::Error)]
@@ -33,26 +35,21 @@ where
     L1: L1Interface,
     L2: L2Interface,
 {
-    pub fn new(l1: L1, l2: L2, chain: l2types::Chain) -> Self {
-        Self { l1, l2, chain }
+    pub fn new(l1: L1, l2: L2, chain: l2types::Chain, limit: u128) -> Self {
+        Self { l1, l2, chain, limit }
     }
 
-    async fn consume_stream_with_timeout<S>(mut stream: S) -> S
-where
-        S: Stream + Unpin,
+    // consume all items that are available instantely, return on first item 
+    // that required more than 1s of waiting
+    async fn consume_stream_with_timeout(mut stream: HeaderStream) -> HeaderStream
     {
         loop {
-            // Set a timeout of 1 second
             let result = timeout(Duration::from_secs(1), stream.next()).await;
-
             match result {
-                Ok(Some(item)) => { 
-                    tracing::debug!("skipping item");
-                }
-                Ok(None) => { // Stream has ended
-                    panic!("Stream ended.");
-                }
-                Err(_) => {
+                Ok(Some(Ok((number, hash)))) => { 
+                    tracing::debug!("${} : {} skipping item", number, hex_encode(hash));
+                },
+                _ => {
                     return stream;
                 }
             }
@@ -71,6 +68,7 @@ where
                 if let Some(update) = self.find_malicious_update(at).await? {
                     tracing::info!("Found malicious update: {}", update);
                     self.cancel_update(update).await?;
+                    stream = Self::consume_stream_with_timeout(stream).await;
                     continue;
                 }
             }
@@ -205,10 +203,10 @@ where
 
         match latest_request_l1 {
             Some(latest_request_l1) if latest_request_l1 > latest_processed_on_l2 => {
-                tracing::info!("new requests on L1 found");
                                
                 let start = latest_processed_on_l2.saturating_add(1u128);
-                let end = latest_request_l1;
+                let end = std::cmp::min(latest_request_l1, start.saturating_add(self.limit));
+                tracing::info!("new requests availabla, fetching range {}..{}", start, end);
 
                 let update = self.l1.get_update(start, end).await?;
                 let update_hash = self.l1.get_update_hash(start, end).await?;
@@ -394,7 +392,7 @@ pub (crate) mod test {
             .times(1)
             .return_once(move |_| Ok(vec![pending]));
 
-        let sequencer = Sequencer::new(l1mock, l2mock, ETHEREUM);
+        let sequencer = Sequencer::new(l1mock, l2mock, ETHEREUM, 100u128);
 
         assert_eq!(
             sequencer.find_malicious_update(H256::zero()).await.unwrap(),
@@ -417,7 +415,7 @@ pub (crate) mod test {
             .times(1)
             .return_once(move |_| Ok(vec![pending]));
 
-        let sequencer = Sequencer::new(l1mock, l2mock, ETHEREUM);
+        let sequencer = Sequencer::new(l1mock, l2mock, ETHEREUM, 100u128);
 
         assert_eq!(
             sequencer.find_malicious_update(H256::zero()).await.unwrap(),
@@ -448,7 +446,7 @@ pub (crate) mod test {
             .times(1)
             .return_once(move |_| Ok(vec![pending]));
 
-        let sequencer = Sequencer::new(l1mock, l2mock, ETHEREUM);
+        let sequencer = Sequencer::new(l1mock, l2mock, ETHEREUM, 100u128);
 
         assert_eq!(
             sequencer.find_malicious_update(H256::zero()).await.unwrap(),
@@ -468,7 +466,7 @@ pub (crate) mod test {
             .expect_get_pending_cancels()
             .return_once(|_, _| Ok(vec![1u128, 2u128]));
 
-        let sequencer = Sequencer::new(l1mock, l2mock, ETHEREUM);
+        let sequencer = Sequencer::new(l1mock, l2mock, ETHEREUM, 100u128);
         let result = sequencer
             .find_closable_cancel_resolutions(H256::zero())
             .await;
@@ -491,7 +489,7 @@ pub (crate) mod test {
             .expect_get_pending_cancels()
             .return_once(|_, _| Ok(cancels));
 
-        let sequencer = Sequencer::new(l1mock, l2mock, ETHEREUM);
+        let sequencer = Sequencer::new(l1mock, l2mock, ETHEREUM, 100u128);
         let result = sequencer
             .find_closable_cancel_resolutions(H256::zero())
             .await;
@@ -509,7 +507,7 @@ pub (crate) mod test {
         let mut l2mock = MockL2::new();
         l2mock.expect_get_pending_cancels().times(0);
 
-        let sequencer = Sequencer::new(l1mock, l2mock, ETHEREUM);
+        let sequencer = Sequencer::new(l1mock, l2mock, ETHEREUM, 100u128);
         let result = sequencer
             .find_closable_cancel_resolutions(H256::zero())
             .await;
@@ -530,10 +528,92 @@ pub (crate) mod test {
 
         l1mock.expect_get_update().times(0);
 
-        let sequencer = Sequencer::new(l1mock, l2mock, ETHEREUM);
+        let sequencer = Sequencer::new(l1mock, l2mock, ETHEREUM, 100u128);
 
         let update = sequencer.get_pending_update(H256::zero()).await;
         assert!(matches!(update, Ok(None)));
+    }
+
+    #[tokio::test]
+    async fn test_get_pending_update_when_there_are_requests() {
+        let mut l1mock = MockL1::new();
+        l1mock
+            .expect_get_latest_reqeust_id()
+            .return_once(|| Ok(Some(10u128)));
+
+        let mut l2mock = MockL2::new();
+        l2mock.expect_get_latest_processed_request_id()
+            .return_once(|_,_| Ok(0u128));
+
+        let update = l1types::L1Update{
+            chain: Default::default(),
+            pendingDeposits : vec![],
+            pendingCancelResolutions: vec![],
+        };
+
+
+        l1mock.expect_get_update()
+            .times(1)
+            .with(eq(1u128), eq(10u128))
+            .return_once(|_, _| Ok(update));
+
+        l1mock.expect_get_update_hash()
+            .times(1)
+            .with(eq(1u128), eq(10u128))
+            .return_once(|_, _| Ok(H256::zero()));
+
+        l2mock.expect_deserialize_sequencer_update()
+            .times(1)
+            .return_once(|_| Ok(UpdateBuilder::new().build(ETHEREUM)));
+
+        let sequencer = Sequencer::new(l1mock, l2mock, ETHEREUM, 100u128);
+
+        sequencer.get_pending_update(H256::zero()).await.unwrap();
+    }
+
+    #[tokio::test]
+    async fn test_get_pending_update_when_there_are_too_many_requests_for_single_update() {
+        // use tracing::level_filters::LevelFilter;
+        // let filter = tracing_subscriber::EnvFilter::builder()
+        //     .with_default_directive(LevelFilter::INFO.into())
+        //     .from_env_lossy()
+        //     .add_directive("sequencer=trace".parse().expect("proper directive"));
+        // tracing_subscriber::fmt().with_env_filter(filter).init();
+        //
+
+        let mut l1mock = MockL1::new();
+        l1mock
+            .expect_get_latest_reqeust_id()
+            .return_once(|| Ok(Some(1000u128)));
+
+        let mut l2mock = MockL2::new();
+        l2mock.expect_get_latest_processed_request_id()
+            .return_once(|_,_| Ok(0u128));
+
+        let update = l1types::L1Update{
+            chain: Default::default(),
+            pendingDeposits : vec![],
+            pendingCancelResolutions: vec![],
+        };
+
+
+        l1mock.expect_get_update()
+            .times(1)
+            .with(eq(1u128), eq(101u128))
+            .return_once(|_, _| Ok(update));
+
+        l1mock.expect_get_update_hash()
+            .times(1)
+            .with(eq(1u128), eq(101u128))
+            .return_once(|_, _| Ok(H256::zero()));
+
+        l2mock.expect_deserialize_sequencer_update()
+            .times(1)
+            .return_once(|_| Ok(UpdateBuilder::new().build(ETHEREUM)));
+
+        let sequencer = Sequencer::new(l1mock, l2mock, ETHEREUM, 100u128);
+
+        sequencer.get_pending_update(H256::zero()).await.unwrap();
     }
 
 

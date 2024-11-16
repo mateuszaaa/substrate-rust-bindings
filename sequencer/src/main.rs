@@ -40,6 +40,9 @@ struct Config {
 
     #[envconfig(from = "MANGATA_CONTRACT_ADDRESS")]
     pub rolldown_contract_address: String,
+
+    #[envconfig(from = "LIMIT")]
+    pub update_size_limit: String,
 }
 
 #[derive(Debug, thiserror::Error)]
@@ -83,7 +86,8 @@ fn strip_prefix(str: &String) -> &str {
 
 async fn run(config: Config) -> Result<(), Error> {
 
-    tracing::info!("hello world");
+    let update_size_limit = config.update_size_limit.parse::<u128>().unwrap();
+    assert!(update_size_limit > 0, "Update size limit must be greater than 0");
     let eth_secret_key = <[u8; 32]>::from_hex(strip_prefix(&config.l1_private_key))?;
     let gasp_secret_key = <[u8; 32]>::from_hex(strip_prefix(&config.l2_mnemonic))?;
     let rolldown_contract_address = <[u8; 20]>::from_hex(strip_prefix(&config.rolldown_contract_address))?;
@@ -109,7 +113,7 @@ async fn run(config: Config) -> Result<(), Error> {
     .await.map_err(Into::<sequencer::Error>::into)?;
     tracing::info!("Connected to {}", config.l1_uri);
 
-    let seq = Sequencer::new(rolldown, gasp, chain);
+    let seq = Sequencer::new(rolldown, gasp, chain, update_size_limit);
     seq.run().await?;
     Ok(())
 }
