@@ -44,6 +44,7 @@ use gasp::api::runtime_types::rollup_runtime::RuntimeEvent;
 pub type L2Event = EventRecord<RuntimeEvent, H256>;
 
 pub trait L2Interface {
+    fn address(&self) -> [u8; 20];
     async fn get_latest_processed_request_id(
         &self,
         chain: types::Chain,
@@ -298,6 +299,10 @@ impl Gasp {
 }
 
 impl L2Interface for Gasp {
+    fn address(&self) -> [u8; 20] {
+        self.keypair.address().into_inner()
+    }
+
     #[tracing::instrument(skip(self))]
     async fn get_latest_processed_request_id(
         &self,
@@ -651,9 +656,16 @@ mod test {
     }
 
     #[serial]
-    #[ignore]
     #[tokio::test]
     async fn test_can_submit_multiple_tx_in_a_row() {
+        use tracing::level_filters::LevelFilter;
+        let filter = tracing_subscriber::EnvFilter::builder()
+            .with_default_directive(LevelFilter::INFO.into())
+            .from_env_lossy()
+            .add_directive("sequencer=trace".parse().expect("proper directive"));
+        tracing_subscriber::fmt().with_env_filter(filter).init();
+
+
         let gasp = Gasp::new(URI, BALTATHAR_PKEY)
             .await
             .expect("can connect to gasp");

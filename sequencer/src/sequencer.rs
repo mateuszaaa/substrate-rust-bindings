@@ -1,10 +1,9 @@
 use std::time::Duration;
 
 use alloy::sol_types::SolValue;
-use futures::{Stream, StreamExt};
+use futures::StreamExt;
 use primitive_types::H256;
 use hex::encode as hex_encode;
-use tokio::time::error::Elapsed;
 use tokio::time::timeout;
 
 use crate::l1::{L1Error, L1Interface, types as l1types};
@@ -16,6 +15,7 @@ pub struct Sequencer<L1, L2> {
     l2: L2,
     chain: l2types::Chain,
     limit: u128,
+    address: [u8; 20],
 }
 
 #[derive(Debug, thiserror::Error)]
@@ -36,7 +36,8 @@ where
     L2: L2Interface,
 {
     pub fn new(l1: L1, l2: L2, chain: l2types::Chain, limit: u128) -> Self {
-        Self { l1, l2, chain, limit }
+        let address = l2.address();
+        Self { l1, l2, chain, limit , address }
     }
 
     // consume all items that are available instantely, return on first item 
@@ -79,7 +80,7 @@ where
                 continue;
             }
 
-            if self.has_read_rights_available(block_hash).await? {
+            if self.has_read_rights_available(block_hash).await? && self.is_selected_sequencer(block_hash).await? {
                 if let Some((update_hash, update)) = self.get_pending_update(block_hash).await? {
                     tracing::info!("Found update to submit: {:?}", update);
                     let result = self.l2.update_l1_from_l2(update, update_hash).await?;
@@ -185,6 +186,16 @@ where
     }
 
     #[tracing::instrument(skip(self))]
+    pub async fn is_selected_sequencer(&self, at: H256) -> Result<bool, Error> {
+        if let Some(selected) = self.l2.get_selected_sequencer(self.chain.clone(), at).await? {
+            Ok(selected == self.address)
+        }else{
+            Ok(false)
+        }
+    }
+
+
+    #[tracing::instrument(skip(self))]
     pub async fn has_cancel_rights_available(&self, at: H256) -> Result<bool, Error> {
         let cancel_rights = self.l2.get_cancel_rights(self.chain.clone(), at).await?;
         tracing::trace!("cancel rights: {}", cancel_rights);
@@ -282,6 +293,7 @@ pub (crate) mod test {
         pub L2 {}
 
         impl L2Interface for L2{
+            fn address(&self) -> [u8; 20];
             async fn get_latest_processed_request_id(&self, chain: l2types::Chain, at: H256) -> Result<u128, L2Error>;
             async fn get_read_rights(&self, chain: l2types::Chain, at: H256) -> Result<u128, L2Error>;
             async fn get_cancel_rights(&self, chain: l2types::Chain, at: H256) -> Result<u128, L2Error>;
@@ -387,6 +399,7 @@ pub (crate) mod test {
             .returning(move |_, _| Ok(correct_hash));
 
         let mut l2mock = MockL2::new();
+        l2mock.expect_address().return_const(DUMMY_ADDRESS);
         l2mock
             .expect_get_pending_updates()
             .times(1)
@@ -410,6 +423,7 @@ pub (crate) mod test {
         l1mock.expect_get_update_hash().times(0);
 
         let mut l2mock = MockL2::new();
+        l2mock.expect_address().return_const(DUMMY_ADDRESS);
         l2mock
             .expect_get_pending_updates()
             .times(1)
@@ -441,6 +455,7 @@ pub (crate) mod test {
             .returning(move |_, _| Ok(correct_hash));
 
         let mut l2mock = MockL2::new();
+        l2mock.expect_address().return_const(DUMMY_ADDRESS);
         l2mock
             .expect_get_pending_updates()
             .times(1)
@@ -462,6 +477,7 @@ pub (crate) mod test {
             .return_once(|| Ok(Some(1u128)));
 
         let mut l2mock = MockL2::new();
+        l2mock.expect_address().return_const(DUMMY_ADDRESS);
         l2mock
             .expect_get_pending_cancels()
             .return_once(|_, _| Ok(vec![1u128, 2u128]));
@@ -485,6 +501,7 @@ pub (crate) mod test {
         let cancels = pending_cancels.clone();
 
         let mut l2mock = MockL2::new();
+        l2mock.expect_address().return_const(DUMMY_ADDRESS);
         l2mock
             .expect_get_pending_cancels()
             .return_once(|_, _| Ok(cancels));
@@ -505,6 +522,7 @@ pub (crate) mod test {
             .return_once(|| Ok(None));
 
         let mut l2mock = MockL2::new();
+        l2mock.expect_address().return_const(DUMMY_ADDRESS);
         l2mock.expect_get_pending_cancels().times(0);
 
         let sequencer = Sequencer::new(l1mock, l2mock, ETHEREUM, 100u128);
@@ -523,6 +541,7 @@ pub (crate) mod test {
             .return_once(|| Ok(None));
 
         let mut l2mock = MockL2::new();
+        l2mock.expect_address().return_const(DUMMY_ADDRESS);
         l2mock.expect_get_latest_processed_request_id()
             .return_once(|_,_| Ok(0u128));
 
@@ -542,6 +561,7 @@ pub (crate) mod test {
             .return_once(|| Ok(Some(10u128)));
 
         let mut l2mock = MockL2::new();
+        l2mock.expect_address().return_const(DUMMY_ADDRESS);
         l2mock.expect_get_latest_processed_request_id()
             .return_once(|_,_| Ok(0u128));
 
@@ -587,6 +607,7 @@ pub (crate) mod test {
             .return_once(|| Ok(Some(1000u128)));
 
         let mut l2mock = MockL2::new();
+        l2mock.expect_address().return_const(DUMMY_ADDRESS);
         l2mock.expect_get_latest_processed_request_id()
             .return_once(|_,_| Ok(0u128));
 
