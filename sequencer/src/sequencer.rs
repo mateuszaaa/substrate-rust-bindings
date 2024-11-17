@@ -28,6 +28,8 @@ pub enum Error {
     CancelDeserializationFailure,
     #[error("Update submission failed")]
     UpdateSubmissionFailure,
+    #[error("L2Request does not exists")]
+    L2RequestDoesNotExists(u128),
 }
 
 impl<L1, L2> Sequencer<L1, L2>
@@ -279,13 +281,20 @@ where
         if let Some(latest_closable_request_id) = latest_closable_request_id {
             let cancels = self
                 .l2
-                .get_pending_cancels(self.chain.clone(), at)
-                .await?
+                .get_pending_cancels(self.chain.clone(), at).await?
                 .into_iter()
                 .filter(|&cancel_request_id| cancel_request_id <= latest_closable_request_id)
-                .collect();
+                .collect::<Vec<_>>();
 
-            Ok(cancels)
+            let stream = futures::stream::iter(cancels)
+                .map(|cancel_request_id:u128| async move {
+                        let hash = self.l2.get_l2_request_hash(cancel_request_id, self.chain.clone(), at).await?
+                            .ok_or(Error::L2RequestDoesNotExists(cancel_request_id))?;
+                        Ok::<_, Error>((self.l1.is_closed(hash).await?, cancel_request_id))
+                }).collect::<Vec<_>>().await;
+
+            let result : Result<Vec<_>, Error> = futures::future::join_all(stream).await.into_iter().collect();
+            Ok(result?.into_iter().filter_map(|(closed, request_id)| if !closed { Some(request_id) } else { None }).collect())
         } else {
             Ok(vec![])
         }
@@ -314,6 +323,7 @@ pub (crate) mod test {
             async fn close_cancel(&self, cancel: l1types::Cancel, merkle_root:H256, proof: Vec<H256>) -> Result<H256, L1Error>;
             async fn get_latest_finalized_request_id(&self) -> Result<Option<u128>, L1Error>;
             async fn get_merkle_root(&self, request_id: u128) -> Result<([u8; 32], (u128, u128)), L1Error>;
+            async fn is_closed(&self, request_hash: H256) -> Result<bool, L1Error>;
         }
     }
 

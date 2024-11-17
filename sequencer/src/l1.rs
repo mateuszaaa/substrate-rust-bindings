@@ -33,6 +33,7 @@ pub enum L1Error {
 }
 
 pub trait L1Interface {
+    async fn is_closed(&self, request_hash: H256) -> Result<bool, L1Error>;
     async fn get_update(&self, start: u128, end: u128) -> Result<types::L1Update, L1Error>;
     async fn get_update_hash(&self, start: u128, end: u128) -> Result<H256, L1Error>;
     async fn get_latest_reqeust_id(&self) -> Result<Option<u128>, L1Error>;
@@ -232,6 +233,23 @@ impl L1Interface for RolldownContract {
         let pending_update = self.get_update(start, end).await?;
         let x: [u8; 32] = Keccak256::digest(&pending_update.abi_encode()[..]).into();
         Ok(x.into())
+    }
+
+    #[tracing::instrument(skip(self))]
+    async fn is_closed(&self, request_hash: H256) -> Result<bool, L1Error>{
+
+        let request_hash = request_hash.0.into();
+        let request_status = self
+            .contract_handle
+            .processedL2Requests(request_hash).call().await
+            .map(|elem| elem._0)?;
+
+        let closed = self.contract_handle.CLOSED().call().await?._0;
+        let is_closed = request_status == closed;
+
+        tracing::trace!("is_closed: {} ({})", is_closed, hex_encode(request_status));
+        return Ok(is_closed);
+
     }
 }
 

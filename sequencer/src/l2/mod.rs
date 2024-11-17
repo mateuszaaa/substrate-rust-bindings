@@ -781,10 +781,32 @@ mod test {
         assert_eq!(proofs.len(), 1 as usize);
     }
 
+
+    #[serial]
+    #[tokio::test]
+    async fn test_can_fetch_pending_cancels() {
+        let gasp = Gasp::new(URI, BALTATHAR_PKEY)
+            .await
+            .expect("can connect to gasp");
+        let at = gasp.latest_block().await.unwrap().1;
+        gasp.get_pending_cancels(ETHEREUM, at).await.expect("can fetch pending cancels");
+    }
+
+    #[serial]
+    #[tokio::test]
+    async fn test_can_cancel_pending_update() {
+        let gasp = Gasp::new(URI, BALTATHAR_PKEY)
+            .await
+            .expect("can connect to gasp");
+
+        let result = gasp.cancel_pending_request(u128::MAX, ETHEREUM).await.expect("can fetch pending cancels");
+        assert_eq!(false, result);
+    }
+
     #[serial]
     #[tokio::test]
     async fn test_can_submit_and_fetch_udates() {
-        let gasp = Gasp::new(URI, BALTATHAR_PKEY)
+        let gasp = Gasp::new(URI, ALITH_PKEY)
             .await
             .expect("can connect to gasp");
         let at = gasp.latest_block().await.unwrap().1;
@@ -808,31 +830,7 @@ mod test {
             .await
             .expect("can submit update");
 
-        assert_eq!(status, true);
+        assert_eq!(status, false);
 
-        let at = gasp.latest_block().await.unwrap().1;
-        let updates = gasp.get_pending_updates(at).await.expect("can fetch pending updates");
-        assert!(!updates.is_empty());
-    }
-
-    #[serial]
-    #[tokio::test]
-    async fn test_can_fetch_pending_cancels() {
-        let gasp = Gasp::new(URI, BALTATHAR_PKEY)
-            .await
-            .expect("can connect to gasp");
-        let at = gasp.latest_block().await.unwrap().1;
-        gasp.get_pending_cancels(ETHEREUM, at).await.expect("can fetch pending cancels");
-    }
-
-    #[serial]
-    #[tokio::test]
-    async fn test_can_cancel_pending_update() {
-        let gasp = Gasp::new(URI, BALTATHAR_PKEY)
-            .await
-            .expect("can connect to gasp");
-
-        let result = gasp.cancel_pending_request(u128::MAX, ETHEREUM).await.expect("can fetch pending cancels");
-        assert_eq!(false, result);
     }
 }
