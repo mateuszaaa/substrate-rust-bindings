@@ -513,12 +513,14 @@ pub (crate) mod test {
         l1mock
             .expect_get_latest_finalized_request_id()
             .return_once(|| Ok(Some(1u128)));
+        l1mock.expect_is_closed().returning(|_| Ok(false));
 
         let mut l2mock = MockL2::new();
         l2mock.expect_address().return_const(DUMMY_ADDRESS);
         l2mock
             .expect_get_pending_cancels()
             .return_once(|_, _| Ok(vec![1u128, 2u128]));
+        l2mock.expect_get_l2_request_hash().returning(|_,_,_| Ok(Some(H256::zero())));
 
         let sequencer = Sequencer::new(l1mock, l2mock, ETHEREUM, 100u128);
         let result = sequencer
@@ -534,12 +536,14 @@ pub (crate) mod test {
         l1mock
             .expect_get_latest_finalized_request_id()
             .return_once(|| Ok(Some(10u128)));
+        l1mock.expect_is_closed().returning(|_| Ok(false));
 
         let pending_cancels = vec![1u128, 2u128, 10u128];
         let cancels = pending_cancels.clone();
 
         let mut l2mock = MockL2::new();
         l2mock.expect_address().return_const(DUMMY_ADDRESS);
+        l2mock.expect_get_l2_request_hash().returning(|_,_,_| Ok(Some(H256::zero())));
         l2mock
             .expect_get_pending_cancels()
             .return_once(|_, _| Ok(cancels));
@@ -551,6 +555,49 @@ pub (crate) mod test {
 
         assert_eq!(result.unwrap(), pending_cancels);
     }
+
+    #[tokio::test]
+    async fn test_find_pending_cancels_ignores_closed_cancels() {
+        let at = H256::zero();
+        let first_request_hash = H256::from(hex!("0000000000000000000000000000000000000000000000000000000000000001"));
+        let second_request_hash = H256::from(hex!("0000000000000000000000000000000000000000000000000000000000000002"));
+        let third_request_hash = H256::from(hex!("0000000000000000000000000000000000000000000000000000000000000003"));
+
+        let mut l1mock = MockL1::new();
+        l1mock
+            .expect_get_latest_finalized_request_id()
+            .return_once(|| Ok(Some(10u128)));
+        l1mock.expect_is_closed().with(eq(first_request_hash.clone())).returning(|_| Ok(true));
+        l1mock.expect_is_closed().with(eq(second_request_hash.clone())).returning(|_| Ok(false));
+        l1mock.expect_is_closed().with(eq(third_request_hash.clone())).returning(|_| Ok(true));
+
+        let pending_cancels = vec![1u128, 2u128, 10u128];
+        let cancels = pending_cancels.clone();
+
+        let mut l2mock = MockL2::new();
+        l2mock.expect_address().return_const(DUMMY_ADDRESS);
+        l2mock.expect_get_l2_request_hash()
+            .with(eq(pending_cancels[0]), eq(ETHEREUM), eq(at))
+            .returning(move |_,_,_| Ok(Some(first_request_hash)));
+        l2mock.expect_get_l2_request_hash()
+            .with(eq(pending_cancels[1]), eq(ETHEREUM), eq(at))
+            .returning(move |_,_,_| Ok(Some(second_request_hash)));
+        l2mock.expect_get_l2_request_hash()
+            .with(eq(pending_cancels[2]), eq(ETHEREUM), eq(at))
+            .returning(move |_,_,_| Ok(Some(third_request_hash)));
+
+        l2mock
+            .expect_get_pending_cancels()
+            .return_once(|_, _| Ok(cancels));
+
+        let sequencer = Sequencer::new(l1mock, l2mock, ETHEREUM, 100u128);
+        let result = sequencer
+            .find_closable_cancel_resolutions(at)
+            .await;
+
+        assert_eq!(result.unwrap(), vec![2u128]);
+    }
+
 
     #[tokio::test]
     async fn test_find_pending_cancels_to_close_when_there_is_no_merkle_root_provided_to_l1() {
