@@ -347,6 +347,7 @@ impl L2Interface for Gasp {
             .ok_or(L2Error::CanNotFetchRights)
     }
 
+    #[tracing::instrument(skip(self))]
     async fn get_selected_sequencer(
         &self,
         chain: types::Chain,
@@ -362,11 +363,15 @@ impl L2Interface for Gasp {
             .unwrap_or_default();
 
         let selected = selected.iter()
-            .find(|(c, account)| {
-                account.0 == self.keypair.address().into_inner() && c == &chain
-            });
+            .find(|(c, account)| c == &chain)
+            .map(|(_, account)| account.0);
 
-        Ok(selected.map(|(_, account)| account.0))
+        if let Some(selected) = &selected {
+            tracing::trace!("selected : {}", hex_encode(selected));
+        } else {
+            tracing::warn!("no sequencer selected");
+        }
+        Ok(selected)
     }
 
     #[tracing::instrument(skip(self))]

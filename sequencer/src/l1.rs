@@ -4,6 +4,7 @@ use hex_literal::hex;
 use alloy::providers::fillers::{
     BlobGasFiller, ChainIdFiller, FillProvider, GasFiller, JoinFill, NonceFiller, WalletFiller,
 };
+use hex::encode as hex_encode;
 use alloy::sol_types::SolValue;
 use alloy::transports::BoxTransport;
 use primitive_types::H256;
@@ -143,21 +144,27 @@ impl L1Interface for RolldownContract {
     #[tracing::instrument(skip(self))]
     async fn get_latest_finalized_request_id(&self) -> Result<Option<u128>, L1Error> {
         let call = self.contract_handle.getMerkleRootsLength();
-        let length = call.call().await?;
-        if let Some(id) = length._0.checked_sub(alloy::primitives::U256::from(1)) {
-            let latest_root = self.contract_handle.roots(id.clone()).call().await?;
+
+        let length = call.call().await?._0;
+        tracing::trace!("there are {} merkle roots on the contract", length);
+        if let Some(id) = length.checked_sub(alloy::primitives::U256::from(1)) {
+            let latest_root = self.contract_handle.roots(id.clone()).call().await?._0;
+            tracing::trace!("latest merkle root {}", hex_encode(latest_root));
             let range = self
                 .contract_handle
-                .merkleRootRange(latest_root._0)
+                .merkleRootRange(latest_root)
                 .call()
                 .await?;
-            Ok(Some(
+            let latest: u128 =
                 range
                     .end
                     .try_into()
-                    .or_else(|_| Err(L1Error::OverflowError))?,
-            ))
+                    .or_else(|_| Err(L1Error::OverflowError))?;
+            tracing::trace!("latest request in root {}: {}", hex_encode(latest_root), latest);
+
+            Ok(Some(latest))
         } else {
+            tracing::trace!("latest request: None");
             Ok(None)
         }
     }
@@ -192,7 +199,7 @@ impl L1Interface for RolldownContract {
 
             Ok(result._0)
         } else {
-            tracing::warn!("there are no requests in contrcact yet");
+            tracing::warn!("there are no requests in contract yet");
             Err(L1Error::InvalidRange)
         }
     }

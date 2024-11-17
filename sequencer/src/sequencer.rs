@@ -57,7 +57,13 @@ where
         }
     }
 
+    pub async fn is_deployed(&self) -> Result<(), Error> {
+        Ok(())
+    }
+
     pub async fn run(&self) -> Result<(), Error> {
+
+
         let mut stream = self.l2.finalized_header_stream().await?;
         loop {
             let (number, block_hash) = stream.next().await.expect("infinite stream")?;
@@ -192,10 +198,19 @@ where
     #[tracing::instrument(skip(self))]
     pub async fn is_selected_sequencer(&self) -> Result<bool, Error> {
         let at = self.get_latest_block_hash().await?;
-        if let Some(selected) = self.l2.get_selected_sequencer(self.chain.clone(), at).await? {
-            Ok(selected == self.address)
-        }else{
-            Ok(false)
+        match self.l2.get_selected_sequencer(self.chain.clone(), at).await? {
+            Some(selected) if selected == self.address => {
+                tracing::debug!("i am selected");
+                Ok(true)
+            }
+            Some(selected) => {
+                tracing::debug!("im not the selected sequencer selected({}) vs me({})", hex_encode(selected), hex_encode(self.address));
+                Ok(false)
+            }
+            None =>{
+                tracing::debug!("no selcted sequencer");
+                Ok(false)
+            }
         }
     }
 
@@ -673,5 +688,8 @@ pub (crate) mod test {
             Some(33u128)
         );
     }
+
+
+
 
 }
