@@ -1,4 +1,3 @@
-use hex_literal::hex;
 use tracing::level_filters::LevelFilter;
 use envconfig::Envconfig;
 use hex::FromHex;

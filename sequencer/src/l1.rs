@@ -1,6 +1,5 @@
-use alloy::network::{Ethereum, EthereumWallet, TxSigner};
+use alloy::network::{Ethereum, EthereumWallet};
 use alloy::signers::local::PrivateKeySigner;
-use hex_literal::hex;
 use alloy::providers::fillers::{
     BlobGasFiller, ChainIdFiller, FillProvider, GasFiller, JoinFill, NonceFiller, WalletFiller,
 };

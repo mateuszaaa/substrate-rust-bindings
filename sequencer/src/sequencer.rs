@@ -7,7 +7,6 @@ use hex::encode as hex_encode;
 use tokio::time::timeout;
 
 use crate::l1::{L1Error, L1Interface, types as l1types};
-use crate::l2::types::bindings::rolldown::storage::types::last_processed_request_on_l2;
 use crate::l2::{types as l2types, HeaderStream, L2Error, L2Interface, PendingUpdate};
 
 pub struct Sequencer<L1, L2> {

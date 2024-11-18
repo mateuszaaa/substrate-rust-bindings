@@ -24,7 +24,7 @@ pub mod types {
     pub use gasp::api as bindings;
     pub use gasp::api::runtime_types::pallet_rolldown::messages::L1Update;
     pub use gasp::api::runtime_types::pallet_rolldown::messages::{
-        CancelResolution, Chain, Deposit, Origin, Range, RequestId,
+        Chain, Origin, RequestId,
     };
 }
 
