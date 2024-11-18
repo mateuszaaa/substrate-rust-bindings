@@ -6,7 +6,7 @@ use hex::encode as hex_encode;
 
 use futures::StreamExt;
 use primitive_types::H256;
-use subxt::config::Header;
+// use subxt::config::Header;
 use subxt::ext::subxt_core;
 use subxt::ext::subxt_core::storage::address::StorageHashers;
 use subxt::storage::StorageKey;
@@ -21,10 +21,14 @@ use gasp::{GaspAddress, GaspConfig, GaspSignature};
 
 pub mod types {
     use super::gasp;
+
+    // NOTE: this alias is used in multiple other files to make code more readable
+    #[allow(unused_imports)]
     pub use gasp::api as bindings;
     pub use gasp::api::runtime_types::pallet_rolldown::messages::L1Update;
+    #[allow(unused_imports)]
     pub use gasp::api::runtime_types::pallet_rolldown::messages::{
-        Chain, Origin, RequestId,
+        Chain, Origin, RequestId, Deposit, CancelResolution
     };
 }
 
@@ -146,59 +150,6 @@ pub enum L2Error {
 pub type HashOf<T> = <T as Config>::Hash;
 
 impl Gasp {
-    pub async fn withdraw(
-        &self,
-        chain: types::Chain,
-        recipient: [u8; 20],
-        token: [u8; 20],
-        amount: u128,
-        ferry_tip: Option<u128>,
-    ) -> Result<bool, L2Error> {
-        let call = gasp::api::tx()
-            .rolldown()
-            .withdraw(chain, recipient, token, amount, ferry_tip);
-        self.sign_and_send(call).await
-    }
-
-    async fn update_l1_from_l2_unsafe(
-        &self,
-        update: gasp::api::runtime_types::pallet_rolldown::messages::L1Update,
-    ) -> Result<bool, L2Error> {
-        let call = gasp::api::tx().rolldown().update_l2_from_l1_unsafe(update);
-        self.sign_and_send(call).await
-    }
-
-
-    pub async fn wait_for_next_block(&self) -> Result<(), L2Error> {
-        let (best, header) = self.latest_block().await?;
-        let mut stream = self.header_stream().await?;
-
-        while let Some(item) = stream.next().await {
-            let (number, _hash) = item?;
-            if number > best {
-                break;
-            }
-        }
-        Ok(())
-    }
-
-    pub async fn last_finalized(&self) -> Result<HashOf<GaspConfig>, L2Error> {
-        Ok(self
-            .client
-            .backend()
-            .latest_finalized_block_ref()
-            .await?
-            .hash())
-    }
-
-    pub async fn latest_block(&self) -> Result<(u32, HashOf<GaspConfig>), L2Error> {
-        let mut stream = self.header_stream().await?;
-        stream
-            .next()
-            .await
-            .ok_or(L2Error::HeaderSubscriptionFailed)?
-    }
-
     pub async fn new(uri: &str, secret_key: [u8; 32]) -> Result<Self, L2Error> {
         let client = OnlineClient::<GaspConfig>::from_url(uri).await?;
 
@@ -296,6 +247,53 @@ impl Gasp {
         let tx_hash = signed.submit().await?;
         Ok(self.wait_for_tx_execution(tx_hash).await?)
     }
+
+    #[cfg(test)]
+    async fn update_l1_from_l2_unsafe(
+        &self,
+        update: gasp::api::runtime_types::pallet_rolldown::messages::L1Update,
+    ) -> Result<bool, L2Error> {
+        let call = gasp::api::tx().rolldown().update_l2_from_l1_unsafe(update);
+        self.sign_and_send(call).await
+    }
+
+    #[cfg(test)]
+    pub async fn wait_for_next_block(&self) -> Result<(), L2Error> {
+        let (best, _header) = self.latest_block().await?;
+        let mut stream = self.header_stream().await?;
+
+        while let Some(item) = stream.next().await {
+            let (number, _hash) = item?;
+            if number > best {
+                break;
+            }
+        }
+        Ok(())
+    }
+
+    #[cfg(test)]
+    pub async fn latest_block(&self) -> Result<(u32, HashOf<GaspConfig>), L2Error> {
+        let mut stream = self.header_stream().await?;
+        stream
+            .next()
+            .await
+            .ok_or(L2Error::HeaderSubscriptionFailed)?
+    }
+
+    #[cfg(test)]
+    pub async fn withdraw(
+        &self,
+        chain: types::Chain,
+        recipient: [u8; 20],
+        token: [u8; 20],
+        amount: u128,
+        ferry_tip: Option<u128>,
+    ) -> Result<bool, L2Error> {
+        let call = gasp::api::tx()
+            .rolldown()
+            .withdraw(chain, recipient, token, amount, ferry_tip);
+        self.sign_and_send(call).await
+    }
 }
 
 impl L2Interface for Gasp {
@@ -363,7 +361,7 @@ impl L2Interface for Gasp {
             .unwrap_or_default();
 
         let selected = selected.iter()
-            .find(|(c, account)| c == &chain)
+            .find(|(c, _)| c == &chain)
             .map(|(_, account)| account.0);
 
         if let Some(selected) = &selected {

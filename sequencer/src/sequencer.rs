@@ -58,10 +58,6 @@ where
         }
     }
 
-    pub async fn is_deployed(&self) -> Result<(), Error> {
-        Ok(())
-    }
-
     pub async fn run(&self) -> Result<(), Error> {
 
 
@@ -267,14 +263,6 @@ where
         }
     }
 
-    pub async fn submit_sequencer_update(
-        &self,
-        update: l2types::L1Update,
-        update_hash: H256,
-    ) -> Result<bool, Error> {
-        Ok(self.l2.update_l1_from_l2(update, update_hash).await?)
-    }
-
     pub async fn find_closable_cancel_resolutions(&self, at: H256) -> Result<Vec<u128>, Error> {
         let latest_closable_request_id = self.l1.get_latest_finalized_request_id().await?;
         if let Some(latest_closable_request_id) = latest_closable_request_id {
@@ -352,6 +340,7 @@ pub (crate) mod test {
     const ETHEREUM: l2types::Chain = l2types::Chain::Ethereum;
     const ARBITRUM: l2types::Chain = l2types::Chain::Arbitrum;
 
+    #[allow(dead_code)]
     pub enum Request {
         Deposit(l2types::Deposit),
         Cancel(l2types::CancelResolution),

@@ -10,7 +10,6 @@ use primitive_types::H256;
 use sha3::{Digest, Keccak256};
 
 use alloy::providers::{Identity, PendingTransactionError, ProviderBuilder, RootProvider};
-// use subxt::ext::subxt_core::storage::address::{StorageHashers};
 
 pub mod types {
     pub use bindings::rolldown::IRolldownPrimitives::Cancel;
@@ -92,11 +91,6 @@ impl RolldownContract {
     #[cfg(test)]
     #[tracing::instrument(skip(self))]
     pub async fn deposit(&self, amount: u128, ferry_tip: u128) -> Result<(), L1Error> {
-        use alloy::providers::Provider;
-        use hex::encode as hex_encode;
-
-
-
         let call = self.contract_handle.deposit_native_1(
                 alloy::primitives::U256::from(ferry_tip)
         ).value(alloy::primitives::U256::from(amount));
@@ -259,9 +253,7 @@ mod test{
     use serial_test::serial;
 
     const URI: &'static str = "http://localhost:8545";
-    const DUMMY_ADDRESS: [u8; 20] = hex!("0000000000000000000000000000000000000000");
     const ROLLDOWN_ADDRESS: [u8; 20] = hex!("1429859428C0aBc9C2C47C8Ee9FBaf82cFA0F20f");
-    const TOKEN_ADDRESS: [u8; 20] = hex!("FD471836031dc5108809D173A067e8486B9047A3");
     const ALICE_PKEY: [u8; 32] = hex!("dbda1821b80551c9d65939329250298aa3472ba22feea921c0cf5d620ea67b97");
     // const ETHEREUM: l2types::Chain = l2types::Chain::Ethereum;
     // const ARBITRUM: l2types::Chain = l2types::Chain::Arbitrum;
