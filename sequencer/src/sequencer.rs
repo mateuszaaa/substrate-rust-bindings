@@ -50,7 +50,7 @@ where
             let result = timeout(Duration::from_secs(1), stream.next()).await;
             match result {
                 Ok(Some(Ok((number, hash)))) => { 
-                    tracing::debug!("${} : {} skipping item", number, hex_encode(hash));
+                    tracing::debug!("#{} : {} - skipping", number, hex_encode(hash));
                 },
                 _ => {
                     return stream;

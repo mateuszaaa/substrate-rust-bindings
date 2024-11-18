@@ -187,6 +187,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -435,6 +436,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -467,6 +469,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -497,6 +500,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -527,6 +531,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -555,6 +560,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -582,6 +588,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -607,6 +614,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -634,6 +642,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -667,6 +676,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -703,6 +713,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -810,6 +821,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -841,6 +853,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -875,6 +888,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -1084,6 +1098,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -1111,6 +1126,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -1137,6 +1153,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -1167,6 +1184,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -1196,6 +1214,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -1221,6 +1240,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -1247,6 +1267,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -1274,6 +1295,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -1308,6 +1330,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -1367,6 +1390,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -1710,6 +1734,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -1742,6 +1767,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -1774,6 +1800,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -1806,6 +1833,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -1838,6 +1866,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -1869,6 +1898,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -1899,6 +1929,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -1929,6 +1960,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -1959,6 +1991,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -1988,6 +2021,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -2016,6 +2050,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -2047,6 +2082,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -2079,6 +2115,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -2104,6 +2141,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -2198,6 +2236,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -2224,6 +2263,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -2254,6 +2294,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -2354,6 +2395,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -2381,6 +2423,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -2409,6 +2452,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -2528,6 +2572,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -2557,6 +2602,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -2583,6 +2629,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -2612,6 +2659,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -2688,6 +2736,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -2750,6 +2799,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -2827,6 +2877,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -2854,6 +2905,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -2941,6 +2993,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -2975,6 +3028,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -3132,6 +3186,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -3164,6 +3219,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -3198,6 +3254,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -3226,6 +3283,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -3283,6 +3341,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -3402,6 +3461,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -3435,6 +3495,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -3464,6 +3525,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -3492,6 +3554,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -3615,6 +3678,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -3648,6 +3712,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -3677,6 +3742,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -3705,6 +3771,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -4000,6 +4067,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -4034,6 +4102,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -4066,6 +4135,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -4095,6 +4165,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -4125,6 +4196,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -4158,6 +4230,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -4190,6 +4263,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -4221,6 +4295,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -4256,6 +4331,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -4286,6 +4362,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -4318,6 +4395,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -4354,6 +4432,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -4644,6 +4723,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -4669,6 +4749,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -4696,6 +4777,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -4715,6 +4797,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -4740,6 +4823,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -4765,6 +4849,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -4792,6 +4877,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -4817,6 +4903,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -5714,6 +5801,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -5907,6 +5995,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -5955,6 +6044,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -5998,6 +6088,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -6041,6 +6132,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -6078,6 +6170,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -6121,6 +6214,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -6345,6 +6439,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -6373,6 +6468,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -6392,6 +6488,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -6411,6 +6508,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -6430,6 +6528,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -6455,6 +6554,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -6519,6 +6619,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -6560,6 +6661,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -6601,6 +6703,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -6640,6 +6743,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -6668,6 +6772,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -6718,6 +6823,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -6772,6 +6878,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -6817,6 +6924,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -6857,6 +6965,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -6897,6 +7006,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -7273,6 +7383,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -7299,6 +7410,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -7332,6 +7444,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -7361,6 +7474,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -7393,6 +7507,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -7681,6 +7796,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -7703,6 +7819,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -7725,6 +7842,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -7747,6 +7865,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -7845,6 +7964,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -7868,6 +7988,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -7891,6 +8012,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -7916,6 +8038,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -7941,6 +8064,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -8009,6 +8133,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -8039,6 +8164,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -8067,6 +8193,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -8097,6 +8224,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -8133,6 +8261,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -8163,6 +8292,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -8194,6 +8324,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -8222,6 +8353,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -8253,6 +8385,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -8287,6 +8420,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -8329,6 +8463,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -8369,6 +8504,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -8674,6 +8810,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -8706,6 +8843,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -8737,6 +8875,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -8765,6 +8904,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -8797,6 +8937,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -8833,6 +8974,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -8855,6 +8997,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -8884,6 +9027,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -8910,6 +9054,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -8936,6 +9081,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -10084,6 +10230,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -10164,6 +10311,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -10374,6 +10522,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -10420,6 +10569,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -10471,6 +10621,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -10515,6 +10666,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -10559,6 +10711,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -10603,6 +10756,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -10634,6 +10788,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -10893,6 +11048,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -10922,6 +11078,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -10952,6 +11109,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -10983,6 +11141,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -11012,6 +11171,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -11041,6 +11201,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -11075,6 +11236,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -11106,6 +11268,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -11133,6 +11296,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -11162,6 +11326,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -11193,6 +11358,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -11222,6 +11388,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -11253,6 +11420,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -11282,6 +11450,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -11311,6 +11480,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -11336,6 +11506,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -11365,6 +11536,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -11394,6 +11566,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -11420,6 +11593,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -11880,6 +12054,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -12030,6 +12205,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -12064,6 +12240,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -12112,6 +12289,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -12159,6 +12337,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -12207,6 +12386,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -12257,6 +12437,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -12290,6 +12471,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -12324,6 +12506,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -12358,6 +12541,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -12388,6 +12572,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -12421,6 +12606,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -12779,6 +12965,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -12811,6 +12998,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -12841,6 +13029,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -12875,6 +13064,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -12909,6 +13099,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -12945,6 +13136,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -12981,6 +13173,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -13007,6 +13200,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -13035,6 +13229,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -13063,6 +13258,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -13091,6 +13287,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -13453,6 +13650,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -13482,6 +13680,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -13514,6 +13713,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -13554,6 +13754,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -13585,6 +13786,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -13624,6 +13826,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -13670,6 +13873,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -13709,6 +13913,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -13743,6 +13948,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -13783,6 +13989,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -13815,6 +14022,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -14126,6 +14334,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -14152,6 +14361,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -14180,6 +14390,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -14208,6 +14419,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -14236,6 +14448,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -14266,6 +14479,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -14296,6 +14510,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -14326,6 +14541,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -15446,6 +15662,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -15485,6 +15702,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -15557,6 +15775,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -15575,6 +15794,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -15601,6 +15821,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -15921,6 +16142,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -15958,6 +16180,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -15999,6 +16222,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -16051,6 +16275,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -16104,6 +16329,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -16134,6 +16360,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -16363,6 +16590,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -16393,6 +16621,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -16604,6 +16833,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -16641,6 +16871,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -16681,6 +16912,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -16714,6 +16946,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -16745,6 +16978,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -16779,6 +17013,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -16813,6 +17048,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -17026,6 +17262,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -17053,6 +17290,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -17083,6 +17321,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -17108,6 +17347,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -17135,6 +17375,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -17165,6 +17406,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -17840,6 +18082,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -17862,6 +18105,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -17884,6 +18128,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -17975,6 +18220,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -18006,6 +18252,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -18037,6 +18284,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -18061,6 +18309,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -18080,6 +18329,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -18106,6 +18356,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -18524,6 +18775,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -18558,6 +18810,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -18591,6 +18844,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -18622,6 +18876,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -18755,6 +19010,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -18783,6 +19039,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -19023,6 +19280,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -19062,6 +19320,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -19094,6 +19353,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -19189,6 +19449,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -19212,6 +19473,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -19240,6 +19502,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -19263,6 +19526,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -19286,6 +19550,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -19313,6 +19578,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -19337,6 +19603,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -19644,6 +19911,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -19668,6 +19936,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -19695,6 +19964,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -19724,6 +19994,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -19748,6 +20019,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -19767,6 +20039,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -19786,6 +20059,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -19805,6 +20079,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -20505,6 +20780,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -20535,6 +20811,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -20564,6 +20841,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -20603,6 +20881,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -20633,6 +20912,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -20665,6 +20945,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -20696,6 +20977,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -20719,6 +21001,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -20742,6 +21025,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -20775,6 +21059,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -20804,6 +21089,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -20837,6 +21123,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -20860,6 +21147,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -20900,6 +21188,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -20925,6 +21214,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -20956,6 +21246,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -20980,6 +21271,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -21010,6 +21302,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -21045,6 +21338,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -21076,6 +21370,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -21111,6 +21406,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -21140,6 +21436,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -21178,6 +21475,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -21214,6 +21512,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -21248,6 +21547,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -21278,6 +21578,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -21318,6 +21619,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -21944,6 +22246,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -21975,6 +22278,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -22004,6 +22308,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -22033,6 +22338,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -22062,6 +22368,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -22091,6 +22398,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -22120,6 +22428,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -22149,6 +22458,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -22176,6 +22486,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -22203,6 +22514,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -22232,6 +22544,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -22255,6 +22568,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -22284,6 +22598,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -22313,6 +22628,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -22344,6 +22660,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -22375,6 +22692,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -22405,6 +22723,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -22435,6 +22754,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -22464,6 +22784,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -22495,6 +22816,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -22519,6 +22841,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -22548,6 +22871,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -22571,6 +22895,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -22601,6 +22926,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -22634,6 +22960,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -22665,6 +22992,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -22696,6 +23024,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -22725,6 +23054,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -22752,6 +23082,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -22781,6 +23112,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -22808,6 +23140,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -22835,6 +23168,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -22863,6 +23197,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -24052,6 +24387,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -24101,6 +24437,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -24129,6 +24466,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -24157,6 +24495,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -24185,6 +24524,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -24217,6 +24557,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -24255,6 +24596,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -24468,6 +24810,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -24496,6 +24839,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -24522,6 +24866,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -24550,6 +24895,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -24576,6 +24922,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -24603,6 +24950,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -25394,6 +25742,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -25434,6 +25783,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -25532,6 +25882,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -25936,6 +26287,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -25976,6 +26328,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -26021,6 +26374,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -26164,6 +26518,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -26192,6 +26547,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -26211,6 +26567,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -26546,6 +26903,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -26579,6 +26937,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -26627,6 +26986,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -26662,6 +27022,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -26790,6 +27151,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -26819,6 +27181,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -27060,6 +27423,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -27107,6 +27471,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -27151,6 +27516,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -27197,6 +27563,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -27245,6 +27612,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -27295,6 +27663,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -27357,6 +27726,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -27404,6 +27774,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -27451,6 +27822,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -27834,6 +28206,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -27859,6 +28232,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -27884,6 +28258,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -27913,6 +28288,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -27940,6 +28316,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -27965,6 +28342,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -27990,6 +28368,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -28015,6 +28394,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -28044,6 +28424,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -28071,6 +28452,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -28106,6 +28488,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -28131,6 +28514,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -28158,6 +28542,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -28185,6 +28570,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -28598,6 +28984,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -28632,6 +29019,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -28668,6 +29056,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -28698,6 +29087,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -28732,6 +29122,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -28877,6 +29268,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -28903,6 +29295,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -28931,6 +29324,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -28950,6 +29344,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -29026,6 +29421,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -29062,6 +29458,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -29101,6 +29498,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -29233,6 +29631,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -29257,6 +29656,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -29296,6 +29696,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -29355,6 +29756,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -29395,6 +29797,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -29443,6 +29846,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -29485,6 +29889,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -29523,6 +29928,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -29810,6 +30216,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -29842,6 +30249,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -29876,6 +30284,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -29901,6 +30310,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -29926,6 +30336,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -29954,6 +30365,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -29982,6 +30394,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -30011,6 +30424,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -30038,6 +30452,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -30382,6 +30797,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -30417,6 +30833,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -30455,6 +30872,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -30495,6 +30913,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -30525,6 +30944,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -30573,6 +30993,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -30611,6 +31032,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -30650,6 +31072,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -30688,6 +31111,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -30726,6 +31150,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -30777,6 +31202,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -30817,6 +31243,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -30854,6 +31281,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -30888,6 +31316,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -30923,6 +31352,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -30955,6 +31385,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -30992,6 +31423,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -31021,6 +31453,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -31065,6 +31498,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -31097,6 +31531,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -31130,6 +31565,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -31161,6 +31597,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -31753,6 +32190,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -31778,6 +32216,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -31805,6 +32244,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -31832,6 +32272,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -31859,6 +32300,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -31886,6 +32328,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -31913,6 +32356,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -31938,6 +32382,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -31967,6 +32412,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -31996,6 +32442,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -32026,6 +32473,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -32051,6 +32499,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -32076,6 +32525,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -32105,6 +32555,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -32136,6 +32587,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -32161,6 +32613,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -32190,6 +32643,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -32806,6 +33260,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -32837,6 +33292,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -32868,6 +33324,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -32903,6 +33360,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -32937,6 +33395,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -32970,6 +33429,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -33001,6 +33461,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -33177,6 +33638,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -33196,6 +33658,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -33215,6 +33678,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -33234,6 +33698,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -33253,6 +33718,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -33272,6 +33738,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -33360,6 +33827,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -33383,6 +33851,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -33404,6 +33873,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -33425,6 +33895,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -33447,6 +33918,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -33466,6 +33938,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -33483,6 +33956,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -33505,6 +33979,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -33530,6 +34005,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -33552,6 +34028,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -33575,6 +34052,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -33597,6 +34075,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -33629,6 +34108,7 @@ pub mod api {
                             Debug,
                             PartialEq,
                         )]
+                        #[allow(non_snake_case)]
                         # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                         #[codec(dumb_trait_bound)]
                         #[decode_as_type(
@@ -33655,6 +34135,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -33676,6 +34157,7 @@ pub mod api {
                         Debug,
                         PartialEq,
                     )]
+                    #[allow(non_snake_case)]
                     # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                     #[codec(dumb_trait_bound)]
                     #[decode_as_type(
@@ -33697,6 +34179,7 @@ pub mod api {
                         Debug,
                         PartialEq,
                     )]
+                    #[allow(non_snake_case)]
                     # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                     #[codec(dumb_trait_bound)]
                     #[decode_as_type(
@@ -33718,6 +34201,7 @@ pub mod api {
                         Debug,
                         PartialEq,
                     )]
+                    #[allow(non_snake_case)]
                     # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                     #[codec(dumb_trait_bound)]
                     #[decode_as_type(
@@ -33739,6 +34223,7 @@ pub mod api {
                         Debug,
                         PartialEq,
                     )]
+                    #[allow(non_snake_case)]
                     # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                     #[codec(dumb_trait_bound)]
                     #[decode_as_type(
@@ -33760,6 +34245,7 @@ pub mod api {
                         Debug,
                         PartialEq,
                     )]
+                    #[allow(non_snake_case)]
                     # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                     #[codec(dumb_trait_bound)]
                     #[decode_as_type(
@@ -33781,6 +34267,7 @@ pub mod api {
                         Debug,
                         PartialEq,
                     )]
+                    #[allow(non_snake_case)]
                     # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                     #[codec(dumb_trait_bound)]
                     #[decode_as_type(
@@ -33802,6 +34289,7 @@ pub mod api {
                         Debug,
                         PartialEq,
                     )]
+                    #[allow(non_snake_case)]
                     # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                     #[codec(dumb_trait_bound)]
                     #[decode_as_type(
@@ -33824,6 +34312,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -33846,6 +34335,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -33870,6 +34360,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -33899,6 +34390,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -34014,6 +34506,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -34068,6 +34561,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -34128,6 +34622,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -34148,6 +34643,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -34165,6 +34661,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -34183,6 +34680,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -34201,6 +34699,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -34227,6 +34726,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -34250,6 +34750,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -34274,6 +34775,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -34294,6 +34796,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -34317,6 +34820,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -34342,6 +34846,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -34373,6 +34878,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -34435,6 +34941,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -34474,6 +34981,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -34516,6 +35024,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -34646,6 +35155,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -34692,6 +35202,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -34849,6 +35360,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -34867,6 +35379,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -34884,6 +35397,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -34906,6 +35420,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -34940,6 +35455,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -35082,6 +35598,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -35172,6 +35689,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -35221,6 +35739,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -35249,6 +35768,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -35406,6 +35926,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -35466,6 +35987,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -35550,6 +36072,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -35571,6 +36094,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -35596,6 +36120,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -35685,6 +36210,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -35769,6 +36295,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -35830,6 +36357,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -35860,6 +36388,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -35881,6 +36410,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -35915,6 +36445,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -35956,6 +36487,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -35989,6 +36521,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -36021,6 +36554,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -36091,6 +36625,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -36134,6 +36669,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -36169,6 +36705,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -36192,6 +36729,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -36220,6 +36758,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -36254,6 +36793,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -36551,6 +37091,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -36649,6 +37190,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -36783,6 +37325,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -36804,6 +37347,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -36899,6 +37443,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -36932,6 +37477,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -36954,6 +37500,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -36985,6 +37532,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -37018,6 +37566,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -37059,6 +37608,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -37120,6 +37670,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -37142,6 +37693,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -37164,6 +37716,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -37192,6 +37745,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -37230,6 +37784,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -37269,6 +37824,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -37296,6 +37852,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -37371,6 +37928,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -37400,6 +37958,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -37444,6 +38003,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -37483,6 +38043,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -37506,6 +38067,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -37551,6 +38113,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -37600,6 +38163,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -37638,6 +38202,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -37671,6 +38236,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -37693,6 +38259,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -37723,6 +38290,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -37849,6 +38417,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -37917,6 +38486,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -37988,6 +38558,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -38012,6 +38583,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -38040,6 +38612,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -38063,6 +38636,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -38086,6 +38660,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -38106,6 +38681,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -38125,6 +38701,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -38155,6 +38732,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -38175,6 +38753,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -38219,6 +38798,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -38240,6 +38820,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -38258,6 +38839,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -38281,6 +38863,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -38305,6 +38888,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -38328,6 +38912,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -38351,6 +38936,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -38376,6 +38962,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -38398,6 +38985,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -38424,6 +39012,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -38447,6 +39036,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -38468,6 +39058,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -38489,6 +39080,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -38516,6 +39108,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -38541,6 +39134,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -38635,6 +39229,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -38658,6 +39253,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -38744,6 +39340,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -38830,6 +39427,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -38857,6 +39455,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -38879,6 +39478,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -38911,6 +39511,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -38994,6 +39595,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -39042,6 +39644,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -39099,6 +39702,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -39118,6 +39722,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -39142,6 +39747,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -39190,6 +39796,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -39225,6 +39832,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -39257,6 +39865,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -39323,6 +39932,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -39346,6 +39956,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -39394,6 +40005,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -39459,6 +40071,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -39478,6 +40091,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -39514,6 +40128,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -39564,6 +40179,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -39596,6 +40212,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -39619,6 +40236,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -39641,6 +40259,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -39664,6 +40283,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -39678,6 +40298,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -39702,6 +40323,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -39931,6 +40553,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -39988,6 +40611,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -40087,6 +40711,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -40108,6 +40733,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -40127,6 +40753,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -40155,6 +40782,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -40285,6 +40913,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -40308,6 +40937,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -40361,6 +40991,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -40476,6 +41107,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -40525,6 +41157,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -40562,6 +41195,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -40585,6 +41219,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -40609,6 +41244,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -40761,6 +41397,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -40874,6 +41511,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -40983,6 +41621,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -41004,6 +41643,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -41026,6 +41666,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -41234,6 +41875,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -41257,6 +41899,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -41279,6 +41922,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -41314,6 +41958,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -41339,6 +41984,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -41364,6 +42010,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -41389,6 +42036,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -41412,6 +42060,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -41438,6 +42087,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -41461,6 +42111,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -41484,6 +42135,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -41612,6 +42264,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -41853,6 +42506,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -41876,6 +42530,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -41899,6 +42554,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -41920,6 +42576,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -41945,6 +42602,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -41964,6 +42622,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -41983,6 +42642,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -42005,6 +42665,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -42028,6 +42689,7 @@ pub mod api {
                             Debug,
                             PartialEq,
                         )]
+                        #[allow(non_snake_case)]
                         # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                         #[codec(dumb_trait_bound)]
                         #[decode_as_type(
@@ -42052,6 +42714,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -42081,6 +42744,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -42095,6 +42759,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -42164,6 +42829,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -42231,6 +42897,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -42300,6 +42967,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -42323,6 +42991,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -42345,6 +43014,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -42364,6 +43034,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -42383,6 +43054,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -42402,6 +43074,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -42430,6 +43103,7 @@ pub mod api {
                         Debug,
                         PartialEq,
                     )]
+                    #[allow(non_snake_case)]
                     # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                     #[codec(dumb_trait_bound)]
                     #[decode_as_type(
@@ -42455,6 +43129,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -42473,6 +43148,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -42492,6 +43168,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -42523,6 +43200,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -42540,6 +43218,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -42560,6 +43239,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -42575,6 +43255,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -42594,6 +43275,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -42615,6 +43297,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -42636,6 +43319,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -42654,6 +43338,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -42675,6 +43360,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -42699,6 +43385,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -42718,6 +43405,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -42734,6 +43422,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -42751,6 +43440,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -42769,6 +43459,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -42793,6 +43484,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -42811,6 +43503,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -42834,6 +43527,7 @@ pub mod api {
                         Debug,
                         PartialEq,
                     )]
+                    #[allow(non_snake_case)]
                     # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                     #[codec(dumb_trait_bound)]
                     #[decode_as_type(
@@ -42858,6 +43552,7 @@ pub mod api {
                         Debug,
                         PartialEq,
                     )]
+                    #[allow(non_snake_case)]
                     # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                     #[codec(dumb_trait_bound)]
                     #[decode_as_type(
@@ -42880,6 +43575,7 @@ pub mod api {
                         Debug,
                         PartialEq,
                     )]
+                    #[allow(non_snake_case)]
                     # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                     #[codec(dumb_trait_bound)]
                     #[decode_as_type(
@@ -42921,6 +43617,7 @@ pub mod api {
                         Debug,
                         PartialEq,
                     )]
+                    #[allow(non_snake_case)]
                     # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                     #[codec(dumb_trait_bound)]
                     #[decode_as_type(
@@ -43455,6 +44152,7 @@ pub mod api {
                         Debug,
                         PartialEq,
                     )]
+                    #[allow(non_snake_case)]
                     # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                     #[codec(dumb_trait_bound)]
                     #[decode_as_type(
@@ -43486,6 +44184,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -43539,6 +44238,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -43564,6 +44264,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -43587,6 +44288,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -43612,6 +44314,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -43641,6 +44344,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -43684,6 +44388,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -43703,6 +44408,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -43720,6 +44426,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -43755,6 +44462,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -43777,6 +44485,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -43808,6 +44517,7 @@ pub mod api {
                     Debug,
                     PartialEq,
                 )]
+                #[allow(non_snake_case)]
                 # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
                 #[codec(dumb_trait_bound)]
                 #[decode_as_type(
@@ -43832,6 +44542,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
@@ -43852,6 +44563,7 @@ pub mod api {
                 Debug,
                 PartialEq,
             )]
+            #[allow(non_snake_case)]
             # [codec (crate = :: subxt :: ext :: subxt_core :: ext :: codec)]
             #[codec(dumb_trait_bound)]
             #[decode_as_type(crate_path = ":: subxt :: ext :: subxt_core :: ext :: scale_decode")]
